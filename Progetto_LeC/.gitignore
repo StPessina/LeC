@@ -1,1 +1,13 @@
 /bin
+
+[brach "master"]
+/doc
+
+[branch "Doc"]
+/bin
+/libs
+/src
+/.setting
+/.classpath
+/.gitignore
+/.project
