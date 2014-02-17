@@ -1,0 +1,1501 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\begin_modules
+customHeadersFooters
+foottoend
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /media/Data/Universita/IV anno/1 semestre/Informatica 3A/Progettini/Progettini/Cyclone/Sorgenti relazione/Immagini/logo unibg.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+UNIVERSITÀ DEGLI STUDI DI BERGAMO
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+Progetto:
+\begin_inset Newline newline
+\end_inset
+
+Linguaggio di definizione obj 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Esame:
+\series default
+ Linguaggi e compilatori
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Docente:
+\series default
+ Prof.
+ Giuseppe Psaila
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Anno accademico:
+\series default
+ 2013/2014
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Redattore:
+\series default
+ Matteo Ronchi, Stefano Pessina
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Revisione:
+\series default
+ 0.0
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Data:
+\series default
+ 24/02/2014
+\size default
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\series bold
+\size larger
+Storia delle revisioni:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="10text%">
+<column alignment="center" valignment="top" width="15text%">
+<column alignment="center" valignment="top" width="20text%">
+<column alignment="left" valignment="top" width="45text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rev.
+ n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Redattore
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Descrizione
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24/02/2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versione iniziale
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduzione
+\end_layout
+
+\begin_layout Subsection
+Analisi del contesto
+\end_layout
+
+\begin_layout Subsubsection*
+Il formato obj
+\end_layout
+
+\begin_layout Standard
+Un file object (obj) rappresenta un formato sviluppato da Wavefront Techonologie
+s usato per definire la geometria e altre proprietà di oggetti grafici.
+ Tramite questo formato possono essere elencate tutte le informazioni per
+ la definizione di linee, poligoni, curve e superfici freeform.
+ Le linee e i poligoni sono descritti in termini dei loro vertici mentre
+ curve e superfici sono definite tramite speciali punti di controllo e altri
+ parametri che dipendono dal tipo di curva (Bezier, B-Spline, ecc.).
+ Spesso un file obj è utilizzato per l'interscambio di oggetti grafici tra
+ diverse piattaforme di visualizzazione.
+\end_layout
+
+\begin_layout Subsubsection*
+Keywords
+\end_layout
+
+\begin_layout Standard
+La struttura di un file obj è molto semplice.
+ Non è necessario includere un header all'inizio del file.
+ Spesso il file inizia con un breve commento contenente informazioni sull'oggett
+o/i definito/i nel file.
+ I commenti (in linea) su un file obj sono individuati dal carattere "#".
+ Ogni riga inizia con una keyword seguita dai dati di riferimento per tale
+ keyword.
+ Ecco a seguire una lista delle più importanti keywords che possono essere
+ trovate in un file obj.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tipo di dato
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Keyword
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Descrizione
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Informazioni sui vertici
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+v
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coordinate vertice
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+vt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coordinate texture
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+vn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Direzione delle normali
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Elementi grafici
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+p
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Punto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+l
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linea
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+f
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Faccia
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Raggruppamento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+g
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nome di un gruppo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parametro di smoothing di un gruppo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nome di un oggetto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Attributi di display/render
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+usemtl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nome del materiale
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mtllib
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nome del file mtl di riferimento
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Keywords file obj.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Informazioni sui vertici
+\end_layout
+
+\begin_layout Description
+Coordinate
+\begin_inset space ~
+\end_inset
+
+vertice:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+v
+\series default
+ x y z w
+\end_layout
+
+\begin_layout Description
+Descrizione: Definisce un vertice geometrico con le rispettive coordinate
+ lungo le tre dimensioni (x, y, z).
+ I vertici elencati nel file obj sono numerati in ordine di apparizione.
+ Ciò significa che il primo vertice sarà etichettato "1", il secondo "2"
+ e così via.
+ Il quarto parametro "w" rappresenta una coordinata omogenea utile nel caso
+ in cui bisogna rappresentare curve o superfici.
+ Se omesso, il valore di default per "w" è 1.0.
+ Tutti i parametri sono rappresentati in formato float.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Coordinate
+\begin_inset space ~
+\end_inset
+
+texture:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+vt
+\series default
+ u v w
+\end_layout
+
+\begin_layout Description
+Descrizione: Definisce come avviene la mappatura UV di una texture.
+ "u, v, w" sono numeri float compresi tra 0 e 1 che indicano dove mappare
+ la texture lungo le tre direzioni.
+ Se la texture è controllata lungo una sola direzione orizzontale allora
+ deve essere specificato solo "u".
+ In questo caso gli altri due parametri assumono il valore di default 0.
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Direzioni
+\begin_inset space ~
+\end_inset
+
+delle
+\begin_inset space ~
+\end_inset
+
+normali:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+vn
+\series default
+ i j k
+\end_layout
+
+\begin_layout Description
+Descrizione: Specifica le componenti i, j e k della normale al vertice di
+ riferimento.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Elementi grafici
+\end_layout
+
+\begin_layout Standard
+Una volta definiti i vertici, tramite differenti "elementi grafici" è possibile
+ relazionare queste informazioni per costituire l'oggetto desiderato.
+ Possiamo definire così facce, linee o singoli punti nello spazio.
+ I vertici elencati nel file obj sono indicizzati per ordine di apparizione
+ nell'elenco.
+ Questo vale per ogni categoria di vertice dichiarato.
+\end_layout
+
+\begin_layout Description
+Punto:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+p
+\series default
+ v1 v2 v3 ....
+\end_layout
+
+\begin_layout Description
+Descrizione: Specifica un punto nello spazio.
+ "v1" è la posizione del primo punto corrispondente al primo vertice elencato
+ nel file.
+ Ovviamente, ogni punto richiede un vertice.
+ Possono essere rappresentati molti punti su una singola riga (Es: p v1
+ v2 ....
+ vN).
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Linea:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+l
+\series default
+ v1/vt1 v2/vt2 ...
+\end_layout
+
+\begin_layout Description
+Descrizione: Specifica una linea composta da un minimo di 2 punti.
+ Ogni "v#" è il vertice di un punto in una linea.
+ Accanto all'indice del vertice può essere presente l'informazione sulla
+ mappatura di una texture.
+ L'informazione sul vertice e sulla texture è separata da uno "/" (senza
+ includere spazi).
+ Una linea può essere definita senza includere informazione sulla texture
+ (Es: l v1 v2).
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Faccia:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+f
+\series default
+ v1/vt1/vn1 v2/vt2/vn2 v3/vt3/vn3...
+\end_layout
+
+\begin_layout Description
+Descrizione: Specifica una faccia composta da almeno 3 vertici.
+ Accanto a ciascun vertice possono essere elencate le informazioni su texture
+ e normali.
+ L'informazione sulla texture, relativa a un determinato vertice "vt" elencato
+ precedentemente, precede sempre l'informazione sulle normali.
+ Se vengono incluse le informazioni su texture e normali per un vertice,
+ devono essere incluse in tutti i vertici che costituiscono la faccia.
+ Nel caso in cui abbiamo solo le informazioni sulla posizione dei vertici
+ e le corrispondenti informazioni sulle normali possiamo combinare assieme
+ queste informazioni con la seguente sintassi:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+ 
+\series bold
+f
+\series default
+ 1//1 2//2 3//3 4//4
+\end_layout
+
+\end_inset
+
+ La più semplice definizione di una faccia è costituita da tre vertici senza
+ ulteriori informazioni (Es: f v1 v2 v3).
+ I vertici delle facce possono condividere le stesse informazioni su texture
+ e/o normali.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Raggruppamento
+\end_layout
+
+\begin_layout Standard
+In questa sezione vengono analizzate alcune nozioni sul raggruppamento di
+ oggetti.
+ In questo modo possono essere realizzate collezioni di oggetti (linee,
+ facce, vertici, ecc.) che rendono più semplice le future manipolazioni su
+ un modello.
+\end_layout
+
+\begin_layout Description
+Nome
+\begin_inset space ~
+\end_inset
+
+di
+\begin_inset space ~
+\end_inset
+
+un
+\begin_inset space ~
+\end_inset
+
+gruppo:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+g
+\series default
+ group_name_1 group_name2 ....
+\end_layout
+
+\begin_layout Description
+Descrizione: Definisce il nome del gruppo di appartenenza per un elemento
+ grafico.
+ Un elemento grafico può appartenere a più gruppi contemporaneamente.
+ Se viene omesso il gruppo, l'elemento grafico viene inserito nel gruppo
+ "default".
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Parametro
+\begin_inset space ~
+\end_inset
+
+di
+\begin_inset space ~
+\end_inset
+
+smoothing
+\begin_inset space ~
+\end_inset
+
+di
+\begin_inset space ~
+\end_inset
+
+un
+\begin_inset space ~
+\end_inset
+
+gruppo:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+s
+\series default
+ group_number
+\end_layout
+
+\begin_layout Description
+Descrizione: Questo parametro indica gli elementi sulle quali le normali
+ sono interpolate per attribuire all'elemento un'apparenza "smooth".
+ Il valore di default è "off" o "0"; in questo caso non viene adoperato
+ nessun valore di smoothing.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Nome
+\begin_inset space ~
+\end_inset
+
+di
+\begin_inset space ~
+\end_inset
+
+un
+\begin_inset space ~
+\end_inset
+
+oggetto:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+o
+\series default
+ object_name
+\end_layout
+
+\begin_layout Description
+Descrizione: Parametro opzionale per dare un nome all'oggetto definito subito
+ dopo nel file obj.
+ Tutti gli elementi di raggruppamento vengono applicati a tutti gli oggetti
+ sottostanti nel file fino a quando un nuovo oggetto viene dichiarato.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Attributi di display / render
+\end_layout
+
+\begin_layout Description
+Nome
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+materiale:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+usemtl
+\series default
+ material_name
+\end_layout
+
+\begin_layout Description
+Descrizione: Definisce il nome del materiale da assegnare all'oggetto.
+ Il materiale deve essere definito separatamente in un file mtl.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Nome
+\begin_inset space ~
+\end_inset
+
+del
+\begin_inset space ~
+\end_inset
+
+file_mtl_di
+\begin_inset space ~
+\end_inset
+
+riferimento:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Sintassi: 
+\series bold
+mtllib
+\series default
+ file_name1 file_name2
+\end_layout
+
+\begin_layout Description
+Descrizione: Parametro opzionale per dare un nome all'oggetto definito subito
+ dopo nel file obj.
+ Tutti gli elementi di raggruppamento vengono applicati a tutti gli oggetti
+ sottostanti nel file fino a quando un nuovo oggetto viene dichiarato.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Scopo del documento
+\end_layout
+
+\begin_layout Standard
+In questo documento, 
+\end_layout
+
+\begin_layout Subsection
+Definizioni, abbreviazioni e sigle
+\end_layout
+
+\begin_layout Section
+Definizione del linguaggio
+\end_layout
+
+\begin_layout Section
+Definizione della sintassi e del lessico
+\end_layout
+
+\begin_layout Subsection
+Alfabeto
+\end_layout
+
+\begin_layout Subsection
+Produzioni
+\end_layout
+
+\begin_layout Section
+Descrizione della semantica
+\end_layout
+
+\begin_layout Subsection
+Errori gestiti dal parser semantico
+\end_layout
+
+\begin_layout Subsection
+Warning gestiti dal parser semantico
+\end_layout
+
+\begin_layout Section
+Grammatica ad attributi
+\end_layout
+
+\begin_layout Section
+Esempio di utilizzo del linguaggio
+\end_layout
+
+\end_body
+\end_document
