@@ -5,3 +5,4 @@ options {
 }
 
 rule: ;
+wq

@@ -1,6 +1,6 @@
 //informazioni sui vertici
 
-VERTEX {[vertexname =]? x_vertex y_vertex z_vertex w_vertex, ...};
+VERTEX [vertexgroupname =]? {[vertexname =]? x_vertex y_vertex z_vertex w_vertex, ...};
 //senza parte opzionale = inline, ha senso solo se segue un costruttore elemento grafico
 
 VERTEX [vertexname =]? x_vertex y_vertex z_vertex w_vertex;
@@ -8,7 +8,7 @@ VERTEX [vertexname =]? x_vertex y_vertex z_vertex w_vertex;
 
 
 
-VTEXTURE {[texturename =]? u_texture v_texture w_texture, ...};
+VTEXTURE [vtexturegroupname =]? {[texturename =]? u_texture v_texture w_texture, ...};
 //senza parte opzionale = inline, ha senso solo se segue un costruttore elemento grafico
 
 VTEXTURE [texturename =]? u_texture v_texture w_texture;
@@ -16,7 +16,7 @@ VTEXTURE [texturename =]? u_texture v_texture w_texture;
 
 
 
-VNORMAL {[normalname =]? i_normal j_normal k_normal, ...};	
+VNORMAL [vnormalgroupname =]? {[normalname =]? i_normal j_normal k_normal, ...};	
 //senza parte opzionale = inline, ha senso solo se segue un costruttore elemento grafico
 
 VNORMAL [normalname =]? i_normal j_normal k_normal;
@@ -32,13 +32,13 @@ POINT [pointname =]? vertexname|VERTEX;
 
 
 
-LINE [linename =]? {vertexname|VERTEX|pointname|POINT [WITH vtexturename|VTEXTURE]?, vertexname|VERTEX|pointname|POINT [WITH vtexturename|VTEXTURE]?, ....}; 
-//valutare se ritenere la sintassi tipo: line l1 = {point vertex 0.1 0.2 0.3};
+LINE [linename =]? {vertexname|VERTEX|pointname [WITH vtexturename|VTEXTURE]?, vertexname|VERTEX|pointname [WITH vtexturename|VTEXTURE]?, ....}; 
+//valutare se ritenere la sintassi tipo: line l1 = {point vertex 0.1 .2 0.3};
 //Linea minimo 2 punti/vertici
 
-linename ADD vertexname|VERTEX|pointname|POINT [WITH vtexturename|VTEXTURE]?;
+TAKE linename ADD vertexname|VERTEX|pointname|POINT [WITH vtexturename|VTEXTURE]?;
 
-linename ADD {vertexname|VERTEX|pointname|POINT [WITH vtexturename|VTEXTURE]?,...};
+TAKE linename ADD {vertexname|VERTEX|pointname|POINT [WITH vtexturename|VTEXTURE]?,...};
 
 
 
@@ -49,23 +49,22 @@ FACE [facename =]? {
 //se vengono incluse le informazioni texture e/o normali per un vertice devono essere incluse in tutti i vertici della faccia 
 
 
+SMOOTHING [smoothingname =]? value;
 
-SMOOTHING [smoothingname]? = value;
+SMOOTHING [smoothinggroupname = ]? {smoothingname = value, ...};
 
-SMOOTHING {smoothingname = value, ...};
-
-GROUP groupname [SMOOTHING sf1 = value]? = {
+GROUP groupname = {
 	facename|FACE|pointname|POINT|linename|LINE [SMOOTHING sf1 = value]?,
 	...
 };
 
 //Se viene definito uno smoothing di gruppo non può essere definito per le facce
 
-groupname SMOOTHING = 10;
+TAKE groupname SMOOTHING = 10;
 
-groupname ADD facename|FACE|pointname|POINT|linename|LINE;
+TAKE groupname ADD facename|FACE|pointname|POINT|linename|LINE;
 
-groupname ADD {facename|FACE|pointname|POINT|linename|LINE, ...};
+TAKE groupname ADD {facename|FACE|pointname|POINT|linename|LINE, ...};
 
 //Cubo definito da due vertici opposti
 BOX name = {
@@ -92,8 +91,19 @@ PYRAMID name
 PLAN name
 
 
-groupname SCALE x_value y_value z_value;
+TAKE groupname SCALE x_value y_value z_value;
 
-groupname ROTATE x_value y_value z_value;
+TAKE groupname ROTATE x_value y_value z_value;
 
-groupname TRASLATE x_value y_value z_value;
+TAKE groupname TRASLATE x_value y_value z_value;
+
+
+//Possibili aggiunte funzionali
+
+facename MAPS texturevertexgroup|normalvertexgroup;
+
+groupname MAPS smoothinggroup;
+
+groupname FILTER condition;
+
+TAKE l1 ASSING gv1;

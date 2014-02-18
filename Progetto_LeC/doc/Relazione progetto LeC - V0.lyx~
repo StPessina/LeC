@@ -1442,10 +1442,8 @@ mtllib
 \end_layout
 
 \begin_layout Description
-Descrizione: Parametro opzionale per dare un nome all'oggetto definito subito
- dopo nel file obj.
- Tutti gli elementi di raggruppamento vengono applicati a tutti gli oggetti
- sottostanti nel file fino a quando un nuovo oggetto viene dichiarato.
+Descrizione: Specifica il nome del file mtl contenente i materiali.
+ Possono essere definiti più file mtl contemporaneamente.
 \end_layout
 
 \end_deeper

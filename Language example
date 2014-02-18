@@ -1,0 +1,113 @@
+/*
+* LINGUAGGIO DEFINIZIONE VERTICI
+*/
+VERTEX 0 1 2; //NO perchè sarebbe inutilizzabile visto che non ha un tagname
+
+VERTEX v1 = 0 1 2; //OK
+
+VERTEX {
+	v1 = 0 1 2,
+	v2 = 0 2 3	
+}; //OK definisco più vertici contemporaneamente evitando di riscrivere la parola chiave VERTEX
+
+VERTEX {
+	0 1 2,
+	0 2 3	
+}; //NO perchè sarebbe inutilizzabile visto che non ha un tagname
+
+VERTEXSET gv1 = {
+	v2,
+	v3,
+	v4	
+};
+
+VERTEXSET gv1 = { //Nome gruppo obbligatorio, perchè non posso tradurre niente direttamente sull'obj, ma il gruppo serve solo nel linguaggio
+	v2, //OK perchè inserisco un vertice che ho già creato in un grouppo
+	v3 = 1 2 3, //OK perchè altrimenti devo definire tutti i vertici prima di poterli inserire nel gruppo
+	0 1 3 //OK perchè non sono obbligato a pensare un nome per il vertice
+};
+
+/*
+* LINGUAGGIO DEFINIZIONE PUNTI
+*/
+
+POINT p1 = v1; OK
+
+POINT v1; OK
+
+POINT {
+	p1 = v1, //OK perchè voglio un nome del punto per riutilizzarlo usando un vertice che ho già definito
+	p2 = VERTEX 0 1 2, //OK perchè voglio un nome per un punto per riutilizzarlo, ma non mi interessa riutilizzare il vertice
+	p3 = VERTEX v1 = 0 1 3, //OK perchè voglio creare un punto e un vertice con dei nomi per riutilizzarli
+	v1, //OK perchè assegno a un punto un vertice che ho già definito
+	VERTEX 0 1 2, //OK perchè il vertice può servirmi solo per questo punto quindi non gli dò un nome
+	VERTEX v2 = 1 2 3, //OK perchè è possibile dichiarare qui un vertice e riutilizzarlo
+};
+
+POINT p1 = VERTEX 0 1 2; //OK
+
+POINT VERTEX 0 1 2; //OK perchè voglio definire un punto con un certo vertice ma non voglio riutilizzare nessuno dei due
+
+/*
+* LINGUAGGIO DEFINIZIONE LINEE
+*/
+
+LINE {v1}; //NO minimo mi servono due punti
+
+LINE {v1, v2}; //OK perchè definisco una linea con due vertici che ho già definito. Non dò un nome alla linea perchè non la voglio riutilizzare
+
+LINE l1 = {v1, v2, v3, v4}; //OK perchè definisco una linea con vertici che ho già definito e dò anche un nome alla linea per riutilizzarla
+
+LINE {
+	v1,
+	VERTEX 0 2 1,
+	VERTEX v2 = 1 2 3, //OK perchè definisco
+	p1, //NO perchè il punto è un elemento grafico
+	POINT VERTEX 0 1 2, //NO perchè il punto è un elemento grafico
+	POINT VERTEX v3 = 1 2 3, //NO perchè il punto è un elemento grafico
+	POINT p2 = VERTEX 2 4 5, //NO perchè il punto è un elemento grafico
+	POINT p3 = VERTEX v5 = 5 6 7, //NO perchè il punto è un elemento grafico
+	POINT p4 = v5, //NO perchè il punto è un elemento grafico
+	p4 = v5, //NO perchè assumo che se il punto c'è già lo hai anche già assegnato a un vertice
+	p4 = VERTEX 1 2 3, //NO perchè il punto è un elemento grafico
+	p6 = VERTEX v7 = 4 5 6 //NO perchè il punto è un elemento grafico
+};
+
+
+LINE {
+	v1, //OK perchè richiamo un vertice che ho già definito
+	VERTEX 0 2 1, //OK perchè non ho bisogno di riutilizzare il vertice
+	VERTEX v2 = 1 2 3, //OK perchè definisco un nuovo vertice che posso riutilizzare
+	v1 WITH vt1, //OK perchè richiamo un vertice e una texture che ho già definito
+	VERTEX 0 2 1 WITH VTEXTURE 0.5 0.5 0.5, //OK perchè non ho bisogno di riutilizzare il vertice e/o la texture
+	VERTEX v2 = 1 2 3 WITH VTEXTURE vt1 = 0.5 0.5 0.5, //OK perchè definisco un nuovo vertice e una nuova texture che posso riutilizzare
+
+	p1, //NO perchè il punto è un elemento grafico
+	POINT VERTEX 0 1 2, //NO perchè il punto è un elemento grafico
+	POINT VERTEX v3 = 1 2 3, //NO perchè il punto è un elemento grafico
+	POINT p2 = VERTEX 2 4 5, //NO perchè il punto è un elemento grafico
+	POINT p3 = VERTEX v5 = 5 6 7, //NO perchè il punto è un elemento grafico
+	POINT p4 = v5, //NO perchè il punto è un elemento grafico
+	p4 = v5, //NO perchè assumo che se il punto c'è già lo hai anche già assegnato a un vertice
+	p4 = VERTEX 1 2 3, //NO perchè il punto è un elemento grafico
+	p6 = VERTEX v7 = 4 5 6 //NO perchè il punto è un elemento grafico
+};
+
+/*
+* LINGUAGGIO DEFINIZIONE FACCE
+*/
+
+FACE f1 = {v1, v2}; //NO perchè i vertici devono essere minimo 3
+
+FACE {...}; //OK perchè posso definire una faccia senza nome in quanto non voglio riutilizzarla
+
+FACE {
+	v1, //OK perchè richiamo un vertice che ho già definito
+	VERTEX 0 2 1, //OK perchè non ho bisogno di riutilizzare il vertice
+	VERTEX v2 = 1 2 3, //OK perchè definisco un nuovo vertice che posso riutilizzare
+	v1 TXT vt1, //OK
+	v2 WITH VTEXTURE 0.5 0.5 0.5,
+	v2 WITH VTEXTURE vt1 = 0.5 0.5 0.5,
+	VERTEX 0 1 2 DEFTEX VTEXTURE vt1 0.5 0.5 0.5 DEFNORM,
+
+};
