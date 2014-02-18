@@ -1,0 +1,17 @@
+vertexset {
+	0 1 2
+};
+
+vertexset gv1 = {
+	v2, v3,
+	v4
+};
+
+
+
+vertex v3 = 0 1 2;
+vertex v1 = 1.0 2.0 3.0;
+vertex {
+	v1= 0 1 2,
+	v2 = 1 2 5,
+};

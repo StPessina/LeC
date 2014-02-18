@@ -4,21 +4,159 @@ options {
   k = 1;
   language = Java;
 }
+@header{
+  package JavaPackage;
+}
 
-rule: ;
+@lexer::header{
+  package JavaPackage;
+}
 
+@members{
+}
+@lexer::members{
+}
+ 
+// produzioni parser
+
+/*
+* Produzione start: 5 tipologie differenti di produzione
+*/
+start : ( 
+          vertexInfo
+        | graphElement
+//        | primitive
+//        | grouping
+//        | functional
+);
+
+/*
+* Produzioni utility
+*/
+assignTag : (tagname equal);
+equal : EQ;
+tagname : ID;
+vDef : (num num num);
+num : (INT|FLOAT);
+
+/*
+* Produzione vertexInfo: relative alle informazioni sui vertici
+*/
+vertexInfo : (
+               vertexRule
+             | vertexSetRule
+             | vTextureRule
+             | textureSetRule
+             | vNormalRule
+             | normalSetRule
+);
+
+// definizione singola e multipla per tutte le produzioni riguardanti le info
+// sui vertici
+singleDef : assignTag vDef;
+multipleDef : LB (assignTag vDef) (COMMA assignTag vDef)* RB;
+
+//definizione di un insieme di informazioni sui vertici
+setDef : LB (tagname(equal vDef)?) (COMMA tagname(equal vDef)?)* RB;
+
+// produzioni relative alla definizione di vertici
+vertexRule : VERTEX (multipleDef|singleDef)SC;
+vertexInline : VERTEX assignTag? vDef; //per definizione inline
+vertexSetRule : VERTEXSET assignTag setDef SC;
+
+// produzioni relative alla definizione di texture coord
+vTextureRule : VTEXTURE (multipleDef|singleDef)SC;
+vTextureInline : VTEXTURE assignTag? vDef; //per definizione inline
+textureSetRule : TEXTURESET assignTag setDef SC;
+
+// produzioni relative alla definizione di normali ai vertici
+vNormalRule : VNORMAL (multipleDef|singleDef)SC;
+vNormalInline : VNORMAL assignTag? vDef; //per definizione inline
+normalSetRule : NORMALSET assignTag setDef SC;
+
+/*
+* Produzione graphElement: relative agli elementi grafici
+*/
+graphElement : (
+                 pointRule
+               | lineRule
+               | faceRule 
+);
+
+// produzioni relative alla definizione di un punto
+pointRule : POINT (singlePointDef|multiplePointDef) SC;
+singlePointDef : (tagname (equal (tagname|vertexInline))?)|(vertexInline);
+multiplePointDef : LB (singlePointDef)
+                   (COMMA singlePointDef)* RB;
+
+// produzione relativa alla definizione di una linea
+lineRule : LINE assignTag? LB (tagname|vertexInline 
+                                (DEFTEX tagname|vTextureInline)?)
+                            (COMMA tagname|vertexInline 
+                                (DEFTEX tagname|vTextureInline)?)+ 
+                         RB SC;
+            
+// produzione relativa alla definizione di una faccia
+faceRule : FACE assignTag? LB (tagname|vertexInline 
+                                (DEFTEX tagname|vTextureInline)? 
+                                (DEFNORM tagname|vNormalInline)?)
+                              //TODO 3 ripetizioni 
+                            (COMMA tagname|vertexInline 
+                                (DEFTEX tagname|vTextureInline)?
+                                (DEFNORM tagname|vNormalInline)?)* 
+                         RB SC;
+
+/*
+* Produzione primitive: relative alle primitive grafiche
+*/
+primitive : (
+
+);
+
+/*
+* Produzione grouping: relative alle funzionalità di raggruppamento
+*/
+grouping : (
+//             groupRule
+//             smoothingRule
+);
+
+//groupRule : GROUP assignTag LB 
+//                  ID|faceRule|lineRule|pointRule
+
+
+//singleSmoothDef :  assignTag? INT;
+//multipleSmoothDef : assignTag? LB (assignTag? INT) (COMMA assignTag? INT)* RB;
+//smoothingRule : SMOOTHING (singleSmoothDef|multipleSmoothDef)SC;
+
+
+/*
+* Produzione grouping: relative alla programmazione funzionale
+*/
+functional : (
+               
+);
+
+
+
+
+
+   
 //lexer
-
 VERTEX  : 'vertex';
+VERTEXSET  : 'vertexset';
 VTEXTURE  : 'vtexture';
+TEXTURESET  : 'textureset';
 VNORMAL  : 'vnormal';
+NORMALSET  : 'normalset';
 POINT  : 'point';
 LINE : 'line';
 FACE : 'face';
 SMOOTHING : 'smoothing';
 GROUP : 'group';
 ADD : 'add';
-WITH : 'with';
+DEFTEX : 'deftex';
+DEFNORM : 'defnorm';
 BOX : 'box';
 //PRIMITIVE : 'box'|'plane';
 
@@ -40,6 +178,6 @@ WS  : ( ' '
       | '\t'
       | '\r'
       | '\n'
-      ) /*{$channel=HIDDEN;}*/
+      ) {$channel=HIDDEN;}
    ;  
-//ERROR : . ;
+ERROR : . ;
