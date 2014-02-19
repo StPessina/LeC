@@ -17,17 +17,22 @@ options {
 @lexer::members{
 }
  
-// produzioni parser
+//produzioni parser
+start 
+@init{System.out.println("Start parsing EBNF\n");}
+    : istruction*;
+
 
 /*
 * Produzione start: 5 tipologie differenti di produzione
 */
-start : ( 
+istruction : ( 
           vertexInfo
         | graphElement
 //        | primitive
 //        | grouping
 //        | functional
+        | comment
 );
 
 /*
@@ -54,7 +59,7 @@ vertexInfo : (
 // definizione singola e multipla per tutte le produzioni riguardanti le info
 // sui vertici
 singleDef : assignTag vDef;
-multipleDef : LB (assignTag vDef) (COMMA assignTag vDef)* RB;
+multipleDef : LB (singleDef) (COMMA singleDef)* RB;
 
 //definizione di un insieme di informazioni sui vertici
 setDef : LB (tagname(equal vDef)?) (COMMA tagname(equal vDef)?)* RB;
@@ -114,11 +119,11 @@ primitive : (
 );
 
 /*
-* Produzione grouping: relative alle funzionalità di raggruppamento
+* Produzione grouping: relative alle funzionalitï¿½ di raggruppamento
 */
 grouping : (
 //             groupRule
-//             smoothingRule
+//          | smoothingRule
 );
 
 //groupRule : GROUP assignTag LB 
@@ -137,7 +142,7 @@ functional : (
                
 );
 
-
+comment : SINGLELINECM|MULTILINETEXTCM;
 
 
 
@@ -168,7 +173,11 @@ RB : '}';
 COMMA : ',';
 EQ : '=';
 SC : ';';
-CM : '//';
+
+//Commenti:
+SINGLELINECM : '//' .* ( '\r' | '\n' );
+MULTILINETEXTCM : '/*' .* '*/';
+     
 
 INT   : ('0'..'9')+ ;
 FLOAT : ('0'..'9')* '.' ('0'..'9')+ ;
@@ -178,6 +187,7 @@ WS  : ( ' '
       | '\t'
       | '\r'
       | '\n'
-      ) {$channel=HIDDEN;}
+//      ) {$channel=HIDDEN;}
+      )+ {skip();}
    ;  
-ERROR : . ;
+//ERROR : . ;
