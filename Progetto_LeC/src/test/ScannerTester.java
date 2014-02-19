@@ -9,8 +9,8 @@ import JavaPackage.*;
 
 public class ScannerTester {
   public static void main(String[] args) {
-  	String fileIn = ".\\resources\\testVertex.txt";
-  	String fileOut = ".\\resources\\lexer.ANTRL.txt";
+  	String fileIn = "./resources/testVTexture.txt";
+  	String fileOut = "./resources/lexer.ANTRL.txt";
   	FileWriter fOut;
   	Token tk;
   	int i;

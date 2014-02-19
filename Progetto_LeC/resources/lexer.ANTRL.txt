@@ -1,120 +1,261 @@
-1:[1,0]	TokenType:32:	
-2:[1,1]	TokenType:32:	
+1:[1,0]	TokenType:31:	vtexture
+2:[1,9]	TokenType:14:	0
+3:[1,11]	TokenType:14:	1
+4:[1,13]	TokenType:14:	2
+5:[1,14]	TokenType:22:	;
+6:[1,16]	TokenType:24:	//Errore OK! line 1:9 no viable alternative at input '0'
 
-3:[2,0]	TokenType:28:	vertex
-4:[2,6]	TokenType:32:	 
-5:[2,7]	TokenType:16:	0
-6:[2,8]	TokenType:32:	 
-7:[2,9]	TokenType:16:	1
-8:[2,10]	TokenType:32:	 
-9:[2,11]	TokenType:16:	2
-10:[2,12]	TokenType:23:	;
-11:[2,13]	TokenType:32:	
-12:[2,14]	TokenType:32:	
+7:[3,0]	TokenType:31:	vtexture
+8:[3,9]	TokenType:13:	v2
+9:[3,12]	TokenType:9:	=
+10:[3,14]	TokenType:11:	0.1
+11:[3,18]	TokenType:11:	0.2
+12:[3,22]	TokenType:11:	0.3
+13:[3,25]	TokenType:22:	;
+14:[3,27]	TokenType:24:	//Non errore OK!
 
-13:[3,0]	TokenType:28:	vertex
-14:[3,6]	TokenType:32:	 
-15:[3,7]	TokenType:15:	v1
-16:[3,9]	TokenType:32:	 
-17:[3,10]	TokenType:10:	=
-18:[3,11]	TokenType:32:	 
-19:[3,12]	TokenType:13:	1.0
-20:[3,15]	TokenType:32:	 
-21:[3,16]	TokenType:13:	2.0
-22:[3,19]	TokenType:32:	 
-23:[3,20]	TokenType:13:	3.0
-24:[3,23]	TokenType:23:	;
-25:[3,24]	TokenType:32:	
-26:[3,25]	TokenType:32:	
+15:[5,0]	TokenType:31:	vtexture
+16:[5,9]	TokenType:13:	v1
+17:[5,12]	TokenType:9:	=
+18:[5,14]	TokenType:14:	0
+19:[5,16]	TokenType:14:	1
+20:[5,18]	TokenType:14:	2
+21:[5,20]	TokenType:24:	//Errore OK! line 5:20 missing SC at '//Errore OK!\n'
 
-27:[4,0]	TokenType:28:	vertex
-28:[4,6]	TokenType:32:	 
-29:[4,7]	TokenType:17:	{
-30:[4,8]	TokenType:32:	
-31:[4,9]	TokenType:32:	
+22:[7,0]	TokenType:31:	vtexture
+23:[7,9]	TokenType:13:	v2
+24:[7,12]	TokenType:9:	=
+25:[7,14]	TokenType:11:	4.5
+26:[7,17]	TokenType:11:	.6
+27:[7,20]	TokenType:14:	4
+28:[7,22]	TokenType:14:	5
+29:[7,23]	TokenType:22:	;
+30:[7,25]	TokenType:24:	//Errore OK! line 7:22 extraneous input '5' expecting SC
 
-32:[5,0]	TokenType:32:		
-33:[5,1]	TokenType:15:	v1
-34:[5,3]	TokenType:10:	=
-35:[5,4]	TokenType:32:	 
-36:[5,5]	TokenType:16:	0
-37:[5,6]	TokenType:32:	 
-38:[5,7]	TokenType:16:	1
-39:[5,8]	TokenType:32:	 
-40:[5,9]	TokenType:16:	2
-41:[5,10]	TokenType:7:	,
-42:[5,11]	TokenType:32:	
-43:[5,12]	TokenType:32:	
+31:[9,0]	TokenType:31:	vtexture
+32:[9,9]	TokenType:9:	=
+33:[9,11]	TokenType:14:	0
+34:[9,13]	TokenType:14:	1
+35:[9,15]	TokenType:14:	2
+36:[9,16]	TokenType:22:	;
+37:[9,18]	TokenType:24:	//Errore OK! line 9:9 no viable alternative at input '='
 
-44:[6,0]	TokenType:32:		
-45:[6,1]	TokenType:15:	v2
-46:[6,3]	TokenType:32:	 
-47:[6,4]	TokenType:10:	=
-48:[6,5]	TokenType:32:	 
-49:[6,6]	TokenType:16:	1
-50:[6,7]	TokenType:32:	 
-51:[6,8]	TokenType:16:	2
-52:[6,9]	TokenType:32:	 
-53:[6,10]	TokenType:16:	5
-54:[6,11]	TokenType:7:	,
-55:[6,12]	TokenType:32:	
-56:[6,13]	TokenType:32:	
+38:[11,0]	TokenType:31:	vtexture
+39:[11,9]	TokenType:13:	v3
+40:[11,12]	TokenType:9:	=
+41:[11,14]	TokenType:11:	4.5
+42:[11,18]	TokenType:14:	5
+43:[11,20]	TokenType:11:	5.4
+44:[11,23]	TokenType:6:	,
+45:[11,25]	TokenType:24:	//Errore OK! line 11:23 mismatched input ',' expecting SC
 
-57:[7,0]	TokenType:21:	}
-58:[7,1]	TokenType:23:	;
-59:[7,2]	TokenType:32:	
-60:[7,3]	TokenType:32:	
+46:[13,0]	TokenType:31:	vtexture
+47:[13,9]	TokenType:13:	v3
+48:[13,12]	TokenType:9:	=
+49:[13,14]	TokenType:11:	4.5
+50:[13,18]	TokenType:14:	5
+51:[13,20]	TokenType:11:	5.4
+52:[13,23]	TokenType:22:	;
+53:[13,25]	TokenType:24:	//Non errore OK!
 
-61:[8,0]	TokenType:32:	
-62:[8,1]	TokenType:32:	
+54:[15,0]	TokenType:31:	vtexture
+55:[15,9]	TokenType:15:	{
+56:[16,1]	TokenType:13:	v1
+57:[16,4]	TokenType:9:	=
+58:[16,6]	TokenType:14:	0
+59:[16,8]	TokenType:14:	1
+60:[16,10]	TokenType:14:	2
+61:[16,11]	TokenType:6:	,
+62:[17,1]	TokenType:13:	v2
+63:[17,4]	TokenType:9:	=
+64:[17,6]	TokenType:14:	0
+65:[17,8]	TokenType:14:	2
+66:[17,10]	TokenType:14:	3
+67:[18,0]	TokenType:20:	}
+68:[18,1]	TokenType:22:	;
+69:[18,3]	TokenType:24:	//Non errore OK!
 
-63:[9,0]	TokenType:29:	vertexset
-64:[9,9]	TokenType:32:	 
-65:[9,10]	TokenType:17:	{
-66:[9,11]	TokenType:32:	
-67:[9,12]	TokenType:32:	
+70:[20,0]	TokenType:31:	vtexture
+71:[21,1]	TokenType:13:	v1
+72:[21,4]	TokenType:9:	=
+73:[21,6]	TokenType:14:	0
+74:[21,8]	TokenType:14:	1
+75:[21,10]	TokenType:14:	2
+76:[21,11]	TokenType:6:	,
+77:[22,1]	TokenType:13:	v2
+78:[22,4]	TokenType:9:	=
+79:[22,6]	TokenType:14:	0
+80:[22,8]	TokenType:14:	2
+81:[22,10]	TokenType:14:	3
+82:[23,0]	TokenType:20:	}
+83:[23,1]	TokenType:22:	;
+84:[23,3]	TokenType:24:	//Errore OK! line 21:11 mismatched input ',' expecting SC
 
-68:[10,0]	TokenType:32:		
-69:[10,1]	TokenType:16:	0
-70:[10,2]	TokenType:32:	 
-71:[10,3]	TokenType:16:	1
-72:[10,4]	TokenType:32:	 
-73:[10,5]	TokenType:16:	2
-74:[10,6]	TokenType:32:	
-75:[10,7]	TokenType:32:	
+85:[24,0]	TokenType:24:	//Anche se lo riconosce come una definizione singola quindi pensa che manchi solo il punto e virgola
 
-76:[11,0]	TokenType:21:	}
-77:[11,1]	TokenType:23:	;
-78:[11,2]	TokenType:32:	
-79:[11,3]	TokenType:32:	
+86:[26,0]	TokenType:31:	vtexture
+87:[26,9]	TokenType:15:	{
+88:[27,1]	TokenType:13:	v1
+89:[27,4]	TokenType:9:	=
+90:[27,6]	TokenType:14:	0
+91:[27,8]	TokenType:14:	1
+92:[27,10]	TokenType:14:	2
+93:[27,11]	TokenType:6:	,
+94:[28,1]	TokenType:13:	v2
+95:[28,4]	TokenType:9:	=
+96:[28,6]	TokenType:14:	0
+97:[28,8]	TokenType:14:	2
+98:[28,10]	TokenType:14:	3
+99:[29,0]	TokenType:22:	;
+100:[29,2]	TokenType:24:	//Errore OK! Manca la graffa...//line 29:0 missing RB at ';'
 
-80:[12,0]	TokenType:32:	
-81:[12,1]	TokenType:32:	
+101:[31,0]	TokenType:31:	vtexture
+102:[31,9]	TokenType:15:	{
+103:[32,1]	TokenType:13:	v1
+104:[32,4]	TokenType:9:	=
+105:[32,6]	TokenType:14:	0
+106:[32,8]	TokenType:14:	1
+107:[32,10]	TokenType:14:	2
+108:[33,1]	TokenType:13:	v2
+109:[33,4]	TokenType:9:	=
+110:[33,6]	TokenType:14:	0
+111:[33,8]	TokenType:14:	2
+112:[33,10]	TokenType:14:	3
+113:[34,0]	TokenType:20:	}
+114:[34,1]	TokenType:22:	;
+115:[34,3]	TokenType:24:	//Errore OK! Manca la virgola...in realtà non dice che manca la virgola ma che manca la graffa..//line 33:1 mismatched input 'v2' expecting RB
 
-82:[13,0]	TokenType:29:	vertexset
-83:[13,9]	TokenType:32:	 
-84:[13,10]	TokenType:15:	gv1
-85:[13,13]	TokenType:10:	=
-86:[13,14]	TokenType:17:	{
-87:[13,15]	TokenType:32:	
-88:[13,16]	TokenType:32:	
+116:[35,0]	TokenType:24:	//pensa sia un insieme di un unico punto
 
-89:[14,0]	TokenType:32:		
-90:[14,1]	TokenType:32:	
-91:[14,2]	TokenType:32:	
+117:[37,0]	TokenType:31:	vtexture
+118:[37,9]	TokenType:15:	{
+119:[38,1]	TokenType:13:	v1
+120:[38,4]	TokenType:9:	=
+121:[38,6]	TokenType:14:	0
+122:[38,8]	TokenType:14:	1
+123:[38,10]	TokenType:14:	2
+124:[38,11]	TokenType:6:	,
+125:[39,1]	TokenType:13:	v2
+126:[39,4]	TokenType:9:	=
+127:[39,6]	TokenType:14:	0
+128:[39,8]	TokenType:14:	2
+129:[39,10]	TokenType:14:	3
+130:[39,11]	TokenType:6:	,
+131:[40,0]	TokenType:20:	}
+132:[40,1]	TokenType:22:	;
+133:[40,3]	TokenType:24:	//Errore OK! dice che dopo la virgola dopo la def di v2 ci vorrebbe un altro vertice //line 40:0 mismatched input '}' expecting ID
 
-92:[15,0]	TokenType:32:		
-93:[15,1]	TokenType:15:	v2
-94:[15,3]	TokenType:7:	,
-95:[15,4]	TokenType:32:	 
-96:[15,5]	TokenType:15:	v3
-97:[15,7]	TokenType:7:	,
-98:[15,8]	TokenType:32:	
-99:[15,9]	TokenType:32:	
+134:[42,0]	TokenType:31:	vtexture
+135:[42,9]	TokenType:15:	{
+136:[43,1]	TokenType:31:	vtexture
+137:[43,10]	TokenType:13:	v1
+138:[43,13]	TokenType:9:	=
+139:[43,15]	TokenType:14:	0
+140:[43,17]	TokenType:14:	1
+141:[43,19]	TokenType:14:	2
+142:[43,20]	TokenType:6:	,
+143:[44,1]	TokenType:31:	vtexture
+144:[44,10]	TokenType:9:	=
+145:[44,12]	TokenType:14:	0
+146:[44,14]	TokenType:14:	1
+147:[44,16]	TokenType:14:	2
+148:[44,17]	TokenType:6:	,
+149:[45,1]	TokenType:13:	v1
+150:[45,4]	TokenType:13:	v1
+151:[45,7]	TokenType:9:	=
+152:[45,9]	TokenType:14:	0
+153:[45,11]	TokenType:14:	1
+154:[45,13]	TokenType:14:	2
+155:[45,14]	TokenType:6:	,
+156:[46,1]	TokenType:13:	v2
+157:[46,4]	TokenType:14:	0
+158:[46,6]	TokenType:14:	2
+159:[46,8]	TokenType:14:	3
+160:[47,0]	TokenType:20:	}
+161:[47,1]	TokenType:22:	;
+162:[47,3]	TokenType:24:	//Errore OK! line 43:18 mismatched input ',' expecting SC..non è possibile definire in line non ha senso qui
 
-100:[16,0]	TokenType:32:		
-101:[16,1]	TokenType:15:	v4
-102:[16,3]	TokenType:32:	
-103:[16,4]	TokenType:32:	
+163:[49,0]	TokenType:31:	vtexture
+164:[49,9]	TokenType:15:	{
+165:[50,1]	TokenType:13:	v1
+166:[50,4]	TokenType:9:	=
+167:[50,6]	TokenType:14:	0
+168:[50,8]	TokenType:14:	1
+169:[50,10]	TokenType:14:	2
+170:[50,11]	TokenType:6:	,
+171:[51,1]	TokenType:14:	0
+172:[51,3]	TokenType:14:	2
+173:[51,5]	TokenType:14:	3
+174:[52,0]	TokenType:20:	}
+175:[52,1]	TokenType:22:	;
+176:[52,3]	TokenType:24:	//Errore OK! non trova il nome del vertice...line 49:1 mismatched input '0' expecting ID
 
-104:[17,0]	TokenType:21:	}
+177:[54,0]	TokenType:31:	vtexture
+178:[54,9]	TokenType:13:	vg1
+179:[54,13]	TokenType:9:	=
+180:[54,15]	TokenType:15:	{
+181:[55,1]	TokenType:13:	v1
+182:[55,4]	TokenType:9:	=
+183:[55,6]	TokenType:14:	0
+184:[55,8]	TokenType:14:	1
+185:[55,10]	TokenType:14:	2
+186:[55,11]	TokenType:6:	,
+187:[56,1]	TokenType:13:	v2
+188:[56,4]	TokenType:9:	=
+189:[56,6]	TokenType:14:	0
+190:[56,8]	TokenType:14:	2
+191:[56,10]	TokenType:14:	3
+192:[57,0]	TokenType:20:	}
+193:[57,1]	TokenType:22:	;
+194:[57,3]	TokenType:24:	//Errore OK non posso dare un nome ad un elenco di vertici che non sia set
+
+195:[59,0]	TokenType:13:	vtextureset
+196:[59,12]	TokenType:15:	{
+197:[60,1]	TokenType:13:	v1
+198:[60,4]	TokenType:9:	=
+199:[60,6]	TokenType:14:	0
+200:[60,8]	TokenType:14:	1
+201:[60,10]	TokenType:14:	2
+202:[60,11]	TokenType:6:	,
+203:[61,1]	TokenType:13:	v2
+204:[62,0]	TokenType:20:	}
+205:[62,1]	TokenType:22:	;
+206:[62,3]	TokenType:24:	//Errore OK! Non trova il nome del gruppo
+
+207:[64,0]	TokenType:13:	vtextureset
+208:[64,12]	TokenType:13:	gv1
+209:[64,16]	TokenType:9:	=
+210:[64,18]	TokenType:15:	{
+211:[65,1]	TokenType:13:	v2
+212:[65,3]	TokenType:6:	,
+213:[66,1]	TokenType:13:	v3
+214:[66,3]	TokenType:6:	,
+215:[67,1]	TokenType:13:	v4
+216:[68,0]	TokenType:20:	}
+217:[68,1]	TokenType:22:	;
+218:[68,3]	TokenType:24:	//No errore OK!
+
+219:[70,0]	TokenType:13:	vtextureset
+220:[70,12]	TokenType:13:	gv1
+221:[70,16]	TokenType:9:	=
+222:[70,18]	TokenType:15:	{
+223:[71,1]	TokenType:13:	v2
+224:[71,3]	TokenType:6:	,
+225:[72,1]	TokenType:13:	v3
+226:[72,4]	TokenType:9:	=
+227:[72,6]	TokenType:14:	1
+228:[72,8]	TokenType:14:	2
+229:[72,10]	TokenType:14:	3
+230:[72,11]	TokenType:6:	,
+231:[73,1]	TokenType:14:	0
+232:[73,3]	TokenType:14:	1
+233:[73,5]	TokenType:14:	3
+234:[73,6]	TokenType:6:	,
+235:[74,1]	TokenType:31:	vtexture
+236:[74,10]	TokenType:13:	v5
+237:[74,13]	TokenType:9:	=
+238:[74,15]	TokenType:14:	0
+239:[74,17]	TokenType:14:	1
+240:[74,19]	TokenType:14:	2
+241:[75,0]	TokenType:20:	}
+242:[75,1]	TokenType:22:	;
