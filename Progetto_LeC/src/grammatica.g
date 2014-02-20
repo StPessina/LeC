@@ -95,20 +95,20 @@ multiplePointDef : LB (singlePointDef)
                    (COMMA singlePointDef)* RB;
 
 // produzione relativa alla definizione di una linea
-lineRule : LINE assignTag? LB (tagname|vertexInline 
-                                (DEFTEX tagname|vTextureInline)?)
-                            (COMMA tagname|vertexInline 
-                                (DEFTEX tagname|vTextureInline)?)+ 
+lineRule : LINE assignTag? LB ((tagname|vertexInline) 
+                                (DEFTEX (tagname|vTextureInline))?)
+                            (COMMA (tagname|vertexInline) 
+                                (DEFTEX (tagname|vTextureInline))?)+ 
                          RB SC;
             
 // produzione relativa alla definizione di una faccia
-faceRule : FACE assignTag? LB (tagname|vertexInline 
-                                (DEFTEX tagname|vTextureInline)? 
-                                (DEFNORM tagname|vNormalInline)?)
+faceRule : FACE assignTag? LB ((tagname|vertexInline) 
+                                (DEFTEX (tagname|vTextureInline))? 
+                                (DEFNORM (tagname|vNormalInline))?)
                               //TODO 3 ripetizioni 
-                            (COMMA tagname|vertexInline 
-                                (DEFTEX tagname|vTextureInline)?
-                                (DEFNORM tagname|vNormalInline)?)* 
+                            (COMMA (tagname|vertexInline) 
+                                (DEFTEX (tagname|vTextureInline))?
+                                (DEFNORM (tagname|vNormalInline))?)* 
                          RB SC;
 
 /*
