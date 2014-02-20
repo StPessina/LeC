@@ -25,52 +25,52 @@ line {
 
 line {
 	v1,
-	POINT vertex 0 1 2	
-}; //Errore
+	point vertex 0 1 2	
+}; //Errore line 28:1 no viable alternative at input 'point'
 
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
 
 line {
 	v1,
-	POINT vertex v3 = 0 1 2	
-}; //Errore 
+	point vertex v3 = 0 1 2	
+}; //Errore line 36:1 no viable alternative at input 'point'
 
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
 
 line {
 	v1,
-	POINT p2 = vertex 2 4 5
-}; //ERRORE
+	point p2 = vertex 2 4 5
+}; //ERRORE line 44:1 no viable alternative at input 'point'
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
 
 line {
 	v1,
-	POINT p2 = vertex v5 = 5 6 7	
-}; //ERRORE
+	point p2 = vertex v5 = 5 6 7	
+}; //ERRORE line 51:1 no viable alternative at input 'point'
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
 
 line {
 	v1,
-	POINT p4 = v5
-}; //ERRORE
-
-line {v1, v2}; //Grammatica corretta per azzerare parser..
-
-line {
-	v1,
-	p4 = vertex 1 2 3
-}; /ERRORE
+	point p4 = v5
+}; //ERRORE line 58:1 no viable alternative at input 'point'
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
 
 line {
 	v1,
 	p4 = vertex 1 2 3
-};
+}; //ERRORE line 65:4 mismatched input '=' expecting RB
+
+line {v1, v2}; //Grammatica corretta per azzerare parser..
+
+line {
+	v1,
+	p4 = vertex 1 2 3
+}; //line 72:4 mismatched input '=' expecting RB
 
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
@@ -78,7 +78,7 @@ line {v1, v2}; //Grammatica corretta per azzerare parser..
 line {
 	v1,
 	p6 = vertex v7 = 4 5 6
-}; //ERRORE
+}; //ERRORE line 80:4 mismatched input '=' expecting RB
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
 
@@ -104,7 +104,7 @@ line {
 
 line {
 	v1,
-	vertex v1 = 0 1 2 deftex vtexture vt1 0 1 2
+	vertex v1 = 0 1 2 deftex vtexture vt1 = 0 1 2
 }; //OK
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
@@ -112,26 +112,26 @@ line {v1, v2}; //Grammatica corretta per azzerare parser..
 line {
 	v1,
 	vertex = 0 1 2 deftex vtexture vt1 0 1 2
-}; //ERRORE
+}; //ERRORE line 114:8 mismatched input '=' expecting set null
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
 
 line {
 	v1,
 	vertex  1 2 deftex vtexture vt1 0 1 2
-}; //ERRORE
+}; //ERRORE line 121:13 mismatched input 'deftex' expecting set null
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
 
 line {
 	v1,
 	vertex 1 1 2 deftex vtexture  1 2
-}; //ERRORE
+}; //ERRORE line 129:0 mismatched input '}' expecting set null
 
 line {v1, v2}; //Grammatica corretta per azzerare parser..
 
 line {
 	v1,
 	vertex 1 1 2 vtexture 1 1 2
-}; //ERRORE
+}; //ERRORE line 135:14 mismatched input 'vtexture' expecting RB
 

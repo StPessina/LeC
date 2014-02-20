@@ -13,7 +13,7 @@ public class ParserTester  {
 
 	public static void main(String[] args) {
 		CommonTokenStream tokens;
-		String fileIn = "./resources/testLineGrammar.txt";
+		String fileIn = "./resources/testFaceGrammar.txt";
 
 		try {
 			System.out.println ("Parsing con ANTLR");

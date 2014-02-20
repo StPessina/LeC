@@ -66,17 +66,17 @@ setDef : LB (tagname(equal vDef)?) (COMMA tagname(equal vDef)?)* RB;
 
 // produzioni relative alla definizione di vertici
 vertexRule : VERTEX (multipleDef|singleDef)SC;
-vertexInline : VERTEX assignTag? vDef; //per definizione inline
+vertexInline : vDef;
 vertexSetRule : VERTEXSET assignTag setDef SC;
 
 // produzioni relative alla definizione di texture coord
 vTextureRule : VTEXTURE (multipleDef|singleDef)SC;
-vTextureInline : VTEXTURE assignTag? vDef; //per definizione inline
+vTextureInline : vDef; //per definizione inline
 textureSetRule : TEXTURESET assignTag setDef SC;
 
 // produzioni relative alla definizione di normali ai vertici
 vNormalRule : VNORMAL (multipleDef|singleDef)SC;
-vNormalInline : VNORMAL assignTag? vDef; //per definizione inline
+vNormalInline : vDef; //per definizione inline
 normalSetRule : NORMALSET assignTag setDef SC;
 
 /*
@@ -90,25 +90,25 @@ graphElement : (
 
 // produzioni relative alla definizione di un punto
 pointRule : POINT (singlePointDef|multiplePointDef) SC;
-singlePointDef : (tagname (equal (tagname|vertexInline))?)|(vertexInline);
+singlePointDef : ((tagname (equal (tagname|vertexInline))? )|vertexInline);
 multiplePointDef : LB (singlePointDef)
                    (COMMA singlePointDef)* RB;
 
 // produzione relativa alla definizione di una linea
 lineRule : LINE assignTag? LB ((tagname|vertexInline) 
-                                (DEFTEX (tagname|vTextureInline))?)
+                                (DEFTEX (tagname (equal vertexInline))?|(vTextureInline))?)
                             (COMMA (tagname|vertexInline) 
-                                (DEFTEX (tagname|vTextureInline))?)+ 
+                                (DEFTEX (tagname (equal vertexInline))?|(vTextureInline))?)+ 
                          RB SC;
             
 // produzione relativa alla definizione di una faccia
 faceRule : FACE assignTag? LB ((tagname|vertexInline) 
-                                (DEFTEX (tagname|vTextureInline))? 
-                                (DEFNORM (tagname|vNormalInline))?)
+                                (DEFTEX ((tagname (equal vertexInline))?|vTextureInline))? 
+                                (DEFNORM ((tagname (equal vNormalInline))?|vNormalInline))?)
                               //TODO 3 ripetizioni 
                             (COMMA (tagname|vertexInline) 
-                                (DEFTEX (tagname|vTextureInline))?
-                                (DEFNORM (tagname|vNormalInline))?)* 
+                                (DEFTEX ((tagname (equal vTextureInline))?|vTextureInline))?
+                                (DEFNORM ((tagname (equal vNormalInline))?|vNormalInline))?)* 
                          RB SC;
 
 /*
@@ -179,8 +179,8 @@ SINGLELINECM : '//' .* ( '\r' | '\n' );
 MULTILINETEXTCM : '/*' .* '*/';
      
 
-INT   : ('0'..'9')+ ;
-FLOAT : ('0'..'9')* '.' ('0'..'9')+ ;
+INT   : ('-')? ('0'..'9')+ ;
+FLOAT : ('-')? ('0'..'9')* '.' ('0'..'9')+ ;
 ID    : (('a'..'z')|('A'..'Z'))
         (('a'..'z')|('A'..'Z')|('0'..'9')|'_')*;
 WS  : ( ' '           

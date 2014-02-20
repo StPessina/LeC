@@ -107,3 +107,71 @@ groupname MAPS smoothinggroup;
 groupname FILTER condition;
 
 TAKE l1 ASSING gv1;
+
+//Altre idee
+
+p1 = v1; 
+
+
+
+
+
+//Altri esempi
+
+
+
+vertex v1 = 0 1 2;
+
+point v1;
+
+v 0 1 2
+p 0
+
+point v1; tagname
+
+point 0 1 2; vertexInline
+
+point p1 = 0 1 2; assigntag vertexInline
+
+point p1 = v1;	assigntag tagname
+
+vertex v1 = 0 1 2;
+vertex v2 = 0 2 4;
+
+point p1 = v1;
+point p2 = v1;
+
+point p3 = v2;
+
+v 0 1 2
+v 0 2 4
+
+p 0
+
+p 0
+
+p 1
+
+
+
+
+vertex v1 = 0 1 2;
+vertex v2 = 0 1 2;
+
+v 0 1 2
+v 0 1 2
+
+vtexture abc = 0 1 2;
+
+line {
+	v1 deftex vt1 defnorm vn1,
+	v1 deftex vt1 = 0 1 2 defnorm vn1 = 0 1 2
+};
+
+line {
+	v1 deftex vt1 defnorm,
+	v2 deftex vt2	
+};
+
+
+

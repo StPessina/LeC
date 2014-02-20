@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g 2014-02-20 14:38:43
+// $ANTLR 3.4 /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g 2014-02-20 16:06:29
 
   package JavaPackage;
 
@@ -709,68 +709,30 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:182:7: ( ( '0' .. '9' )+ )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:182:9: ( '0' .. '9' )+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:182:7: ( ( '-' )? ( '0' .. '9' )+ )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:182:9: ( '-' )? ( '0' .. '9' )+
             {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:182:9: ( '0' .. '9' )+
-            int cnt3=0;
-            loop3:
-            do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:182:9: ( '-' )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-                if ( ((LA3_0 >= '0' && LA3_0 <= '9')) ) {
-                    alt3=1;
-                }
+            if ( (LA3_0=='-') ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:182:10: '-'
+                    {
+                    match('-'); 
 
-
-                switch (alt3) {
-            	case 1 :
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:
-            	    {
-            	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
-            	        input.consume();
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt3 >= 1 ) break loop3;
-                        EarlyExitException eee =
-                            new EarlyExitException(3, input);
-                        throw eee;
-                }
-                cnt3++;
-            } while (true);
-
+                    }
+                    break;
 
             }
 
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "INT"
 
-    // $ANTLR start "FLOAT"
-    public final void mFLOAT() throws RecognitionException {
-        try {
-            int _type = FLOAT;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:7: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:9: ( '0' .. '9' )* '.' ( '0' .. '9' )+
-            {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:9: ( '0' .. '9' )*
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:182:16: ( '0' .. '9' )+
+            int cnt4=0;
             loop4:
             do {
                 int alt4=2;
@@ -799,26 +761,65 @@ public class grammaticaLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop4;
+            	    if ( cnt4 >= 1 ) break loop4;
+                        EarlyExitException eee =
+                            new EarlyExitException(4, input);
+                        throw eee;
                 }
+                cnt4++;
             } while (true);
 
 
-            match('.'); 
+            }
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:25: ( '0' .. '9' )+
-            int cnt5=0;
-            loop5:
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "INT"
+
+    // $ANTLR start "FLOAT"
+    public final void mFLOAT() throws RecognitionException {
+        try {
+            int _type = FLOAT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:7: ( ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:9: ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+
+            {
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:9: ( '-' )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0=='-') ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:10: '-'
+                    {
+                    match('-'); 
+
+                    }
+                    break;
+
+            }
+
+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:16: ( '0' .. '9' )*
+            loop6:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( ((LA5_0 >= '0' && LA5_0 <= '9')) ) {
-                    alt5=1;
+                if ( ((LA6_0 >= '0' && LA6_0 <= '9')) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt6) {
             	case 1 :
             	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:
             	    {
@@ -836,12 +837,49 @@ public class grammaticaLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt5 >= 1 ) break loop5;
+            	    break loop6;
+                }
+            } while (true);
+
+
+            match('.'); 
+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:183:32: ( '0' .. '9' )+
+            int cnt7=0;
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( ((LA7_0 >= '0' && LA7_0 <= '9')) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:
+            	    {
+            	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
+            	        input.consume();
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt7 >= 1 ) break loop7;
                         EarlyExitException eee =
-                            new EarlyExitException(5, input);
+                            new EarlyExitException(7, input);
                         throw eee;
                 }
-                cnt5++;
+                cnt7++;
             } while (true);
 
 
@@ -875,17 +913,17 @@ public class grammaticaLexer extends Lexer {
 
 
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:185:9: ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) | ( '0' .. '9' ) | '_' )*
-            loop6:
+            loop8:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( ((LA6_0 >= '0' && LA6_0 <= '9')||(LA6_0 >= 'A' && LA6_0 <= 'Z')||LA6_0=='_'||(LA6_0 >= 'a' && LA6_0 <= 'z')) ) {
-                    alt6=1;
+                if ( ((LA8_0 >= '0' && LA8_0 <= '9')||(LA8_0 >= 'A' && LA8_0 <= 'Z')||LA8_0=='_'||(LA8_0 >= 'a' && LA8_0 <= 'z')) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt8) {
             	case 1 :
             	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:
             	    {
@@ -903,7 +941,7 @@ public class grammaticaLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop8;
                 }
             } while (true);
 
@@ -928,18 +966,18 @@ public class grammaticaLexer extends Lexer {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:186:7: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:186:7: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            int cnt7=0;
-            loop7:
+            int cnt9=0;
+            loop9:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( ((LA7_0 >= '\t' && LA7_0 <= '\n')||LA7_0=='\r'||LA7_0==' ') ) {
-                    alt7=1;
+                if ( ((LA9_0 >= '\t' && LA9_0 <= '\n')||LA9_0=='\r'||LA9_0==' ') ) {
+                    alt9=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt9) {
             	case 1 :
             	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:
             	    {
@@ -957,12 +995,12 @@ public class grammaticaLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt7 >= 1 ) break loop7;
+            	    if ( cnt9 >= 1 ) break loop9;
                         EarlyExitException eee =
-                            new EarlyExitException(7, input);
+                            new EarlyExitException(9, input);
                         throw eee;
                 }
-                cnt7++;
+                cnt9++;
             } while (true);
 
 
@@ -981,9 +1019,9 @@ public class grammaticaLexer extends Lexer {
 
     public void mTokens() throws RecognitionException {
         // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:8: ( VERTEX | VERTEXSET | VTEXTURE | TEXTURESET | VNORMAL | NORMALSET | POINT | LINE | FACE | SMOOTHING | GROUP | ADD | DEFTEX | DEFNORM | BOX | SCALE | ROTATE | TRASLATE | LB | RB | COMMA | EQ | SC | SINGLELINECM | MULTILINETEXTCM | INT | FLOAT | ID | WS )
-        int alt8=29;
-        alt8 = dfa8.predict(input);
-        switch (alt8) {
+        int alt10=29;
+        alt10 = dfa10.predict(input);
+        switch (alt10) {
             case 1 :
                 // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:10: VERTEX
                 {
@@ -1222,19 +1260,19 @@ public class grammaticaLexer extends Lexer {
     }
 
 
-    protected DFA8 dfa8 = new DFA8(this);
-    static final String DFA8_eotS =
-        "\1\uffff\14\25\6\uffff\1\51\3\uffff\20\25\3\uffff\14\25\1\106\1"+
-        "\25\1\111\10\25\1\122\1\123\3\25\1\uffff\2\25\1\uffff\7\25\1\140"+
-        "\2\uffff\1\25\1\142\1\143\3\25\1\150\5\25\1\uffff\1\25\2\uffff\1"+
-        "\157\1\25\1\161\1\25\1\uffff\1\25\1\164\4\25\1\uffff\1\171\1\uffff"+
-        "\1\25\1\173\1\uffff\1\25\1\175\2\25\1\uffff\1\u0080\1\uffff\1\25"+
-        "\1\uffff\1\u0082\1\u0083\1\uffff\1\u0084\3\uffff";
-    static final String DFA8_eofS =
-        "\u0085\uffff";
-    static final String DFA8_minS =
+    protected DFA10 dfa10 = new DFA10(this);
+    static final String DFA10_eotS =
+        "\1\uffff\14\26\7\uffff\1\52\3\uffff\20\26\3\uffff\14\26\1\107\1"+
+        "\26\1\112\10\26\1\123\1\124\3\26\1\uffff\2\26\1\uffff\7\26\1\141"+
+        "\2\uffff\1\26\1\143\1\144\3\26\1\151\5\26\1\uffff\1\26\2\uffff\1"+
+        "\160\1\26\1\162\1\26\1\uffff\1\26\1\165\4\26\1\uffff\1\172\1\uffff"+
+        "\1\26\1\174\1\uffff\1\26\1\176\2\26\1\uffff\1\u0081\1\uffff\1\26"+
+        "\1\uffff\1\u0083\1\u0084\1\uffff\1\u0085\3\uffff";
+    static final String DFA10_eofS =
+        "\u0086\uffff";
+    static final String DFA10_minS =
         "\1\11\2\145\2\157\1\151\1\141\1\143\1\162\1\144\1\145\2\157\5\uffff"+
-        "\1\52\1\56\3\uffff\1\162\1\145\1\157\1\170\1\141\1\162\1\151\1\156"+
+        "\1\52\2\56\3\uffff\1\162\1\145\1\157\1\170\1\141\1\162\1\151\1\156"+
         "\1\143\1\157\1\141\1\157\1\144\1\146\1\170\1\164\3\uffff\1\164\1"+
         "\170\1\162\1\164\1\163\1\155\1\156\2\145\1\157\1\154\1\165\1\60"+
         "\1\156\1\60\1\141\1\145\1\164\1\155\1\165\1\154\1\141\1\164\2\60"+
@@ -1244,9 +1282,9 @@ public class grammaticaLexer extends Lexer {
         "\155\1\60\1\145\1\uffff\1\145\1\60\1\163\2\145\1\156\1\uffff\1\60"+
         "\1\uffff\1\164\1\60\1\uffff\1\145\1\60\1\164\1\147\1\uffff\1\60"+
         "\1\uffff\1\164\1\uffff\2\60\1\uffff\1\60\3\uffff";
-    static final String DFA8_maxS =
+    static final String DFA10_maxS =
         "\1\175\1\164\1\162\2\157\1\151\1\141\1\155\1\162\1\144\1\145\2\157"+
-        "\5\uffff\1\57\1\71\3\uffff\1\162\1\145\1\157\1\170\1\141\1\162\1"+
+        "\5\uffff\1\57\2\71\3\uffff\1\162\1\145\1\157\1\170\1\141\1\162\1"+
         "\151\1\156\1\143\1\157\1\141\1\157\1\144\1\146\1\170\1\164\3\uffff"+
         "\1\164\1\170\1\162\1\164\1\163\1\155\1\156\2\145\1\157\1\154\1\165"+
         "\1\172\1\164\1\172\1\141\1\145\1\164\1\155\1\165\1\154\1\141\1\164"+
@@ -1256,42 +1294,42 @@ public class grammaticaLexer extends Lexer {
         "\1\172\1\155\1\172\1\145\1\uffff\1\145\1\172\1\163\2\145\1\156\1"+
         "\uffff\1\172\1\uffff\1\164\1\172\1\uffff\1\145\1\172\1\164\1\147"+
         "\1\uffff\1\172\1\uffff\1\164\1\uffff\2\172\1\uffff\1\172\3\uffff";
-    static final String DFA8_acceptS =
-        "\15\uffff\1\23\1\24\1\25\1\26\1\27\2\uffff\1\33\1\34\1\35\20\uffff"+
+    static final String DFA10_acceptS =
+        "\15\uffff\1\23\1\24\1\25\1\26\1\27\3\uffff\1\33\1\34\1\35\20\uffff"+
         "\1\30\1\31\1\32\34\uffff\1\14\2\uffff\1\17\10\uffff\1\10\1\11\14"+
         "\uffff\1\7\1\uffff\1\20\1\13\4\uffff\1\1\6\uffff\1\15\1\uffff\1"+
         "\21\2\uffff\1\5\4\uffff\1\16\1\uffff\1\3\1\uffff\1\22\2\uffff\1"+
         "\2\1\uffff\1\6\1\12\1\4";
-    static final String DFA8_specialS =
-        "\u0085\uffff}>";
-    static final String[] DFA8_transitionS = {
-            "\2\26\2\uffff\1\26\22\uffff\1\26\13\uffff\1\17\1\uffff\1\24"+
-            "\1\22\12\23\1\uffff\1\21\1\uffff\1\20\3\uffff\32\25\6\uffff"+
-            "\1\11\1\13\1\25\1\12\1\25\1\6\1\10\4\25\1\5\1\25\1\3\1\25\1"+
-            "\4\1\25\1\14\1\7\1\2\1\25\1\1\4\25\1\15\1\uffff\1\16",
-            "\1\27\10\uffff\1\31\5\uffff\1\30",
-            "\1\32\14\uffff\1\33",
-            "\1\34",
+    static final String DFA10_specialS =
+        "\u0086\uffff}>";
+    static final String[] DFA10_transitionS = {
+            "\2\27\2\uffff\1\27\22\uffff\1\27\13\uffff\1\17\1\23\1\25\1\22"+
+            "\12\24\1\uffff\1\21\1\uffff\1\20\3\uffff\32\26\6\uffff\1\11"+
+            "\1\13\1\26\1\12\1\26\1\6\1\10\4\26\1\5\1\26\1\3\1\26\1\4\1\26"+
+            "\1\14\1\7\1\2\1\26\1\1\4\26\1\15\1\uffff\1\16",
+            "\1\30\10\uffff\1\32\5\uffff\1\31",
+            "\1\33\14\uffff\1\34",
             "\1\35",
             "\1\36",
             "\1\37",
-            "\1\41\11\uffff\1\40",
-            "\1\42",
+            "\1\40",
+            "\1\42\11\uffff\1\41",
             "\1\43",
             "\1\44",
             "\1\45",
             "\1\46",
+            "\1\47",
             "",
             "",
             "",
             "",
             "",
-            "\1\50\4\uffff\1\47",
-            "\1\24\1\uffff\12\23",
+            "\1\51\4\uffff\1\50",
+            "\1\25\1\uffff\12\24",
+            "\1\25\1\uffff\12\24",
             "",
             "",
             "",
-            "\1\52",
             "\1\53",
             "\1\54",
             "\1\55",
@@ -1307,10 +1345,10 @@ public class grammaticaLexer extends Lexer {
             "\1\67",
             "\1\70",
             "\1\71",
-            "",
-            "",
-            "",
             "\1\72",
+            "",
+            "",
+            "",
             "\1\73",
             "\1\74",
             "\1\75",
@@ -1322,10 +1360,10 @@ public class grammaticaLexer extends Lexer {
             "\1\103",
             "\1\104",
             "\1\105",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\1\110\5\uffff\1\107",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\1\112",
+            "\1\106",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
+            "\1\111\5\uffff\1\110",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "\1\113",
             "\1\114",
             "\1\115",
@@ -1333,104 +1371,105 @@ public class grammaticaLexer extends Lexer {
             "\1\117",
             "\1\120",
             "\1\121",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\1\124",
+            "\1\122",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "\1\125",
             "\1\126",
-            "",
             "\1\127",
-            "\1\130",
             "",
+            "\1\130",
             "\1\131",
+            "",
             "\1\132",
             "\1\133",
             "\1\134",
             "\1\135",
             "\1\136",
             "\1\137",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\1\140",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "",
             "",
-            "\1\141",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\1\144",
+            "\1\142",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "\1\145",
             "\1\146",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\22\25\1\147\7\25",
-            "\1\151",
+            "\1\147",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\22\26\1\150\7\26",
             "\1\152",
             "\1\153",
             "\1\154",
             "\1\155",
-            "",
             "\1\156",
             "",
+            "\1\157",
             "",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\1\160",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\1\162",
             "",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
+            "\1\161",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "\1\163",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\1\165",
+            "",
+            "\1\164",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "\1\166",
             "\1\167",
             "\1\170",
+            "\1\171",
             "",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "",
-            "\1\172",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\1\173",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "",
-            "\1\174",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\1\176",
+            "\1\175",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "\1\177",
+            "\1\u0080",
             "",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "",
-            "\1\u0081",
+            "\1\u0082",
             "",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "",
-            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "",
             "",
             ""
     };
 
-    static final short[] DFA8_eot = DFA.unpackEncodedString(DFA8_eotS);
-    static final short[] DFA8_eof = DFA.unpackEncodedString(DFA8_eofS);
-    static final char[] DFA8_min = DFA.unpackEncodedStringToUnsignedChars(DFA8_minS);
-    static final char[] DFA8_max = DFA.unpackEncodedStringToUnsignedChars(DFA8_maxS);
-    static final short[] DFA8_accept = DFA.unpackEncodedString(DFA8_acceptS);
-    static final short[] DFA8_special = DFA.unpackEncodedString(DFA8_specialS);
-    static final short[][] DFA8_transition;
+    static final short[] DFA10_eot = DFA.unpackEncodedString(DFA10_eotS);
+    static final short[] DFA10_eof = DFA.unpackEncodedString(DFA10_eofS);
+    static final char[] DFA10_min = DFA.unpackEncodedStringToUnsignedChars(DFA10_minS);
+    static final char[] DFA10_max = DFA.unpackEncodedStringToUnsignedChars(DFA10_maxS);
+    static final short[] DFA10_accept = DFA.unpackEncodedString(DFA10_acceptS);
+    static final short[] DFA10_special = DFA.unpackEncodedString(DFA10_specialS);
+    static final short[][] DFA10_transition;
 
     static {
-        int numStates = DFA8_transitionS.length;
-        DFA8_transition = new short[numStates][];
+        int numStates = DFA10_transitionS.length;
+        DFA10_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA8_transition[i] = DFA.unpackEncodedString(DFA8_transitionS[i]);
+            DFA10_transition[i] = DFA.unpackEncodedString(DFA10_transitionS[i]);
         }
     }
 
-    class DFA8 extends DFA {
+    class DFA10 extends DFA {
 
-        public DFA8(BaseRecognizer recognizer) {
+        public DFA10(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 8;
-            this.eot = DFA8_eot;
-            this.eof = DFA8_eof;
-            this.min = DFA8_min;
-            this.max = DFA8_max;
-            this.accept = DFA8_accept;
-            this.special = DFA8_special;
-            this.transition = DFA8_transition;
+            this.decisionNumber = 10;
+            this.eot = DFA10_eot;
+            this.eof = DFA10_eof;
+            this.min = DFA10_min;
+            this.max = DFA10_max;
+            this.accept = DFA10_accept;
+            this.special = DFA10_special;
+            this.transition = DFA10_transition;
         }
         public String getDescription() {
             return "1:1: Tokens : ( VERTEX | VERTEXSET | VTEXTURE | TEXTURESET | VNORMAL | NORMALSET | POINT | LINE | FACE | SMOOTHING | GROUP | ADD | DEFTEX | DEFNORM | BOX | SCALE | ROTATE | TRASLATE | LB | RB | COMMA | EQ | SC | SINGLELINECM | MULTILINETEXTCM | INT | FLOAT | ID | WS );";
