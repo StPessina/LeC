@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g 2014-02-19 12:42:57
+// $ANTLR 3.4 /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g 2014-02-20 16:06:28
 
   package JavaPackage;
 
@@ -841,38 +841,13 @@ public class grammaticaParser extends Parser {
 
 
     // $ANTLR start "vertexInline"
-    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:69:1: vertexInline : VERTEX ( assignTag )? vDef ;
+    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:69:1: vertexInline : vDef ;
     public final void vertexInline() throws RecognitionException {
         try {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:69:14: ( VERTEX ( assignTag )? vDef )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:69:16: VERTEX ( assignTag )? vDef
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:69:14: ( vDef )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:69:16: vDef
             {
-            match(input,VERTEX,FOLLOW_VERTEX_in_vertexInline377); 
-
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:69:23: ( assignTag )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==ID) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:69:23: assignTag
-                    {
-                    pushFollow(FOLLOW_assignTag_in_vertexInline379);
-                    assignTag();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-
-            pushFollow(FOLLOW_vDef_in_vertexInline382);
+            pushFollow(FOLLOW_vDef_in_vertexInline377);
             vDef();
 
             state._fsp--;
@@ -902,21 +877,21 @@ public class grammaticaParser extends Parser {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:70:15: ( VERTEXSET assignTag setDef SC )
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:70:17: VERTEXSET assignTag setDef SC
             {
-            match(input,VERTEXSET,FOLLOW_VERTEXSET_in_vertexSetRule390); 
+            match(input,VERTEXSET,FOLLOW_VERTEXSET_in_vertexSetRule384); 
 
-            pushFollow(FOLLOW_assignTag_in_vertexSetRule392);
+            pushFollow(FOLLOW_assignTag_in_vertexSetRule386);
             assignTag();
 
             state._fsp--;
 
 
-            pushFollow(FOLLOW_setDef_in_vertexSetRule394);
+            pushFollow(FOLLOW_setDef_in_vertexSetRule388);
             setDef();
 
             state._fsp--;
 
 
-            match(input,SC,FOLLOW_SC_in_vertexSetRule396); 
+            match(input,SC,FOLLOW_SC_in_vertexSetRule390); 
 
             }
 
@@ -942,30 +917,30 @@ public class grammaticaParser extends Parser {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:73:14: ( VTEXTURE ( multipleDef | singleDef ) SC )
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:73:16: VTEXTURE ( multipleDef | singleDef ) SC
             {
-            match(input,VTEXTURE,FOLLOW_VTEXTURE_in_vTextureRule405); 
+            match(input,VTEXTURE,FOLLOW_VTEXTURE_in_vTextureRule399); 
 
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:73:25: ( multipleDef | singleDef )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA10_0==LB) ) {
-                alt10=1;
+            if ( (LA9_0==LB) ) {
+                alt9=1;
             }
-            else if ( (LA10_0==ID) ) {
-                alt10=2;
+            else if ( (LA9_0==ID) ) {
+                alt9=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt10) {
+            switch (alt9) {
                 case 1 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:73:26: multipleDef
                     {
-                    pushFollow(FOLLOW_multipleDef_in_vTextureRule408);
+                    pushFollow(FOLLOW_multipleDef_in_vTextureRule402);
                     multipleDef();
 
                     state._fsp--;
@@ -976,7 +951,7 @@ public class grammaticaParser extends Parser {
                 case 2 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:73:38: singleDef
                     {
-                    pushFollow(FOLLOW_singleDef_in_vTextureRule410);
+                    pushFollow(FOLLOW_singleDef_in_vTextureRule404);
                     singleDef();
 
                     state._fsp--;
@@ -988,7 +963,7 @@ public class grammaticaParser extends Parser {
             }
 
 
-            match(input,SC,FOLLOW_SC_in_vTextureRule412); 
+            match(input,SC,FOLLOW_SC_in_vTextureRule406); 
 
             }
 
@@ -1008,38 +983,13 @@ public class grammaticaParser extends Parser {
 
 
     // $ANTLR start "vTextureInline"
-    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:74:1: vTextureInline : VTEXTURE ( assignTag )? vDef ;
+    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:74:1: vTextureInline : vDef ;
     public final void vTextureInline() throws RecognitionException {
         try {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:74:16: ( VTEXTURE ( assignTag )? vDef )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:74:18: VTEXTURE ( assignTag )? vDef
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:74:16: ( vDef )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:74:18: vDef
             {
-            match(input,VTEXTURE,FOLLOW_VTEXTURE_in_vTextureInline419); 
-
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:74:27: ( assignTag )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0==ID) ) {
-                alt11=1;
-            }
-            switch (alt11) {
-                case 1 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:74:27: assignTag
-                    {
-                    pushFollow(FOLLOW_assignTag_in_vTextureInline421);
-                    assignTag();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-
-            pushFollow(FOLLOW_vDef_in_vTextureInline424);
+            pushFollow(FOLLOW_vDef_in_vTextureInline413);
             vDef();
 
             state._fsp--;
@@ -1069,21 +1019,21 @@ public class grammaticaParser extends Parser {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:75:16: ( TEXTURESET assignTag setDef SC )
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:75:18: TEXTURESET assignTag setDef SC
             {
-            match(input,TEXTURESET,FOLLOW_TEXTURESET_in_textureSetRule432); 
+            match(input,TEXTURESET,FOLLOW_TEXTURESET_in_textureSetRule421); 
 
-            pushFollow(FOLLOW_assignTag_in_textureSetRule434);
+            pushFollow(FOLLOW_assignTag_in_textureSetRule423);
             assignTag();
 
             state._fsp--;
 
 
-            pushFollow(FOLLOW_setDef_in_textureSetRule436);
+            pushFollow(FOLLOW_setDef_in_textureSetRule425);
             setDef();
 
             state._fsp--;
 
 
-            match(input,SC,FOLLOW_SC_in_textureSetRule438); 
+            match(input,SC,FOLLOW_SC_in_textureSetRule427); 
 
             }
 
@@ -1109,30 +1059,30 @@ public class grammaticaParser extends Parser {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:78:13: ( VNORMAL ( multipleDef | singleDef ) SC )
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:78:15: VNORMAL ( multipleDef | singleDef ) SC
             {
-            match(input,VNORMAL,FOLLOW_VNORMAL_in_vNormalRule447); 
+            match(input,VNORMAL,FOLLOW_VNORMAL_in_vNormalRule436); 
 
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:78:23: ( multipleDef | singleDef )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA12_0==LB) ) {
-                alt12=1;
+            if ( (LA10_0==LB) ) {
+                alt10=1;
             }
-            else if ( (LA12_0==ID) ) {
-                alt12=2;
+            else if ( (LA10_0==ID) ) {
+                alt10=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt12) {
+            switch (alt10) {
                 case 1 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:78:24: multipleDef
                     {
-                    pushFollow(FOLLOW_multipleDef_in_vNormalRule450);
+                    pushFollow(FOLLOW_multipleDef_in_vNormalRule439);
                     multipleDef();
 
                     state._fsp--;
@@ -1143,7 +1093,7 @@ public class grammaticaParser extends Parser {
                 case 2 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:78:36: singleDef
                     {
-                    pushFollow(FOLLOW_singleDef_in_vNormalRule452);
+                    pushFollow(FOLLOW_singleDef_in_vNormalRule441);
                     singleDef();
 
                     state._fsp--;
@@ -1155,7 +1105,7 @@ public class grammaticaParser extends Parser {
             }
 
 
-            match(input,SC,FOLLOW_SC_in_vNormalRule454); 
+            match(input,SC,FOLLOW_SC_in_vNormalRule443); 
 
             }
 
@@ -1175,38 +1125,13 @@ public class grammaticaParser extends Parser {
 
 
     // $ANTLR start "vNormalInline"
-    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:79:1: vNormalInline : VNORMAL ( assignTag )? vDef ;
+    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:79:1: vNormalInline : vDef ;
     public final void vNormalInline() throws RecognitionException {
         try {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:79:15: ( VNORMAL ( assignTag )? vDef )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:79:17: VNORMAL ( assignTag )? vDef
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:79:15: ( vDef )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:79:17: vDef
             {
-            match(input,VNORMAL,FOLLOW_VNORMAL_in_vNormalInline461); 
-
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:79:25: ( assignTag )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==ID) ) {
-                alt13=1;
-            }
-            switch (alt13) {
-                case 1 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:79:25: assignTag
-                    {
-                    pushFollow(FOLLOW_assignTag_in_vNormalInline463);
-                    assignTag();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-
-            pushFollow(FOLLOW_vDef_in_vNormalInline466);
+            pushFollow(FOLLOW_vDef_in_vNormalInline450);
             vDef();
 
             state._fsp--;
@@ -1236,21 +1161,21 @@ public class grammaticaParser extends Parser {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:80:15: ( NORMALSET assignTag setDef SC )
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:80:17: NORMALSET assignTag setDef SC
             {
-            match(input,NORMALSET,FOLLOW_NORMALSET_in_normalSetRule474); 
+            match(input,NORMALSET,FOLLOW_NORMALSET_in_normalSetRule458); 
 
-            pushFollow(FOLLOW_assignTag_in_normalSetRule476);
+            pushFollow(FOLLOW_assignTag_in_normalSetRule460);
             assignTag();
 
             state._fsp--;
 
 
-            pushFollow(FOLLOW_setDef_in_normalSetRule478);
+            pushFollow(FOLLOW_setDef_in_normalSetRule462);
             setDef();
 
             state._fsp--;
 
 
-            match(input,SC,FOLLOW_SC_in_normalSetRule480); 
+            match(input,SC,FOLLOW_SC_in_normalSetRule464); 
 
             }
 
@@ -1277,36 +1202,36 @@ public class grammaticaParser extends Parser {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:85:16: ( pointRule | lineRule | faceRule )
             {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:85:16: ( pointRule | lineRule | faceRule )
-            int alt14=3;
+            int alt11=3;
             switch ( input.LA(1) ) {
             case POINT:
                 {
-                alt14=1;
+                alt11=1;
                 }
                 break;
             case LINE:
                 {
-                alt14=2;
+                alt11=2;
                 }
                 break;
             case FACE:
                 {
-                alt14=3;
+                alt11=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
 
             }
 
-            switch (alt14) {
+            switch (alt11) {
                 case 1 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:86:18: pointRule
                     {
-                    pushFollow(FOLLOW_pointRule_in_graphElement509);
+                    pushFollow(FOLLOW_pointRule_in_graphElement493);
                     pointRule();
 
                     state._fsp--;
@@ -1317,7 +1242,7 @@ public class grammaticaParser extends Parser {
                 case 2 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:87:18: lineRule
                     {
-                    pushFollow(FOLLOW_lineRule_in_graphElement528);
+                    pushFollow(FOLLOW_lineRule_in_graphElement512);
                     lineRule();
 
                     state._fsp--;
@@ -1328,7 +1253,7 @@ public class grammaticaParser extends Parser {
                 case 3 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:88:18: faceRule
                     {
-                    pushFollow(FOLLOW_faceRule_in_graphElement547);
+                    pushFollow(FOLLOW_faceRule_in_graphElement531);
                     faceRule();
 
                     state._fsp--;
@@ -1364,30 +1289,30 @@ public class grammaticaParser extends Parser {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:92:11: ( POINT ( singlePointDef | multiplePointDef ) SC )
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:92:13: POINT ( singlePointDef | multiplePointDef ) SC
             {
-            match(input,POINT,FOLLOW_POINT_in_pointRule559); 
+            match(input,POINT,FOLLOW_POINT_in_pointRule543); 
 
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:92:19: ( singlePointDef | multiplePointDef )
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA15_0==ID||LA15_0==VERTEX) ) {
-                alt15=1;
+            if ( (LA12_0==FLOAT||(LA12_0 >= ID && LA12_0 <= INT)) ) {
+                alt12=1;
             }
-            else if ( (LA15_0==LB) ) {
-                alt15=2;
+            else if ( (LA12_0==LB) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt15) {
+            switch (alt12) {
                 case 1 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:92:20: singlePointDef
                     {
-                    pushFollow(FOLLOW_singlePointDef_in_pointRule562);
+                    pushFollow(FOLLOW_singlePointDef_in_pointRule546);
                     singlePointDef();
 
                     state._fsp--;
@@ -1398,7 +1323,7 @@ public class grammaticaParser extends Parser {
                 case 2 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:92:35: multiplePointDef
                     {
-                    pushFollow(FOLLOW_multiplePointDef_in_pointRule564);
+                    pushFollow(FOLLOW_multiplePointDef_in_pointRule548);
                     multiplePointDef();
 
                     state._fsp--;
@@ -1410,7 +1335,7 @@ public class grammaticaParser extends Parser {
             }
 
 
-            match(input,SC,FOLLOW_SC_in_pointRule567); 
+            match(input,SC,FOLLOW_SC_in_pointRule551); 
 
             }
 
@@ -1430,78 +1355,81 @@ public class grammaticaParser extends Parser {
 
 
     // $ANTLR start "singlePointDef"
-    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:1: singlePointDef : ( ( tagname ( equal ( tagname | vertexInline ) )? ) | ( vertexInline ) );
+    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:1: singlePointDef : ( ( tagname ( equal ( tagname | vertexInline ) )? ) | vertexInline ) ;
     public final void singlePointDef() throws RecognitionException {
         try {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:16: ( ( tagname ( equal ( tagname | vertexInline ) )? ) | ( vertexInline ) )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:16: ( ( ( tagname ( equal ( tagname | vertexInline ) )? ) | vertexInline ) )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:18: ( ( tagname ( equal ( tagname | vertexInline ) )? ) | vertexInline )
+            {
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:18: ( ( tagname ( equal ( tagname | vertexInline ) )? ) | vertexInline )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA18_0==ID) ) {
-                alt18=1;
+            if ( (LA15_0==ID) ) {
+                alt15=1;
             }
-            else if ( (LA18_0==VERTEX) ) {
-                alt18=2;
+            else if ( (LA15_0==FLOAT||LA15_0==INT) ) {
+                alt15=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt18) {
+            switch (alt15) {
                 case 1 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:18: ( tagname ( equal ( tagname | vertexInline ) )? )
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:19: ( tagname ( equal ( tagname | vertexInline ) )? )
                     {
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:18: ( tagname ( equal ( tagname | vertexInline ) )? )
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:19: tagname ( equal ( tagname | vertexInline ) )?
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:19: ( tagname ( equal ( tagname | vertexInline ) )? )
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:20: tagname ( equal ( tagname | vertexInline ) )?
                     {
-                    pushFollow(FOLLOW_tagname_in_singlePointDef575);
+                    pushFollow(FOLLOW_tagname_in_singlePointDef560);
                     tagname();
 
                     state._fsp--;
 
 
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:27: ( equal ( tagname | vertexInline ) )?
-                    int alt17=2;
-                    int LA17_0 = input.LA(1);
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:28: ( equal ( tagname | vertexInline ) )?
+                    int alt14=2;
+                    int LA14_0 = input.LA(1);
 
-                    if ( (LA17_0==EQ) ) {
-                        alt17=1;
+                    if ( (LA14_0==EQ) ) {
+                        alt14=1;
                     }
-                    switch (alt17) {
+                    switch (alt14) {
                         case 1 :
-                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:28: equal ( tagname | vertexInline )
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:29: equal ( tagname | vertexInline )
                             {
-                            pushFollow(FOLLOW_equal_in_singlePointDef578);
+                            pushFollow(FOLLOW_equal_in_singlePointDef563);
                             equal();
 
                             state._fsp--;
 
 
-                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:34: ( tagname | vertexInline )
-                            int alt16=2;
-                            int LA16_0 = input.LA(1);
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:35: ( tagname | vertexInline )
+                            int alt13=2;
+                            int LA13_0 = input.LA(1);
 
-                            if ( (LA16_0==ID) ) {
-                                alt16=1;
+                            if ( (LA13_0==ID) ) {
+                                alt13=1;
                             }
-                            else if ( (LA16_0==VERTEX) ) {
-                                alt16=2;
+                            else if ( (LA13_0==FLOAT||LA13_0==INT) ) {
+                                alt13=2;
                             }
                             else {
                                 NoViableAltException nvae =
-                                    new NoViableAltException("", 16, 0, input);
+                                    new NoViableAltException("", 13, 0, input);
 
                                 throw nvae;
 
                             }
-                            switch (alt16) {
+                            switch (alt13) {
                                 case 1 :
-                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:35: tagname
+                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:36: tagname
                                     {
-                                    pushFollow(FOLLOW_tagname_in_singlePointDef581);
+                                    pushFollow(FOLLOW_tagname_in_singlePointDef566);
                                     tagname();
 
                                     state._fsp--;
@@ -1510,9 +1438,9 @@ public class grammaticaParser extends Parser {
                                     }
                                     break;
                                 case 2 :
-                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:43: vertexInline
+                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:44: vertexInline
                                     {
-                                    pushFollow(FOLLOW_vertexInline_in_singlePointDef583);
+                                    pushFollow(FOLLOW_vertexInline_in_singlePointDef568);
                                     vertexInline();
 
                                     state._fsp--;
@@ -1536,24 +1464,22 @@ public class grammaticaParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:60: ( vertexInline )
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:62: vertexInline
                     {
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:60: ( vertexInline )
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:93:61: vertexInline
-                    {
-                    pushFollow(FOLLOW_vertexInline_in_singlePointDef590);
+                    pushFollow(FOLLOW_vertexInline_in_singlePointDef575);
                     vertexInline();
 
                     state._fsp--;
 
 
                     }
-
-
-                    }
                     break;
 
             }
+
+
+            }
+
         }
         catch (RecognitionException re) {
             reportError(re);
@@ -1576,12 +1502,12 @@ public class grammaticaParser extends Parser {
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:94:18: ( LB ( singlePointDef ) ( COMMA singlePointDef )* RB )
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:94:20: LB ( singlePointDef ) ( COMMA singlePointDef )* RB
             {
-            match(input,LB,FOLLOW_LB_in_multiplePointDef598); 
+            match(input,LB,FOLLOW_LB_in_multiplePointDef583); 
 
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:94:23: ( singlePointDef )
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:94:24: singlePointDef
             {
-            pushFollow(FOLLOW_singlePointDef_in_multiplePointDef601);
+            pushFollow(FOLLOW_singlePointDef_in_multiplePointDef586);
             singlePointDef();
 
             state._fsp--;
@@ -1591,23 +1517,23 @@ public class grammaticaParser extends Parser {
 
 
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:95:20: ( COMMA singlePointDef )*
-            loop19:
+            loop16:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA19_0==COMMA) ) {
-                    alt19=1;
+                if ( (LA16_0==COMMA) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt16) {
             	case 1 :
             	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:95:21: COMMA singlePointDef
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_multiplePointDef624); 
+            	    match(input,COMMA,FOLLOW_COMMA_in_multiplePointDef609); 
 
-            	    pushFollow(FOLLOW_singlePointDef_in_multiplePointDef626);
+            	    pushFollow(FOLLOW_singlePointDef_in_multiplePointDef611);
             	    singlePointDef();
 
             	    state._fsp--;
@@ -1617,12 +1543,12 @@ public class grammaticaParser extends Parser {
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop16;
                 }
             } while (true);
 
 
-            match(input,RB,FOLLOW_RB_in_multiplePointDef630); 
+            match(input,RB,FOLLOW_RB_in_multiplePointDef615); 
 
             }
 
@@ -1642,26 +1568,26 @@ public class grammaticaParser extends Parser {
 
 
     // $ANTLR start "lineRule"
-    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:1: lineRule : LINE ( assignTag )? LB ( tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ) ( COMMA tagname | vertexInline ( DEFTEX tagname | vTextureInline )? )+ RB SC ;
+    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:1: lineRule : LINE ( assignTag )? LB ( ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )? ) ( COMMA ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )? )+ RB SC ;
     public final void lineRule() throws RecognitionException {
         try {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:10: ( LINE ( assignTag )? LB ( tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ) ( COMMA tagname | vertexInline ( DEFTEX tagname | vTextureInline )? )+ RB SC )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:12: LINE ( assignTag )? LB ( tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ) ( COMMA tagname | vertexInline ( DEFTEX tagname | vTextureInline )? )+ RB SC
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:10: ( LINE ( assignTag )? LB ( ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )? ) ( COMMA ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )? )+ RB SC )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:12: LINE ( assignTag )? LB ( ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )? ) ( COMMA ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )? )+ RB SC
             {
-            match(input,LINE,FOLLOW_LINE_in_lineRule639); 
+            match(input,LINE,FOLLOW_LINE_in_lineRule624); 
 
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:17: ( assignTag )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA20_0==ID) ) {
-                alt20=1;
+            if ( (LA17_0==ID) ) {
+                alt17=1;
             }
-            switch (alt20) {
+            switch (alt17) {
                 case 1 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:17: assignTag
                     {
-                    pushFollow(FOLLOW_assignTag_in_lineRule641);
+                    pushFollow(FOLLOW_assignTag_in_lineRule626);
                     assignTag();
 
                     state._fsp--;
@@ -1673,30 +1599,33 @@ public class grammaticaParser extends Parser {
             }
 
 
-            match(input,LB,FOLLOW_LB_in_lineRule644); 
+            match(input,LB,FOLLOW_LB_in_lineRule629); 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:31: ( tagname | vertexInline ( DEFTEX tagname | vTextureInline )? )
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:31: ( ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )? )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:32: ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )?
+            {
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:32: ( tagname | vertexInline )
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA22_0==ID) ) {
-                alt22=1;
+            if ( (LA18_0==ID) ) {
+                alt18=1;
             }
-            else if ( (LA22_0==VERTEX) ) {
-                alt22=2;
+            else if ( (LA18_0==FLOAT||LA18_0==INT) ) {
+                alt18=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt22) {
+            switch (alt18) {
                 case 1 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:32: tagname
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:33: tagname
                     {
-                    pushFollow(FOLLOW_tagname_in_lineRule647);
+                    pushFollow(FOLLOW_tagname_in_lineRule633);
                     tagname();
 
                     state._fsp--;
@@ -1705,45 +1634,69 @@ public class grammaticaParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:40: vertexInline ( DEFTEX tagname | vTextureInline )?
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:98:41: vertexInline
                     {
-                    pushFollow(FOLLOW_vertexInline_in_lineRule649);
+                    pushFollow(FOLLOW_vertexInline_in_lineRule635);
                     vertexInline();
 
                     state._fsp--;
 
 
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:33: ( DEFTEX tagname | vTextureInline )?
-                    int alt21=3;
-                    int LA21_0 = input.LA(1);
+                    }
+                    break;
 
-                    if ( (LA21_0==DEFTEX) ) {
-                        alt21=1;
+            }
+
+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:33: ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )?
+            int alt20=3;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==DEFTEX) ) {
+                alt20=1;
+            }
+            else if ( (LA20_0==FLOAT||LA20_0==INT) ) {
+                alt20=2;
+            }
+            switch (alt20) {
+                case 1 :
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:34: DEFTEX ( tagname ( equal vertexInline ) )?
+                    {
+                    match(input,DEFTEX,FOLLOW_DEFTEX_in_lineRule672); 
+
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:41: ( tagname ( equal vertexInline ) )?
+                    int alt19=2;
+                    int LA19_0 = input.LA(1);
+
+                    if ( (LA19_0==ID) ) {
+                        alt19=1;
                     }
-                    else if ( (LA21_0==VTEXTURE) ) {
-                        alt21=2;
-                    }
-                    switch (alt21) {
+                    switch (alt19) {
                         case 1 :
-                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:34: DEFTEX tagname
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:42: tagname ( equal vertexInline )
                             {
-                            match(input,DEFTEX,FOLLOW_DEFTEX_in_lineRule685); 
-
-                            pushFollow(FOLLOW_tagname_in_lineRule687);
+                            pushFollow(FOLLOW_tagname_in_lineRule675);
                             tagname();
 
                             state._fsp--;
 
 
-                            }
-                            break;
-                        case 2 :
-                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:49: vTextureInline
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:50: ( equal vertexInline )
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:51: equal vertexInline
                             {
-                            pushFollow(FOLLOW_vTextureInline_in_lineRule689);
-                            vTextureInline();
+                            pushFollow(FOLLOW_equal_in_lineRule678);
+                            equal();
 
                             state._fsp--;
+
+
+                            pushFollow(FOLLOW_vertexInline_in_lineRule680);
+                            vertexInline();
+
+                            state._fsp--;
+
+
+                            }
 
 
                             }
@@ -1754,65 +1707,70 @@ public class grammaticaParser extends Parser {
 
                     }
                     break;
+                case 2 :
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:73: ( vTextureInline )
+                    {
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:73: ( vTextureInline )
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:99:74: vTextureInline
+                    {
+                    pushFollow(FOLLOW_vTextureInline_in_lineRule686);
+                    vTextureInline();
+
+                    state._fsp--;
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:100:29: ( COMMA tagname | vertexInline ( DEFTEX tagname | vTextureInline )? )+
+            }
+
+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:100:29: ( COMMA ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )? )+
             int cnt24=0;
             loop24:
             do {
-                int alt24=3;
+                int alt24=2;
                 int LA24_0 = input.LA(1);
 
                 if ( (LA24_0==COMMA) ) {
                     alt24=1;
                 }
-                else if ( (LA24_0==VERTEX) ) {
-                    alt24=2;
-                }
 
 
                 switch (alt24) {
             	case 1 :
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:100:30: COMMA tagname
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:100:30: COMMA ( tagname | vertexInline ) ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )?
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_lineRule723); 
+            	    match(input,COMMA,FOLLOW_COMMA_in_lineRule721); 
 
-            	    pushFollow(FOLLOW_tagname_in_lineRule725);
-            	    tagname();
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:100:36: ( tagname | vertexInline )
+            	    int alt21=2;
+            	    int LA21_0 = input.LA(1);
 
-            	    state._fsp--;
+            	    if ( (LA21_0==ID) ) {
+            	        alt21=1;
+            	    }
+            	    else if ( (LA21_0==FLOAT||LA21_0==INT) ) {
+            	        alt21=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 21, 0, input);
 
+            	        throw nvae;
 
             	    }
-            	    break;
-            	case 2 :
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:100:44: vertexInline ( DEFTEX tagname | vTextureInline )?
-            	    {
-            	    pushFollow(FOLLOW_vertexInline_in_lineRule727);
-            	    vertexInline();
-
-            	    state._fsp--;
-
-
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:33: ( DEFTEX tagname | vTextureInline )?
-            	    int alt23=3;
-            	    int LA23_0 = input.LA(1);
-
-            	    if ( (LA23_0==DEFTEX) ) {
-            	        alt23=1;
-            	    }
-            	    else if ( (LA23_0==VTEXTURE) ) {
-            	        alt23=2;
-            	    }
-            	    switch (alt23) {
+            	    switch (alt21) {
             	        case 1 :
-            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:34: DEFTEX tagname
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:100:37: tagname
             	            {
-            	            match(input,DEFTEX,FOLLOW_DEFTEX_in_lineRule763); 
-
-            	            pushFollow(FOLLOW_tagname_in_lineRule765);
+            	            pushFollow(FOLLOW_tagname_in_lineRule724);
             	            tagname();
 
             	            state._fsp--;
@@ -1821,12 +1779,92 @@ public class grammaticaParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:49: vTextureInline
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:100:45: vertexInline
             	            {
-            	            pushFollow(FOLLOW_vTextureInline_in_lineRule767);
+            	            pushFollow(FOLLOW_vertexInline_in_lineRule726);
+            	            vertexInline();
+
+            	            state._fsp--;
+
+
+            	            }
+            	            break;
+
+            	    }
+
+
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:33: ( DEFTEX ( tagname ( equal vertexInline ) )? | ( vTextureInline ) )?
+            	    int alt23=3;
+            	    int LA23_0 = input.LA(1);
+
+            	    if ( (LA23_0==DEFTEX) ) {
+            	        alt23=1;
+            	    }
+            	    else if ( (LA23_0==FLOAT||LA23_0==INT) ) {
+            	        alt23=2;
+            	    }
+            	    switch (alt23) {
+            	        case 1 :
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:34: DEFTEX ( tagname ( equal vertexInline ) )?
+            	            {
+            	            match(input,DEFTEX,FOLLOW_DEFTEX_in_lineRule763); 
+
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:41: ( tagname ( equal vertexInline ) )?
+            	            int alt22=2;
+            	            int LA22_0 = input.LA(1);
+
+            	            if ( (LA22_0==ID) ) {
+            	                alt22=1;
+            	            }
+            	            switch (alt22) {
+            	                case 1 :
+            	                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:42: tagname ( equal vertexInline )
+            	                    {
+            	                    pushFollow(FOLLOW_tagname_in_lineRule766);
+            	                    tagname();
+
+            	                    state._fsp--;
+
+
+            	                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:50: ( equal vertexInline )
+            	                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:51: equal vertexInline
+            	                    {
+            	                    pushFollow(FOLLOW_equal_in_lineRule769);
+            	                    equal();
+
+            	                    state._fsp--;
+
+
+            	                    pushFollow(FOLLOW_vertexInline_in_lineRule771);
+            	                    vertexInline();
+
+            	                    state._fsp--;
+
+
+            	                    }
+
+
+            	                    }
+            	                    break;
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:73: ( vTextureInline )
+            	            {
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:73: ( vTextureInline )
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:101:74: vTextureInline
+            	            {
+            	            pushFollow(FOLLOW_vTextureInline_in_lineRule777);
             	            vTextureInline();
 
             	            state._fsp--;
+
+
+            	            }
 
 
             	            }
@@ -1848,9 +1886,9 @@ public class grammaticaParser extends Parser {
             } while (true);
 
 
-            match(input,RB,FOLLOW_RB_in_lineRule799); 
+            match(input,RB,FOLLOW_RB_in_lineRule810); 
 
-            match(input,SC,FOLLOW_SC_in_lineRule801); 
+            match(input,SC,FOLLOW_SC_in_lineRule812); 
 
             }
 
@@ -1870,13 +1908,13 @@ public class grammaticaParser extends Parser {
 
 
     // $ANTLR start "faceRule"
-    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:1: faceRule : FACE ( assignTag )? LB ( tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )? ) ( COMMA tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )? )* RB SC ;
+    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:1: faceRule : FACE ( assignTag )? LB ( ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vertexInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )? ) ( COMMA ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vTextureInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )? )* RB SC ;
     public final void faceRule() throws RecognitionException {
         try {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:10: ( FACE ( assignTag )? LB ( tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )? ) ( COMMA tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )? )* RB SC )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:12: FACE ( assignTag )? LB ( tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )? ) ( COMMA tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )? )* RB SC
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:10: ( FACE ( assignTag )? LB ( ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vertexInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )? ) ( COMMA ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vTextureInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )? )* RB SC )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:12: FACE ( assignTag )? LB ( ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vertexInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )? ) ( COMMA ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vTextureInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )? )* RB SC
             {
-            match(input,FACE,FOLLOW_FACE_in_faceRule822); 
+            match(input,FACE,FOLLOW_FACE_in_faceRule833); 
 
             // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:17: ( assignTag )?
             int alt25=2;
@@ -1889,7 +1927,7 @@ public class grammaticaParser extends Parser {
                 case 1 :
                     // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:17: assignTag
                     {
-                    pushFollow(FOLLOW_assignTag_in_faceRule824);
+                    pushFollow(FOLLOW_assignTag_in_faceRule835);
                     assignTag();
 
                     state._fsp--;
@@ -1901,30 +1939,33 @@ public class grammaticaParser extends Parser {
             }
 
 
-            match(input,LB,FOLLOW_LB_in_faceRule827); 
+            match(input,LB,FOLLOW_LB_in_faceRule838); 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:31: ( tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )? )
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:31: ( ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vertexInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )? )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:32: ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vertexInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )?
+            {
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:32: ( tagname | vertexInline )
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA28_0==ID) ) {
-                alt28=1;
+            if ( (LA26_0==ID) ) {
+                alt26=1;
             }
-            else if ( (LA28_0==VERTEX) ) {
-                alt28=2;
+            else if ( (LA26_0==FLOAT||LA26_0==INT) ) {
+                alt26=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt28) {
+            switch (alt26) {
                 case 1 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:32: tagname
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:33: tagname
                     {
-                    pushFollow(FOLLOW_tagname_in_faceRule830);
+                    pushFollow(FOLLOW_tagname_in_faceRule842);
                     tagname();
 
                     state._fsp--;
@@ -1933,42 +1974,101 @@ public class grammaticaParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:40: vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )?
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:105:41: vertexInline
                     {
-                    pushFollow(FOLLOW_vertexInline_in_faceRule832);
+                    pushFollow(FOLLOW_vertexInline_in_faceRule844);
                     vertexInline();
 
                     state._fsp--;
 
 
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:33: ( DEFTEX tagname | vTextureInline )?
-                    int alt26=3;
-                    int LA26_0 = input.LA(1);
+                    }
+                    break;
 
-                    if ( (LA26_0==DEFTEX) ) {
-                        alt26=1;
+            }
+
+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:33: ( DEFTEX ( ( tagname ( equal vertexInline ) )? | vTextureInline ) )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
+
+            if ( (LA29_0==DEFTEX) ) {
+                alt29=1;
+            }
+            switch (alt29) {
+                case 1 :
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:34: DEFTEX ( ( tagname ( equal vertexInline ) )? | vTextureInline )
+                    {
+                    match(input,DEFTEX,FOLLOW_DEFTEX_in_faceRule881); 
+
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:41: ( ( tagname ( equal vertexInline ) )? | vTextureInline )
+                    int alt28=2;
+                    int LA28_0 = input.LA(1);
+
+                    if ( ((LA28_0 >= COMMA && LA28_0 <= DEFNORM)||LA28_0==ID||LA28_0==RB) ) {
+                        alt28=1;
                     }
-                    else if ( (LA26_0==VTEXTURE) ) {
-                        alt26=2;
+                    else if ( (LA28_0==FLOAT||LA28_0==INT) ) {
+                        alt28=2;
                     }
-                    switch (alt26) {
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 28, 0, input);
+
+                        throw nvae;
+
+                    }
+                    switch (alt28) {
                         case 1 :
-                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:34: DEFTEX tagname
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:42: ( tagname ( equal vertexInline ) )?
                             {
-                            match(input,DEFTEX,FOLLOW_DEFTEX_in_faceRule868); 
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:42: ( tagname ( equal vertexInline ) )?
+                            int alt27=2;
+                            int LA27_0 = input.LA(1);
 
-                            pushFollow(FOLLOW_tagname_in_faceRule870);
-                            tagname();
+                            if ( (LA27_0==ID) ) {
+                                alt27=1;
+                            }
+                            switch (alt27) {
+                                case 1 :
+                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:43: tagname ( equal vertexInline )
+                                    {
+                                    pushFollow(FOLLOW_tagname_in_faceRule885);
+                                    tagname();
 
-                            state._fsp--;
+                                    state._fsp--;
+
+
+                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:51: ( equal vertexInline )
+                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:52: equal vertexInline
+                                    {
+                                    pushFollow(FOLLOW_equal_in_faceRule888);
+                                    equal();
+
+                                    state._fsp--;
+
+
+                                    pushFollow(FOLLOW_vertexInline_in_faceRule890);
+                                    vertexInline();
+
+                                    state._fsp--;
+
+
+                                    }
+
+
+                                    }
+                                    break;
+
+                            }
 
 
                             }
                             break;
                         case 2 :
-                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:49: vTextureInline
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:106:74: vTextureInline
                             {
-                            pushFollow(FOLLOW_vTextureInline_in_faceRule872);
+                            pushFollow(FOLLOW_vTextureInline_in_faceRule895);
                             vTextureInline();
 
                             state._fsp--;
@@ -1980,34 +2080,93 @@ public class grammaticaParser extends Parser {
                     }
 
 
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:33: ( DEFNORM tagname | vNormalInline )?
-                    int alt27=3;
-                    int LA27_0 = input.LA(1);
+                    }
+                    break;
 
-                    if ( (LA27_0==DEFNORM) ) {
-                        alt27=1;
+            }
+
+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:33: ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
+
+            if ( (LA32_0==DEFNORM) ) {
+                alt32=1;
+            }
+            switch (alt32) {
+                case 1 :
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:34: DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline )
+                    {
+                    match(input,DEFNORM,FOLLOW_DEFNORM_in_faceRule934); 
+
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:42: ( ( tagname ( equal vNormalInline ) )? | vNormalInline )
+                    int alt31=2;
+                    int LA31_0 = input.LA(1);
+
+                    if ( (LA31_0==COMMA||LA31_0==ID||LA31_0==RB) ) {
+                        alt31=1;
                     }
-                    else if ( (LA27_0==VNORMAL) ) {
-                        alt27=2;
+                    else if ( (LA31_0==FLOAT||LA31_0==INT) ) {
+                        alt31=2;
                     }
-                    switch (alt27) {
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 31, 0, input);
+
+                        throw nvae;
+
+                    }
+                    switch (alt31) {
                         case 1 :
-                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:34: DEFNORM tagname
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:43: ( tagname ( equal vNormalInline ) )?
                             {
-                            match(input,DEFNORM,FOLLOW_DEFNORM_in_faceRule910); 
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:43: ( tagname ( equal vNormalInline ) )?
+                            int alt30=2;
+                            int LA30_0 = input.LA(1);
 
-                            pushFollow(FOLLOW_tagname_in_faceRule912);
-                            tagname();
+                            if ( (LA30_0==ID) ) {
+                                alt30=1;
+                            }
+                            switch (alt30) {
+                                case 1 :
+                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:44: tagname ( equal vNormalInline )
+                                    {
+                                    pushFollow(FOLLOW_tagname_in_faceRule938);
+                                    tagname();
 
-                            state._fsp--;
+                                    state._fsp--;
+
+
+                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:52: ( equal vNormalInline )
+                                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:53: equal vNormalInline
+                                    {
+                                    pushFollow(FOLLOW_equal_in_faceRule941);
+                                    equal();
+
+                                    state._fsp--;
+
+
+                                    pushFollow(FOLLOW_vNormalInline_in_faceRule943);
+                                    vNormalInline();
+
+                                    state._fsp--;
+
+
+                                    }
+
+
+                                    }
+                                    break;
+
+                            }
 
 
                             }
                             break;
                         case 2 :
-                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:50: vNormalInline
+                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:107:76: vNormalInline
                             {
-                            pushFollow(FOLLOW_vNormalInline_in_faceRule914);
+                            pushFollow(FOLLOW_vNormalInline_in_faceRule948);
                             vNormalInline();
 
                             state._fsp--;
@@ -2025,60 +2184,48 @@ public class grammaticaParser extends Parser {
             }
 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:109:29: ( COMMA tagname | vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )? )*
-            loop31:
+            }
+
+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:109:29: ( COMMA ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vTextureInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )? )*
+            loop40:
             do {
-                int alt31=3;
-                int LA31_0 = input.LA(1);
+                int alt40=2;
+                int LA40_0 = input.LA(1);
 
-                if ( (LA31_0==COMMA) ) {
-                    alt31=1;
-                }
-                else if ( (LA31_0==VERTEX) ) {
-                    alt31=2;
+                if ( (LA40_0==COMMA) ) {
+                    alt40=1;
                 }
 
 
-                switch (alt31) {
+                switch (alt40) {
             	case 1 :
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:109:30: COMMA tagname
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:109:30: COMMA ( tagname | vertexInline ) ( DEFTEX ( ( tagname ( equal vTextureInline ) )? | vTextureInline ) )? ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )?
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_faceRule979); 
+            	    match(input,COMMA,FOLLOW_COMMA_in_faceRule1014); 
 
-            	    pushFollow(FOLLOW_tagname_in_faceRule981);
-            	    tagname();
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:109:36: ( tagname | vertexInline )
+            	    int alt33=2;
+            	    int LA33_0 = input.LA(1);
 
-            	    state._fsp--;
+            	    if ( (LA33_0==ID) ) {
+            	        alt33=1;
+            	    }
+            	    else if ( (LA33_0==FLOAT||LA33_0==INT) ) {
+            	        alt33=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 33, 0, input);
 
+            	        throw nvae;
 
             	    }
-            	    break;
-            	case 2 :
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:109:44: vertexInline ( DEFTEX tagname | vTextureInline )? ( DEFNORM tagname | vNormalInline )?
-            	    {
-            	    pushFollow(FOLLOW_vertexInline_in_faceRule983);
-            	    vertexInline();
-
-            	    state._fsp--;
-
-
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:33: ( DEFTEX tagname | vTextureInline )?
-            	    int alt29=3;
-            	    int LA29_0 = input.LA(1);
-
-            	    if ( (LA29_0==DEFTEX) ) {
-            	        alt29=1;
-            	    }
-            	    else if ( (LA29_0==VTEXTURE) ) {
-            	        alt29=2;
-            	    }
-            	    switch (alt29) {
+            	    switch (alt33) {
             	        case 1 :
-            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:34: DEFTEX tagname
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:109:37: tagname
             	            {
-            	            match(input,DEFTEX,FOLLOW_DEFTEX_in_faceRule1019); 
-
-            	            pushFollow(FOLLOW_tagname_in_faceRule1021);
+            	            pushFollow(FOLLOW_tagname_in_faceRule1017);
             	            tagname();
 
             	            state._fsp--;
@@ -2087,10 +2234,10 @@ public class grammaticaParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:49: vTextureInline
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:109:45: vertexInline
             	            {
-            	            pushFollow(FOLLOW_vTextureInline_in_faceRule1023);
-            	            vTextureInline();
+            	            pushFollow(FOLLOW_vertexInline_in_faceRule1019);
+            	            vertexInline();
 
             	            state._fsp--;
 
@@ -2101,37 +2248,194 @@ public class grammaticaParser extends Parser {
             	    }
 
 
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:33: ( DEFNORM tagname | vNormalInline )?
-            	    int alt30=3;
-            	    int LA30_0 = input.LA(1);
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:33: ( DEFTEX ( ( tagname ( equal vTextureInline ) )? | vTextureInline ) )?
+            	    int alt36=2;
+            	    int LA36_0 = input.LA(1);
 
-            	    if ( (LA30_0==DEFNORM) ) {
-            	        alt30=1;
+            	    if ( (LA36_0==DEFTEX) ) {
+            	        alt36=1;
             	    }
-            	    else if ( (LA30_0==VNORMAL) ) {
-            	        alt30=2;
-            	    }
-            	    switch (alt30) {
+            	    switch (alt36) {
             	        case 1 :
-            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:34: DEFNORM tagname
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:34: DEFTEX ( ( tagname ( equal vTextureInline ) )? | vTextureInline )
             	            {
-            	            match(input,DEFNORM,FOLLOW_DEFNORM_in_faceRule1060); 
+            	            match(input,DEFTEX,FOLLOW_DEFTEX_in_faceRule1056); 
 
-            	            pushFollow(FOLLOW_tagname_in_faceRule1062);
-            	            tagname();
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:41: ( ( tagname ( equal vTextureInline ) )? | vTextureInline )
+            	            int alt35=2;
+            	            int LA35_0 = input.LA(1);
 
-            	            state._fsp--;
+            	            if ( ((LA35_0 >= COMMA && LA35_0 <= DEFNORM)||LA35_0==ID||LA35_0==RB) ) {
+            	                alt35=1;
+            	            }
+            	            else if ( (LA35_0==FLOAT||LA35_0==INT) ) {
+            	                alt35=2;
+            	            }
+            	            else {
+            	                NoViableAltException nvae =
+            	                    new NoViableAltException("", 35, 0, input);
+
+            	                throw nvae;
+
+            	            }
+            	            switch (alt35) {
+            	                case 1 :
+            	                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:42: ( tagname ( equal vTextureInline ) )?
+            	                    {
+            	                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:42: ( tagname ( equal vTextureInline ) )?
+            	                    int alt34=2;
+            	                    int LA34_0 = input.LA(1);
+
+            	                    if ( (LA34_0==ID) ) {
+            	                        alt34=1;
+            	                    }
+            	                    switch (alt34) {
+            	                        case 1 :
+            	                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:43: tagname ( equal vTextureInline )
+            	                            {
+            	                            pushFollow(FOLLOW_tagname_in_faceRule1060);
+            	                            tagname();
+
+            	                            state._fsp--;
+
+
+            	                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:51: ( equal vTextureInline )
+            	                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:52: equal vTextureInline
+            	                            {
+            	                            pushFollow(FOLLOW_equal_in_faceRule1063);
+            	                            equal();
+
+            	                            state._fsp--;
+
+
+            	                            pushFollow(FOLLOW_vTextureInline_in_faceRule1065);
+            	                            vTextureInline();
+
+            	                            state._fsp--;
+
+
+            	                            }
+
+
+            	                            }
+            	                            break;
+
+            	                    }
+
+
+            	                    }
+            	                    break;
+            	                case 2 :
+            	                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:110:76: vTextureInline
+            	                    {
+            	                    pushFollow(FOLLOW_vTextureInline_in_faceRule1070);
+            	                    vTextureInline();
+
+            	                    state._fsp--;
+
+
+            	                    }
+            	                    break;
+
+            	            }
 
 
             	            }
             	            break;
-            	        case 2 :
-            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:50: vNormalInline
-            	            {
-            	            pushFollow(FOLLOW_vNormalInline_in_faceRule1064);
-            	            vNormalInline();
 
-            	            state._fsp--;
+            	    }
+
+
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:33: ( DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline ) )?
+            	    int alt39=2;
+            	    int LA39_0 = input.LA(1);
+
+            	    if ( (LA39_0==DEFNORM) ) {
+            	        alt39=1;
+            	    }
+            	    switch (alt39) {
+            	        case 1 :
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:34: DEFNORM ( ( tagname ( equal vNormalInline ) )? | vNormalInline )
+            	            {
+            	            match(input,DEFNORM,FOLLOW_DEFNORM_in_faceRule1108); 
+
+            	            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:42: ( ( tagname ( equal vNormalInline ) )? | vNormalInline )
+            	            int alt38=2;
+            	            int LA38_0 = input.LA(1);
+
+            	            if ( (LA38_0==COMMA||LA38_0==ID||LA38_0==RB) ) {
+            	                alt38=1;
+            	            }
+            	            else if ( (LA38_0==FLOAT||LA38_0==INT) ) {
+            	                alt38=2;
+            	            }
+            	            else {
+            	                NoViableAltException nvae =
+            	                    new NoViableAltException("", 38, 0, input);
+
+            	                throw nvae;
+
+            	            }
+            	            switch (alt38) {
+            	                case 1 :
+            	                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:43: ( tagname ( equal vNormalInline ) )?
+            	                    {
+            	                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:43: ( tagname ( equal vNormalInline ) )?
+            	                    int alt37=2;
+            	                    int LA37_0 = input.LA(1);
+
+            	                    if ( (LA37_0==ID) ) {
+            	                        alt37=1;
+            	                    }
+            	                    switch (alt37) {
+            	                        case 1 :
+            	                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:44: tagname ( equal vNormalInline )
+            	                            {
+            	                            pushFollow(FOLLOW_tagname_in_faceRule1112);
+            	                            tagname();
+
+            	                            state._fsp--;
+
+
+            	                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:52: ( equal vNormalInline )
+            	                            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:53: equal vNormalInline
+            	                            {
+            	                            pushFollow(FOLLOW_equal_in_faceRule1115);
+            	                            equal();
+
+            	                            state._fsp--;
+
+
+            	                            pushFollow(FOLLOW_vNormalInline_in_faceRule1117);
+            	                            vNormalInline();
+
+            	                            state._fsp--;
+
+
+            	                            }
+
+
+            	                            }
+            	                            break;
+
+            	                    }
+
+
+            	                    }
+            	                    break;
+            	                case 2 :
+            	                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:111:76: vNormalInline
+            	                    {
+            	                    pushFollow(FOLLOW_vNormalInline_in_faceRule1122);
+            	                    vNormalInline();
+
+            	                    state._fsp--;
+
+
+            	                    }
+            	                    break;
+
+            	            }
 
 
             	            }
@@ -2144,14 +2448,14 @@ public class grammaticaParser extends Parser {
             	    break;
 
             	default :
-            	    break loop31;
+            	    break loop40;
                 }
             } while (true);
 
 
-            match(input,RB,FOLLOW_RB_in_faceRule1096); 
+            match(input,RB,FOLLOW_RB_in_faceRule1155); 
 
-            match(input,SC,FOLLOW_SC_in_faceRule1098); 
+            match(input,SC,FOLLOW_SC_in_faceRule1157); 
 
             }
 
@@ -2319,89 +2623,95 @@ public class grammaticaParser extends Parser {
     public static final BitSet FOLLOW_multipleDef_in_vertexRule366 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_singleDef_in_vertexRule368 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_SC_in_vertexRule370 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VERTEX_in_vertexInline377 = new BitSet(new long[]{0x0000000000006800L});
-    public static final BitSet FOLLOW_assignTag_in_vertexInline379 = new BitSet(new long[]{0x0000000000004800L});
-    public static final BitSet FOLLOW_vDef_in_vertexInline382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VERTEXSET_in_vertexSetRule390 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_assignTag_in_vertexSetRule392 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_setDef_in_vertexSetRule394 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_SC_in_vertexSetRule396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VTEXTURE_in_vTextureRule405 = new BitSet(new long[]{0x000000000000A000L});
-    public static final BitSet FOLLOW_multipleDef_in_vTextureRule408 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_singleDef_in_vTextureRule410 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_SC_in_vTextureRule412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VTEXTURE_in_vTextureInline419 = new BitSet(new long[]{0x0000000000006800L});
-    public static final BitSet FOLLOW_assignTag_in_vTextureInline421 = new BitSet(new long[]{0x0000000000004800L});
-    public static final BitSet FOLLOW_vDef_in_vTextureInline424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEXTURESET_in_textureSetRule432 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_assignTag_in_textureSetRule434 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_setDef_in_textureSetRule436 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_SC_in_textureSetRule438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VNORMAL_in_vNormalRule447 = new BitSet(new long[]{0x000000000000A000L});
-    public static final BitSet FOLLOW_multipleDef_in_vNormalRule450 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_singleDef_in_vNormalRule452 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_SC_in_vNormalRule454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VNORMAL_in_vNormalInline461 = new BitSet(new long[]{0x0000000000006800L});
-    public static final BitSet FOLLOW_assignTag_in_vNormalInline463 = new BitSet(new long[]{0x0000000000004800L});
-    public static final BitSet FOLLOW_vDef_in_vNormalInline466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NORMALSET_in_normalSetRule474 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_assignTag_in_normalSetRule476 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_setDef_in_normalSetRule478 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_SC_in_normalSetRule480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pointRule_in_graphElement509 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_lineRule_in_graphElement528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_faceRule_in_graphElement547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_POINT_in_pointRule559 = new BitSet(new long[]{0x000000001000A000L});
-    public static final BitSet FOLLOW_singlePointDef_in_pointRule562 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_multiplePointDef_in_pointRule564 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_SC_in_pointRule567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_tagname_in_singlePointDef575 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_equal_in_singlePointDef578 = new BitSet(new long[]{0x0000000010002000L});
-    public static final BitSet FOLLOW_tagname_in_singlePointDef581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_vertexInline_in_singlePointDef583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_vertexInline_in_singlePointDef590 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LB_in_multiplePointDef598 = new BitSet(new long[]{0x0000000010002000L});
-    public static final BitSet FOLLOW_singlePointDef_in_multiplePointDef601 = new BitSet(new long[]{0x0000000000100040L});
-    public static final BitSet FOLLOW_COMMA_in_multiplePointDef624 = new BitSet(new long[]{0x0000000010002000L});
-    public static final BitSet FOLLOW_singlePointDef_in_multiplePointDef626 = new BitSet(new long[]{0x0000000000100040L});
-    public static final BitSet FOLLOW_RB_in_multiplePointDef630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LINE_in_lineRule639 = new BitSet(new long[]{0x000000000000A000L});
-    public static final BitSet FOLLOW_assignTag_in_lineRule641 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_LB_in_lineRule644 = new BitSet(new long[]{0x0000000010002000L});
-    public static final BitSet FOLLOW_tagname_in_lineRule647 = new BitSet(new long[]{0x0000000010000040L});
-    public static final BitSet FOLLOW_vertexInline_in_lineRule649 = new BitSet(new long[]{0x0000000090000140L});
-    public static final BitSet FOLLOW_DEFTEX_in_lineRule685 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_tagname_in_lineRule687 = new BitSet(new long[]{0x0000000010000040L});
-    public static final BitSet FOLLOW_vTextureInline_in_lineRule689 = new BitSet(new long[]{0x0000000010000040L});
-    public static final BitSet FOLLOW_COMMA_in_lineRule723 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_tagname_in_lineRule725 = new BitSet(new long[]{0x0000000010100040L});
-    public static final BitSet FOLLOW_vertexInline_in_lineRule727 = new BitSet(new long[]{0x0000000090100140L});
-    public static final BitSet FOLLOW_DEFTEX_in_lineRule763 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_tagname_in_lineRule765 = new BitSet(new long[]{0x0000000010100040L});
-    public static final BitSet FOLLOW_vTextureInline_in_lineRule767 = new BitSet(new long[]{0x0000000010100040L});
-    public static final BitSet FOLLOW_RB_in_lineRule799 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_SC_in_lineRule801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FACE_in_faceRule822 = new BitSet(new long[]{0x000000000000A000L});
-    public static final BitSet FOLLOW_assignTag_in_faceRule824 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_LB_in_faceRule827 = new BitSet(new long[]{0x0000000010002000L});
-    public static final BitSet FOLLOW_tagname_in_faceRule830 = new BitSet(new long[]{0x0000000010100040L});
-    public static final BitSet FOLLOW_vertexInline_in_faceRule832 = new BitSet(new long[]{0x00000000D01001C0L});
-    public static final BitSet FOLLOW_DEFTEX_in_faceRule868 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_tagname_in_faceRule870 = new BitSet(new long[]{0x00000000501000C0L});
-    public static final BitSet FOLLOW_vTextureInline_in_faceRule872 = new BitSet(new long[]{0x00000000501000C0L});
-    public static final BitSet FOLLOW_DEFNORM_in_faceRule910 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_tagname_in_faceRule912 = new BitSet(new long[]{0x0000000010100040L});
-    public static final BitSet FOLLOW_vNormalInline_in_faceRule914 = new BitSet(new long[]{0x0000000010100040L});
-    public static final BitSet FOLLOW_COMMA_in_faceRule979 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_tagname_in_faceRule981 = new BitSet(new long[]{0x0000000010100040L});
-    public static final BitSet FOLLOW_vertexInline_in_faceRule983 = new BitSet(new long[]{0x00000000D01001C0L});
-    public static final BitSet FOLLOW_DEFTEX_in_faceRule1019 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_tagname_in_faceRule1021 = new BitSet(new long[]{0x00000000501000C0L});
-    public static final BitSet FOLLOW_vTextureInline_in_faceRule1023 = new BitSet(new long[]{0x00000000501000C0L});
-    public static final BitSet FOLLOW_DEFNORM_in_faceRule1060 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_tagname_in_faceRule1062 = new BitSet(new long[]{0x0000000010100040L});
-    public static final BitSet FOLLOW_vNormalInline_in_faceRule1064 = new BitSet(new long[]{0x0000000010100040L});
-    public static final BitSet FOLLOW_RB_in_faceRule1096 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_SC_in_faceRule1098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_vDef_in_vertexInline377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VERTEXSET_in_vertexSetRule384 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_assignTag_in_vertexSetRule386 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_setDef_in_vertexSetRule388 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_SC_in_vertexSetRule390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VTEXTURE_in_vTextureRule399 = new BitSet(new long[]{0x000000000000A000L});
+    public static final BitSet FOLLOW_multipleDef_in_vTextureRule402 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_singleDef_in_vTextureRule404 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_SC_in_vTextureRule406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_vDef_in_vTextureInline413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEXTURESET_in_textureSetRule421 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_assignTag_in_textureSetRule423 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_setDef_in_textureSetRule425 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_SC_in_textureSetRule427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VNORMAL_in_vNormalRule436 = new BitSet(new long[]{0x000000000000A000L});
+    public static final BitSet FOLLOW_multipleDef_in_vNormalRule439 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_singleDef_in_vNormalRule441 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_SC_in_vNormalRule443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_vDef_in_vNormalInline450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NORMALSET_in_normalSetRule458 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_assignTag_in_normalSetRule460 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_setDef_in_normalSetRule462 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_SC_in_normalSetRule464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pointRule_in_graphElement493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_lineRule_in_graphElement512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_faceRule_in_graphElement531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_POINT_in_pointRule543 = new BitSet(new long[]{0x000000000000E800L});
+    public static final BitSet FOLLOW_singlePointDef_in_pointRule546 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_multiplePointDef_in_pointRule548 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_SC_in_pointRule551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_tagname_in_singlePointDef560 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_equal_in_singlePointDef563 = new BitSet(new long[]{0x0000000000006800L});
+    public static final BitSet FOLLOW_tagname_in_singlePointDef566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_vertexInline_in_singlePointDef568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_vertexInline_in_singlePointDef575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LB_in_multiplePointDef583 = new BitSet(new long[]{0x0000000000006800L});
+    public static final BitSet FOLLOW_singlePointDef_in_multiplePointDef586 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_COMMA_in_multiplePointDef609 = new BitSet(new long[]{0x0000000000006800L});
+    public static final BitSet FOLLOW_singlePointDef_in_multiplePointDef611 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_RB_in_multiplePointDef615 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LINE_in_lineRule624 = new BitSet(new long[]{0x000000000000A000L});
+    public static final BitSet FOLLOW_assignTag_in_lineRule626 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_LB_in_lineRule629 = new BitSet(new long[]{0x0000000000006800L});
+    public static final BitSet FOLLOW_tagname_in_lineRule633 = new BitSet(new long[]{0x0000000000004940L});
+    public static final BitSet FOLLOW_vertexInline_in_lineRule635 = new BitSet(new long[]{0x0000000000004940L});
+    public static final BitSet FOLLOW_DEFTEX_in_lineRule672 = new BitSet(new long[]{0x0000000000002040L});
+    public static final BitSet FOLLOW_tagname_in_lineRule675 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_equal_in_lineRule678 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_vertexInline_in_lineRule680 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_vTextureInline_in_lineRule686 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_COMMA_in_lineRule721 = new BitSet(new long[]{0x0000000000006800L});
+    public static final BitSet FOLLOW_tagname_in_lineRule724 = new BitSet(new long[]{0x0000000000104940L});
+    public static final BitSet FOLLOW_vertexInline_in_lineRule726 = new BitSet(new long[]{0x0000000000104940L});
+    public static final BitSet FOLLOW_DEFTEX_in_lineRule763 = new BitSet(new long[]{0x0000000000102040L});
+    public static final BitSet FOLLOW_tagname_in_lineRule766 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_equal_in_lineRule769 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_vertexInline_in_lineRule771 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_vTextureInline_in_lineRule777 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_RB_in_lineRule810 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_SC_in_lineRule812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FACE_in_faceRule833 = new BitSet(new long[]{0x000000000000A000L});
+    public static final BitSet FOLLOW_assignTag_in_faceRule835 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_LB_in_faceRule838 = new BitSet(new long[]{0x0000000000006800L});
+    public static final BitSet FOLLOW_tagname_in_faceRule842 = new BitSet(new long[]{0x00000000001001C0L});
+    public static final BitSet FOLLOW_vertexInline_in_faceRule844 = new BitSet(new long[]{0x00000000001001C0L});
+    public static final BitSet FOLLOW_DEFTEX_in_faceRule881 = new BitSet(new long[]{0x00000000001068C0L});
+    public static final BitSet FOLLOW_tagname_in_faceRule885 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_equal_in_faceRule888 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_vertexInline_in_faceRule890 = new BitSet(new long[]{0x00000000001000C0L});
+    public static final BitSet FOLLOW_vTextureInline_in_faceRule895 = new BitSet(new long[]{0x00000000001000C0L});
+    public static final BitSet FOLLOW_DEFNORM_in_faceRule934 = new BitSet(new long[]{0x0000000000106840L});
+    public static final BitSet FOLLOW_tagname_in_faceRule938 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_equal_in_faceRule941 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_vNormalInline_in_faceRule943 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_vNormalInline_in_faceRule948 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_COMMA_in_faceRule1014 = new BitSet(new long[]{0x0000000000006800L});
+    public static final BitSet FOLLOW_tagname_in_faceRule1017 = new BitSet(new long[]{0x00000000001001C0L});
+    public static final BitSet FOLLOW_vertexInline_in_faceRule1019 = new BitSet(new long[]{0x00000000001001C0L});
+    public static final BitSet FOLLOW_DEFTEX_in_faceRule1056 = new BitSet(new long[]{0x00000000001068C0L});
+    public static final BitSet FOLLOW_tagname_in_faceRule1060 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_equal_in_faceRule1063 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_vTextureInline_in_faceRule1065 = new BitSet(new long[]{0x00000000001000C0L});
+    public static final BitSet FOLLOW_vTextureInline_in_faceRule1070 = new BitSet(new long[]{0x00000000001000C0L});
+    public static final BitSet FOLLOW_DEFNORM_in_faceRule1108 = new BitSet(new long[]{0x0000000000106840L});
+    public static final BitSet FOLLOW_tagname_in_faceRule1112 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_equal_in_faceRule1115 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_vNormalInline_in_faceRule1117 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_vNormalInline_in_faceRule1122 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_RB_in_faceRule1155 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_SC_in_faceRule1157 = new BitSet(new long[]{0x0000000000000002L});
 
 }
