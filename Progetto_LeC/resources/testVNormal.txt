@@ -1,0 +1,89 @@
+/*vnormal 0 1 2; //Errore OK! line 1:9 no viable alternative at input '0'
+
+vnormal v2 = 0.1 0.2 0.3; //Non errore OK!
+
+vnormal v1 = 0 1 2 //Errore OK! line 5:19 missing SC at '//Errore OK!\n' 
+
+vnormal v2 = 4.5.6 4 5; //Errore OK! line 7:21 extraneous input '5' expecting SC [DOPPI DECIMALI???]
+
+vnormal = 0 1 2; //Errore OK! line 9:8 no viable alternative at input '='
+
+vnormal v3 = 4.5 5 5.4, //Errore OK! line 11:22 mismatched input ',' expecting SC
+
+vnormal v3 = 4.5 5 5.4; //Non errore OK!
+
+vnormal {
+	v1 = 0 1 2,
+	v2 = 0 2 3	
+}; //Non errore OK!
+
+vnormal 
+	v1 = 0 1 2, 
+	v2 = 0 2 3	
+}; //Errore OK! line 21:11 mismatched input ',' expecting SC
+//Anche se lo riconosce come una definizione singola quindi pensa che manchi solo il punto e virgola
+
+vnormal {
+	v1 = 0 1 2,
+	v2 = 0 2 3 	
+; //Errore OK! Manca la graffa...//line 29:0 missing RB at ';'
+
+vnormal {
+	v1 = 0 1 2 
+	v2 = 0 2 3	
+}; //Errore OK! Manca la virgola...in realtà non dice che manca la virgola ma che manca la graffa..//line 33:1 mismatched input 'v2' expecting RB
+//pensa sia un insieme di un unico punto
+
+vnormal {
+	v1 = 0 1 2, 
+	v2 = 0 2 3,	
+}; //Errore OK! dice che dopo la virgola dopo la def di v2 ci vorrebbe un altro vertice //line 40:0 mismatched input '}' expecting ID
+
+
+vnormal {
+	vnormal v1 = 0 1 2,
+	v1 = 0 1 2,
+	v1 = 0 1 2,
+	v2 = 0 2 3	
+}; //Errore OK! line 44:19 mismatched input ',' expecting SC [???problem???]
+
+vnormal v1 = 0 1 2;
+
+vnormal {
+	vnormal v1 = 0 1 2,
+	v1 = 0 1 2,
+	v1 = 0 1 2,
+	v2 = 0 2 3	
+}; //Errore OK! line 53:1 extraneous input 'vnormal' expecting ID
+
+vnormal {
+	v1 = 0 1 2,
+	0 2 3 
+}; //Errore OK! non trova il nome dela normale...line 61:1 mismatched input '0' expecting ID
+
+vnormal v1 = 0 1 2;
+
+vnormal vg1 = {
+	v1 = 0 1 ;
+	v2 = 0 2 3 
+}; //Errore OK non posso dare un nome ad un elenco di vertici che non sia set. 64:14 mismatched input '{' expecting set null
+
+vnormal v1 = 0 1 2;*/
+
+normalset {
+	v1 = 0 1 2,
+	v2 
+}; //Errore OK! Non trova il nome del gruppo
+
+normalset gv1 = {
+	v2,
+	v3,
+	v4
+}; //No errore OK!
+
+normalset gv1 = {
+	v2, 
+	v3 = 1 2 3, 
+	0 1 3,
+	vnormal v5 = 0 1 2
+}; //Errore OK! qui dentro vnormal non serve
