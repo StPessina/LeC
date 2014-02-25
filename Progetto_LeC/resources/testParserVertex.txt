@@ -1,0 +1,23 @@
+vertex v1 = 0 1 2;
+vertex v2 = 0 2 3;
+vertex v1 = 0 1 2;
+vertex v2 = 0 2 3;
+vertex v1 = 0 1 2;
+vertex v2 = 0 2 3;
+vertex v1 = 0 1 2;
+vertex v2 = 0 2 3;
+
+
+
+
+vtexture vt1 = 0 1 2;
+
+line [
+	v1 deftex vt1,
+	v2 deftex new (vtexture a1 = 0 1 3)
+];
+
+line [
+	v1,
+	v2
+];

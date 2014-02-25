@@ -2,29 +2,39 @@ package test;
 
 import java.io.FileReader;
 
+import lec.storage.IStorage;
+import lec.storage.Storage;
 
-import org.antlr.runtime.*;
+import org.antlr.runtime.ANTLRReaderStream;
+import org.antlr.runtime.CommonTokenStream;
 
-import JavaPackage.*;
+import JavaPackage.grammaticaLexer;
+import JavaPackage.grammaticaParser;
 
 
 public class ParserTester  {
 	static grammaticaParser parser;
+	
+	static Storage storage;
 
 	public static void main(String[] args) {
 		CommonTokenStream tokens;
-		String fileIn = "./resources/testFaceGrammar.txt";
-
+		String fileIn = "./resources/testParserVertex.txt";
+		storage = new Storage();
+		
 		try {
 			System.out.println ("Parsing con ANTLR");
 			System.out.println ("-----------------------");
 			grammaticaLexer lexer = new grammaticaLexer(new ANTLRReaderStream(new FileReader(fileIn))); 
 			tokens = new CommonTokenStream(lexer);
-			parser = new grammaticaParser(tokens);
+			parser = new grammaticaParser(tokens, storage);
 			//parser.java();
 			
 			parser.start();
-
+			
+			storage.testPrint();
+			
+			
 			System.out.println("---------------------");
 			System.out.println("----- FINE PARSING -------");
 			System.out.println("---------------------\n\n");

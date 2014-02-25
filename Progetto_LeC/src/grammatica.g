@@ -6,6 +6,11 @@ options {
 }
 @header{
   package JavaPackage;
+  
+  import lec.semantic.*;
+  import lec.vertexInfo.*;
+  import lec.storage.IStorage;
+  import lec.graphelement.*;
 }
 
 @lexer::header{
@@ -13,13 +18,27 @@ options {
 }
 
 @members{
+  private ParserEnvironment env;
+  private IStorage storage;
+
+  public grammaticaParser(TokenStream input, IStorage storage) {
+     this(input, new RecognizerSharedState());
+     this.storage = storage;
+  }
+  
+  void init () {
+    env = new ParserEnvironment(storage);
+  }  
 }
 @lexer::members{
 }
  
 //produzioni parser
 start 
-@init{System.out.println("Start parsing EBNF\n");}
+@init{
+  System.out.println("Start parsing EBNF\n");
+  init();
+}
     : istruction*;
 
 
@@ -27,10 +46,10 @@ start
 * Produzione start: 5 tipologie differenti di produzione
 */
 istruction : ( 
-          vertexInfo
+          vertexInfo 
         | graphElement
 //        | primitive
-//        | grouping
+        | grouping
 //        | functional
         | comment
 );
@@ -38,14 +57,30 @@ istruction : (
 /*
 * Produzioni utility
 */
-assignTag : (tagname equal);
+assignTag returns [String tag] 
+  :  tag_t=tagname equal
+     {tag=tag_t;}
+  ;
+     
 equal : EQ;
-tagname : ID;
-vDef : (num num num);
-num : (INT|FLOAT);
+
+tagname returns [String tagname] 
+  : tag_t=ID
+    {tagname=env.parseTagname(tag_t);}
+  ;
+  
+//vDef [String points] returns [Vertex3d v] 
+vDef returns [Vertex3d v]
+  : (X=num Y=num Z=num) 
+    {v=env.translateInVertex3d(X,Y,Z);}
+  ;
+num returns [float num] 
+  : s_num=(INT|FLOAT) 
+    {num = env.parseNumber(s_num);}
+  ;
 
 /*
-* Produzione vertexInfo: relative alle informazioni sui vertici
+* Produzione vertexInfo: relative alle infurormazioni sui vertici
 */
 vertexInfo : (
                vertexRule
@@ -58,25 +93,56 @@ vertexInfo : (
 
 // definizione singola e multipla per tutte le produzioni riguardanti le info
 // sui vertici
-singleDef : assignTag vDef;
-multipleDef : LB (singleDef) (COMMA singleDef)* RB;
+singleDef [String type] returns [temp_vertex3d v]
+  : tag_t=assignTag v_t=vDef
+    {env.addNewVertexInfo(type,tag_t, v_t);}
+  ;
+multipleDef [String type]
+  : 
+    LSB (singleDef[type]) (COMMA singleDef[type])* RSB
+    ;
 
 //definizione di un insieme di informazioni sui vertici
-setDef : LB (tagname(equal vDef)?) (COMMA tagname(equal vDef)?)* RB;
+setDef : LSB (tagname(equal vDef)?) (COMMA tagname(equal vDef)?)* RSB;
 
 // produzioni relative alla definizione di vertici
-vertexRule : VERTEX (multipleDef|singleDef)SC;
-vertexInline : vDef;
+vertexRule : VERTEX (multipleDef["vertex"]|singleDef["vertex"])SC;
+vertexInline returns [Vertex v] 
+           : NEW LTB(
+                        VERTEX tag_t=assignTag? v_t=vDef
+                      )
+                   RTB
+                   {
+                        v = env.addNewVertexInLine(tag_t, v_t);
+                   }
+           ;
 vertexSetRule : VERTEXSET assignTag setDef SC;
 
 // produzioni relative alla definizione di texture coord
-vTextureRule : VTEXTURE (multipleDef|singleDef)SC;
-vTextureInline : vDef; //per definizione inline
+vTextureRule : VTEXTURE (multipleDef["texture"]|singleDef["texture"])SC;
+vTextureInline returns [VTexture v] 
+            : NEW LTB(
+                        VTEXTURE tag_t=assignTag? v_t=vDef
+                      )
+                   RTB
+                   {
+                      v = env.addNewVTextureInLine(tag_t, v_t);
+                   }
+           ;
+
 textureSetRule : TEXTURESET assignTag setDef SC;
 
 // produzioni relative alla definizione di normali ai vertici
-vNormalRule : VNORMAL (multipleDef|singleDef)SC;
-vNormalInline : vDef; //per definizione inline
+vNormalRule : VNORMAL (multipleDef["normal"]|singleDef["normal"])SC;
+vNormalInline returns [VNormal v] 
+            : NEW LTB(
+                        VNORMAL tag_t=assignTag? v_t=vDef
+                      )
+                   RTB
+                   {
+                      v = env.addNewVNormalInLine(tag_t, v_t);
+                   }
+           ;
 normalSetRule : NORMALSET assignTag setDef SC;
 
 /*
@@ -89,27 +155,93 @@ graphElement : (
 );
 
 // produzioni relative alla definizione di un punto
-pointRule : POINT (singlePointDef|multiplePointDef) SC;
-singlePointDef : ((tagname (equal (tagname|vertexInline))? )|vertexInline);
-multiplePointDef : LB (singlePointDef)
-                   (COMMA singlePointDef)* RB;
+pointRule : pointDefinition SC;
+pointInLine : NEW LTB(pointDefinition)RTB;
+
+pointDefinition : POINT (singlePointDef|multiplePointDef);
+singlePointDef returns [Point p]
+            : (( tag_point_or_vertex=tagname (equal (
+                              (tag_v=tagname)
+                            | (v=vertexInline)))?)
+              | v=vertexInline)
+              {p = env.addNewPoint(tag_point_or_vertex, tag_v, v);}
+            ;
+multiplePointDef : LSB (singlePointDef)
+                   (COMMA singlePointDef)* RSB;
 
 // produzione relativa alla definizione di una linea
-lineRule : LINE assignTag? LB ((tagname|vertexInline) 
-                                (DEFTEX (tagname (equal vertexInline))?|(vTextureInline))?)
-                            (COMMA (tagname|vertexInline) 
-                                (DEFTEX (tagname (equal vertexInline))?|(vTextureInline))?)+ 
-                         RB SC;
+lineRule : tag_line=lineDefinition SC
+         {env.saveLine(tag_line);} 
+         ;
+lineInLine returns [Line line]
+                : NEW LTB(tag_line = lineDefinition)RTB
+                {line = env.saveLineInLine(tag_line);}
+                ;
+lineDefinition returns [String tag_line]
+                : {env.initializeTempLine();}
+                  LINE tag=assignTag? LSB     (
+                                                (   tag_vertex=tagname
+                                                  | vertex=vertexInline
+                                                ) 
+                                                (DEFTEX 
+                                                  (   tag_texture1=tagname
+                                                    | vTexture1=vTextureInline
+                                                  )
+                                                )?
+                                                {env.addToTempLine(tag_vertex, vertex, tag_texture1, vTexture1);}
+                                              )
+                                              (COMMA 
+                                                (   tag_vertex=tagname
+                                                  | vertex=vertexInline
+                                                ) 
+                                                (DEFTEX 
+                                                  (   tag_texture2=tagname
+                                                    | vTexture2=vTextureInline
+                                                  )
+                                                )?
+                                                {env.addToTempLine(tag_vertex, vertex, tag_texture2, vTexture2);}
+                                              )+
+                                          RSB
+                                          {tag_line=tag;}
+                                          ;
             
 // produzione relativa alla definizione di una faccia
-faceRule : FACE assignTag? LB ((tagname|vertexInline) 
-                                (DEFTEX ((tagname (equal vertexInline))?|vTextureInline))? 
-                                (DEFNORM ((tagname (equal vNormalInline))?|vNormalInline))?)
-                              //TODO 3 ripetizioni 
-                            (COMMA (tagname|vertexInline) 
-                                (DEFTEX ((tagname (equal vTextureInline))?|vTextureInline))?
-                                (DEFNORM ((tagname (equal vNormalInline))?|vNormalInline))?)* 
-                         RB SC;
+faceRule : faceDefinition SC;
+faceInLine : NEW LTB(faceDefinition)RTB;
+faceDefinition returns [String tag_face]
+    :  FACE tag=assignTag? LSB (
+                                       (    tag_vertex=tagname
+                                         |  vertex=vertexInline
+                                       ) 
+                                       (DEFTEX
+                                          (   tag_texture1=tagname
+                                            | vTexure1=vTextureInline
+                                          )
+                                       )? 
+                                       (DEFNORM
+                                          (   tag_normal1=tagname
+                                            | vNormal1=vNormalInline
+                                          )
+                                       )?
+                                     )
+                                     (COMMA
+                                        (   tag_vertex=tagname
+                                          | vertex=vertexInline
+                                        ) 
+                                        (DEFTEX
+                                            (   tag_texture2=tagname
+                                              | vTexture2=vTextureInline
+                                            )
+                                        )? 
+                                        (DEFNORM
+                                            (   tag_normal2=tagname
+                                              | vNormal2=vNormalInline
+                                            )
+                                        )?
+                                     )* 
+                                RSB
+                          {tag_face=tag;}      
+                          ;
 
 /*
 * Produzione primitive: relative alle primitive grafiche
@@ -119,20 +251,39 @@ primitive : (
 );
 
 /*
-* Produzione grouping: relative alle funzionalit� di raggruppamento
+* Produzione grouping: relative alle funzionalita' di raggruppamento
 */
 grouping : (
-//             groupRule
-//          | smoothingRule
+             groupRule
+           | smoothingRule
 );
 
-//groupRule : GROUP assignTag LB 
-//                  ID|faceRule|lineRule|pointRule
+//Raggruppamento
+groupRule : GROUP assignTag LSB 
+                  ((tagname|NEW LSB (
+                                faceDefinition
+                              | lineDefinition
+                              | pointDefinition
+                                   )
+                               RTB
+                    ) smoothingInLine
+                               
+                  )
+                  ((COMMA tagname|NEW LSB (
+                                faceDefinition
+                              | lineDefinition
+                              | pointDefinition
+                                   )
+                               RTB
+                   ) smoothingInLine
+                  )*;
 
+//Definizione dello smoothing di un gruppo
+smoothingRule : SMOOTHING assignTag? (singleSmoothDef|multipleSmoothDef)SC;
+singleSmoothDef :  INT;
+multipleSmoothDef : LSB (assignTag? INT) (COMMA assignTag? INT)* RSB;
+smoothingInLine : NEW LTB (SMOOTHING assignTag? INT) RTB;
 
-//singleSmoothDef :  assignTag? INT;
-//multipleSmoothDef : assignTag? LB (assignTag? INT) (COMMA assignTag? INT)* RB;
-//smoothingRule : SMOOTHING (singleSmoothDef|multipleSmoothDef)SC;
 
 
 /*
@@ -163,13 +314,18 @@ ADD : 'add';
 DEFTEX : 'deftex';
 DEFNORM : 'defnorm';
 BOX : 'box';
+NEW : 'new';
 //PRIMITIVE : 'box'|'plane';
 
 SCALE : 'scale';
 ROTATE : 'rotate';
 TRASLATE : 'traslate';
-LB : '{';
-RB : '}';
+LSB : '[';
+RSB : ']';
+
+LTB : '(';
+RTB : ')';
+
 COMMA : ',';
 EQ : '=';
 SC : ';';

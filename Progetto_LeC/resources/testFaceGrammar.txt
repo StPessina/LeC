@@ -1,158 +1,147 @@
-face f1 = {v1, v2, v}; //NO perchè i vertici devono essere minimo 3 (non ancora implementato tale controllo)
+face f1 = [v1, v2]; //NO perchè i vertici devono essere minimo 3 (non ancora implementato tale controllo)
 
-face {v1,v2,v3,v4}; //OK perchè posso definire una faccia senza nome in quanto non voglio riutilizzarla
+face [v1,v2,v3,v4]; //OK perchè posso definire una faccia senza nome in quanto non voglio riutilizzarla
 
-face {
+face [
 	v1,
 	v2,
 	v3,
 	v4,
-}; //ERRORE
+]; //ERRORE
 
-face {v1,v2,v3,v4}; //Grammatica corretta per riazzerare parser
+face [v1,v2,v3,v4]; //Grammatica corretta per riazzerare parser
 
-face {
+face [
 	v1,
 	v2,
 	v3,
 	v4
-} //ERRORE
+] //ERRORE
 
-face {v1,v2,v3,v4}; //Grammatica corretta per riazzerare parser
+face [v1,v2,v3,v4]; //Grammatica corretta per riazzerare parser
 
-face {
+face [
 	v1,
 	v2,
 	v3,
 	v4
 ; //ERRORE
 
-face {v1,v2,v3,v4}; //Grammatica corretta per riazzerare parser
+face [v1,v2,v3,v4]; //Grammatica corretta per riazzerare parser
 
 face 
 	v1,
 	v2,
 	v3,
 	v4
-}; //ERRORE
+]; //ERRORE
 
-face {v1,v2,v3,v4}; //Grammatica corretta per riazzerare parser
+face [v1,v2,v3,v4]; //Grammatica corretta per riazzerare parser
 
-face abc {
+face abc [
 	v1,
 	v2,
 	v3,
 	v4
-}; //ERRORE
+]; //ERRORE
 
-face {v1,v2,v3,v4}; //Grammatica corretta per riazzerare parser
+face [v1,v2,v3,v4]; //Grammatica corretta per riazzerare parser
 
 face abc = 
 	v1,
 	v2,
 	v3,
 	v4
-}; //ERRORE
+]; //ERRORE
 
-face {v1,v2,v3,v4}; //Grammatica corretta per riazzerare parser
+face [v1,v2,v3,v4]; //Grammatica corretta per riazzerare parser
 
-face abc = {}
+face abc = []
 	v1,
 	v2,
 	v3,
 	v4
-}; //ERRORE
+]; //ERRORE
 
-face {v1,v2,v3,v4}; //Grammatica corretta per riazzerare parser
+face [v1,v2,v3,v4]; //Grammatica corretta per riazzerare parser
 
-face {
+face [
 	v1,
 	v2,
 	v3,
-	vertex 0 1 2
-}; //OK
+	new(vertex 0 1 2)
+]; //OK
 
-face {
+face [
 	v1,
 	v2,
 	v3,
-	vertex v2 = 1 2 3
-}; //OK
+	new(vertex v2 = 1 2 3
+]; //OK
 
-face {
+face [
 	v1,
 	v2,
 	v3,
 	v2 deftex vn3
-}; //OK
+]; //OK
 
-face {
+face [
 	v1,
 	v2,
 	v3,
-	v2 deftex vtexture vn3 = 1 2 3
-}; //OK
+	v2 deftex new(vn3 = 1 2 3)
+]; //OK
 
-face {
+face [
 	v1,
 	v2,
 	v3,
 	v2 defnorm vn3
-}; //OK
+]; //OK
 
-face {
+face [
 	v1,
 	v2,
 	v3,
 	v2 deftex vt1 defnorm vn3
-}; //OK
+]; //OK
 
-face {
+face [
 	v1,
 	v2,
 	v3,
-	v2 deftex vtexture vt1 = 0 1 2 defnorm vn3
-}; //OK
+	v2 deftex new(vtexture vt1 0 1 2) defnorm vn3
+]; //OK
 
-face {
+face [
 	v1,
 	v2,
 	v3,
-	vertex 0 1 2 deftex vtexture vt1 = 0 1 2 defnorm 0 1 2
-}; //ERRORE
+	new(vertex 0 1 2) deftex new(vtexture vt1 = 0 1 2) defnorm 0 1 2
+]; //ERRORE
 
-face {v1,v2,v3,v4}; //Grammatica corretta per riazzerare parser
+face [v1,v2,v3,v4]; //Grammatica corretta per riazzerare parser
 
-face {
+face [
 	v1,
 	v2,
 	v3,
-	vertex v1 = 0 1 2 deftex vtexture vt1 = 0 1 2 defnorm vnormal 0 1 2
-}; //OK
+	new(vertex v1 = 0 1 2) deftex new(vtexture vt1 = 0 1 2) defnorm new(vnormal 0 1 2)
+]; //OK
 
-face {v1,v2,v3,v4}; //Grammatica corretta per riazzerare parser
+face [v1,v2,v3,v4]; //Grammatica corretta per riazzerare parser
 
-face {
+face [
 	v1,
 	v2,
 	v3,
-	vertex v1 = 0 1 2 deftex vtexture vt1 = 0 1 2 defnorm vnormal vn1 = 0 1 2
-}; //OK
+	new(vertex v1 = 0 1 2) deftex new(vtexture vt1 = 0 1 2) defnorm new(vnormal vn1 = 0 1 2)
+]; //OK
 
-face {
+face [
 	v1,
 	v2,
 	v3,
-	vertex v1 = 0 1 2 deftex vtexture vt1 = 0 1 2 defnorm vnormal vn1 = 0 1 2
-}; //OK
-
-face {
-	v1, //OK perchè richiamo un vertice che ho già definito
-	VERTEX 0 2 1, //OK perchè non ho bisogno di riutilizzare il vertice
-	VERTEX v2 = 1 2 3, //OK perchè definisco un nuovo vertice che posso riutilizzare
-	v1 TXT vt1, //OK
-	v2 WITH VTEXTURE 0.5 0.5 0.5,
-	v2 WITH VTEXTURE vt1 = 0.5 0.5 0.5,
-	VERTEX 0 1 2 DEFTEX VTEXTURE vt1 0.5 0.5 0.5 DEFNORM,
-
-};
+	new(vertex v1 = 0 1 2) deftex new(vtexture vt1 = 0 1 2) defnorm new(vnormal vn1 = 0 1 2)
+]; //OK
