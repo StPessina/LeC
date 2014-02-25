@@ -4,70 +4,100 @@ vertex v2 = 0.1 0.2 0.3; //Non errore OK!
 
 vertex v1 = 0 1 2 //Errore OK! line 5:18 missing SC at '//Errore OK!\n'
 
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
 vertex v2 = 4.5.6 4 5; //Errore OK! line 7:20 extraneous input '5' expecting SC
+
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
 
 vertex = 0 1 2; //Errore OK! line 9:7 no viable alternative at input '='
 
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
 vertex v3 = 4.5 5 5.4, //Errore OK! line 11:21 mismatched input ',' expecting SC
+
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
 
 vertex v3 = 4.5 5 5.4; //Non errore OK!
 
-vertex {
+vertex [
 	v1 = 0 1 2,
 	v2 = 0 2 3	
-}; //Non errore OK!
+]; //Non errore OK!
 
 vertex 
 	v1 = 0 1 2, 
 	v2 = 0 2 3	
-}; //Errore OK! line 21:11 mismatched input ',' expecting SC
+]; //Errore OK! line 21:11 mismatched input ',' expecting SC
 //Anche se lo riconosce come una definizione singola quindi pensa che manchi solo il punto e virgola
 
-vertex {
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
+vertex [
 	v1 = 0 1 2,
 	v2 = 0 2 3 	
 ; //Errore OK! Manca la graffa...//line 28:0 missing RB at ';'
 
-vertex {
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
+vertex [
 	v1 = 0 1 2 
 	v2 = 0 2 3	
-}; //Errore OK! Manca la virgola...in realtà non dice che manca la virgola ma che manca la graffa..//line 32:1 mismatched input 'v2' expecting RB
+]; //Errore OK! Manca la virgola...in realtà non dice che manca la virgola ma che manca la graffa..//line 32:1 mismatched input 'v2' expecting RB
 //pensa sia un insieme di un unico punto
 
-vertex {
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
+vertex [
 	v1 = 0 1 2, 
 	v2 = 0 2 3,	
-}; //Errore OK! dice che dopo la virgola dopo la def di v2 ci vorrebbe un altro vertice //line 38:0 mismatched input '}' expecting ID
+]; //Errore OK! dice che dopo la virgola dopo la def di v2 ci vorrebbe un altro vertice //line 38:0 mismatched input ']' expecting ID
 
-vertex {
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
+vertex [
 	vertex v1 = 0 1 2,
 	v2 0 2 3	
-}; //Errore OK! line 43:18 mismatched input ',' expecting SC..non è possibile definire in line non ha senso qui
+]; //Errore OK! line 43:18 mismatched input ',' expecting SC..non è possibile definire in line non ha senso qui
 
-vertex {
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
+vertex [
 	v1 = 0 1 2,
 	0 2 3 
-}; //Errore OK! non trova il nome del vertice...line 49:1 mismatched input '0' expecting ID
+]; //Errore OK! non trova il nome del vertice...line 49:1 mismatched input '0' expecting ID
 
-vertex vg1 = {
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
+vertex [
+	v2 0 2 3	
+]; //Errore OK! line 43:18 mismatched input ',' expecting SC..non è possibile definire in line non ha senso qui
+
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
+vertex vg1 = [
 	v1 = 0 1 2,
 	v2 = 0 2 3 
-}; //Errore OK non posso dare un nome ad un elenco di vertici che non sia set
+]; //Errore OK non posso dare un nome ad un elenco di vertici che non sia set
 
-vertexset {
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
+vertexset [
 	v1 = 0 1 2,
 	v2 
-}; //Errore OK! Non trova il nome del gruppo
+]; //Errore OK! Non trova il nome del gruppo
 
-vertexset gv1 = {
+vertex v2 = 0.1 0.2 0.3; //Grammatica corretta per reset parser
+
+vertexset gv1 = [
 	v2,
 	v3,
 	v4
-}; //No errore OK!
+]; //No errore OK!
 
-vertexset gv1 = {
+vertexset gv1 = [
 	v2, 
 	v3 = 1 2 3, 
 	0 1 3,
 	vertex v5 = 0 1 2
-}; //Errore OK! qui dentro vertex non serve
+]; //Errore OK! qui dentro vertex non serve

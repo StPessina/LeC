@@ -135,6 +135,11 @@ point p1 = 0 1 2; assigntag vertexInline
 
 point p1 = v1;	assigntag tagname
 
+point p1 = v1 = 0 1 2;
+
+v 0 1 2
+p 0
+
 vertex v1 = 0 1 2;
 vertex v2 = 0 2 4;
 
@@ -170,8 +175,67 @@ line {
 
 line {
 	v1 deftex vt1 defnorm,
-	v2 deftex vt2	
+	v2 deftex vt3	
 };
 
 
+//Esempio: 2 cubi
 
+
+group cube1 = {
+	face bottom = {
+		0 0 0,
+		1 0 0,
+		0 1 0,
+		1 1 0
+	},
+	face {
+		new (vertex vt1 = 0 0 1) deftex new vtexture vte1 = 0 1 2 defnorm vn1,
+		vt2 = 1 0 1,
+		vt3 = 0 1 1,
+		vt4 = 1 1 1
+	},
+	...,
+	...   	
+};
+
+group cube2 = {
+	face {
+		vt1 deftex vte1,
+		vt2,
+		vt3,
+		vt4
+	},
+	...,
+	...,
+	...	
+};
+
+//Esempio faccia
+
+vertex vt1 = 0 1 2;
+
+
+point p1 = new (vertex vt1 = 0 1 2); //NO
+point p2 = vertex vt2 = 0 1 2;
+point p3 = vt3 = 0 1 2;
+point p4 = 0 1 2; 
+
+point vertex v1 = 0 1 2;
+point p1 = 0 1 2;
+
+point {
+	v1, //punto senza nome usando un vertice già definito
+	p1 = vt1, //punto con nome usando vertice già definito
+	p1 = vt1 = 0 1 2 //punto con nome definendo un nuovo vertice vt1
+	p1 = 0 1 2, //punto con nome definendo un nuovo vertice senza nome
+	0 1 2, //punto senza nome definendo un nuovo vertice senza nome
+	v1 = 0 1 2 //punto senza definendo un nuovo vertice v1
+};
+
+face {
+	vt1,
+	vt2,
+	vt3,
+	vt4
+};
