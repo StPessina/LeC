@@ -1,6 +1,6 @@
 point p1 = v1; //OK
 
-point p1 ={v1}; //KO
+point p1 ={v1}; //KO line 3:10 no viable alternative at input '{'
 
 point {v1}; //OK
 
@@ -10,15 +10,17 @@ point {v1,v2,v3}; //OK
 
 point = {v1,v2,v3}; //KO
 
-point p1 = vertex 0 3 5; //OK
+point p1 = vertex 0 3 5; //KO
 
-point p2 = vertex  v5 = 5 4 1; //OK
+point {v1,v2,v3}; //OK
 
-point vertex 0 1 2; //OK?
+point p2 = v5 = 5 4 1; //OK
 
-point vertex v2 = 3 4 5; //OK?
+point 0 1 2; //OK?
 
-point v1; //KO?
+point v2 = 3 4 5; //OK?
+
+point v1; //OK
 
 point {
 	p1 = v1,
