@@ -9,52 +9,62 @@ import lec.vertexInfo.Vertex3d;
 public class InfoMap {
 	
 	private HashMap<String, Integer> cache;
-	private ArrayList<Vertex3d> infoList;
+	private ArrayList<Vertex3d<?>> infoList;
 	private HashMap<GraphElement, ArrayList<String>> keyMap;
-	
-	public InfoMap() {
-		// TODO Auto-generated constructor stub
+		
+	public InfoMap(HashMap<String, Integer> cache,
+			ArrayList<Vertex3d<?>> infoList,
+			HashMap<GraphElement, ArrayList<String>> keyMap) {
+		super();
+		this.cache = cache;
+		this.infoList = infoList;
+		this.keyMap = keyMap;
 	}
 	
 	public HashMap<String, Integer> getCache() {
 		return cache;
 	}
-	public void setCache(HashMap<String, Integer> cache) {
-		this.cache = cache;
-	}
-	public ArrayList<Vertex3d> getInfoList() {
-		return infoList;
-	}
-	public ArrayList<String> printInfoList() {
-		ArrayList<String> instr = new ArrayList<String>(infoList.size());
-		if (infoList!=null){
-		for (int i = 0; i < infoList.size(); i++) {
-			instr.set(i, infoList.get(i).getDef());
-		}
-		}
-		return null;
-	}
-
-	public void setInfoList(ArrayList<Vertex3d> infoList) {
-		this.infoList = infoList;
-	}
-
+	
 	public HashMap<GraphElement, ArrayList<String>> getKeyMap() {
 		return keyMap;
 	}
-	public void setKeyMap(HashMap<GraphElement, ArrayList<String>> keyMap) {
-		this.keyMap = keyMap;
+	
+	public ArrayList<String> getInfoList() {
+		
+		ArrayList<String> instr = new ArrayList<String>(infoList.size());
+		for (Vertex3d<?> v3d : infoList) {
+			instr.add(v3d.getDef());
+		}
+		return instr;
 	}
 	
-	public void addVertex3d(GraphElement ge, ArrayList<Vertex3d> vlist) {
+	/**
+	 * 
+	 * @param ge
+	 * @param vlist
+	 */
+	public void addVertex3d(GraphElement ge, ArrayList<Vertex3d<?>> vlist) {
+		
 		ArrayList<String> listT = new ArrayList<String>();
-		for (int i = 0; i < vlist.size(); i++) {
-			if(!cache.containsKey(vlist.get(i).getKey()))
-				cache.put(vlist.get(i).getKey(),infoList.size());
-			infoList.add(vlist.get(i));
-			listT.add(vlist.get(i).getKey());
+		
+		for (Vertex3d<?> v3d : vlist) {
+			if(!cache.containsKey(v3d.getKey())){
+				cache.put(v3d.getKey(),infoList.size());
+				infoList.add(v3d);
+			}
+			listT.add(v3d.getKey());
 		}
 		keyMap.put(ge, listT);
+	}	
+	
+	public ArrayList<Integer> getIndices(GraphElement ge){
+		ArrayList<Integer> listofIndices = new ArrayList<Integer>();
+		ArrayList<String> listofKey = keyMap.get(ge);
+		for (String key : listofKey) {
+			if (cache.containsKey(key))
+				listofIndices.add(cache.get(key));
+		}
+	return listofIndices;
 	}
 	
 	
