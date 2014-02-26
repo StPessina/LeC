@@ -2,11 +2,13 @@ package lec.storage;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import lec.exception.DuplicateTagException;
 import lec.exception.TagNotFoundException;
 import lec.graphelement.Face;
+import lec.graphelement.GraphElement;
 import lec.graphelement.Line;
 import lec.graphelement.Point;
 import lec.grouping.Group;
@@ -146,9 +148,27 @@ public interface IStorage {
 	public Face getFaceCopy(String tag) throws TagNotFoundException;
 	
 	/**
+	 * Lettura di un elemento grafico per tagname
+	 * 
+	 * @param tag
+	 * @return GraphElement in copia
+	 * @throws TagNotFoundException
+	 */
+	public GraphElement getGraphElementCopy(String tag) throws TagNotFoundException;
+	
+	/**
+	 * Aggiunta di un gruppo alla map dei gruppi
+	 * 
+	 * @param tag_group
+	 * @param tempGroup
+	 * @throws DuplicateTagException
+	 */
+	public void addGroup(String tag_group, Group tempGroup) throws DuplicateTagException;
+	
+	/**
 	 * @return Lista dei punti senza tag
 	 */
-	public ArrayList<Point> getPointList();
+	public List<Point> getPointList();
 	
 	/**
 	 * @return Mappa dei punti con tag
@@ -158,7 +178,7 @@ public interface IStorage {
 	/**
 	 * @return Lista delle linee senza tag
 	 */
-	public ArrayList<Line> getLineList();
+	public List<Line> getLineList();
 	
 	/**
 	 * @return Mappa delle liste con tag
@@ -168,7 +188,7 @@ public interface IStorage {
 	/**
 	 * @return Lista delle facce senza tag
 	 */
-	public ArrayList<Face> getFaceList();
+	public List<Face> getFaceList();
 	
 	/**
 	 * @return Mappa delle facce con tag
@@ -178,5 +198,5 @@ public interface IStorage {
 	/**
 	 * @return Lista dei gruppi
 	 */
-	public ArrayList<Group> getGroupList();
+	public Map<String, Group> getGroupMap();
 }

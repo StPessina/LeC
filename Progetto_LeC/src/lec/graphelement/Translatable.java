@@ -58,4 +58,12 @@ public interface Translatable {
 	 * @return numero di vertici normali dell'elemento grafico
 	 */
 	public int getNumberOfVNormal();
+	
+	/**
+	 * Ritorna il tag corretto per l'oggetto desiderato
+	 * es. per un linea torna l
+	 * 
+	 * @return
+	 */
+	public String getOBJTag();
 }

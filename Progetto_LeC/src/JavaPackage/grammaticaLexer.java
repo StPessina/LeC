@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g 2014-02-25 01:36:31
+// $ANTLR 3.4 /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g 2014-02-26 12:08:08
 
   package JavaPackage;
 
@@ -15,34 +15,35 @@ public class grammaticaLexer extends Lexer {
     public static final int BOX=5;
     public static final int COMMA=6;
     public static final int DEFNORM=7;
-    public static final int DEFTEX=8;
-    public static final int EQ=9;
-    public static final int FACE=10;
-    public static final int FLOAT=11;
-    public static final int GROUP=12;
-    public static final int ID=13;
-    public static final int INT=14;
-    public static final int LINE=15;
-    public static final int LSB=16;
-    public static final int LTB=17;
-    public static final int MULTILINETEXTCM=18;
-    public static final int NEW=19;
-    public static final int NORMALSET=20;
-    public static final int POINT=21;
-    public static final int ROTATE=22;
-    public static final int RSB=23;
-    public static final int RTB=24;
-    public static final int SC=25;
-    public static final int SCALE=26;
-    public static final int SINGLELINECM=27;
-    public static final int SMOOTHING=28;
-    public static final int TEXTURESET=29;
-    public static final int TRASLATE=30;
-    public static final int VERTEX=31;
-    public static final int VERTEXSET=32;
-    public static final int VNORMAL=33;
-    public static final int VTEXTURE=34;
-    public static final int WS=35;
+    public static final int DEFSMOOTH=8;
+    public static final int DEFTEX=9;
+    public static final int EQ=10;
+    public static final int FACE=11;
+    public static final int FLOAT=12;
+    public static final int GROUP=13;
+    public static final int ID=14;
+    public static final int INT=15;
+    public static final int LINE=16;
+    public static final int LSB=17;
+    public static final int LTB=18;
+    public static final int MULTILINETEXTCM=19;
+    public static final int NEW=20;
+    public static final int NORMALSET=21;
+    public static final int POINT=22;
+    public static final int ROTATE=23;
+    public static final int RSB=24;
+    public static final int RTB=25;
+    public static final int SC=26;
+    public static final int SCALE=27;
+    public static final int SINGLELINECM=28;
+    public static final int SMOOTHING=29;
+    public static final int TEXTURESET=30;
+    public static final int TRASLATE=31;
+    public static final int VERTEX=32;
+    public static final int VERTEXSET=33;
+    public static final int VNORMAL=34;
+    public static final int VTEXTURE=35;
+    public static final int WS=36;
 
 
 
@@ -66,8 +67,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = VERTEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:302:9: ( 'vertex' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:302:11: 'vertex'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:319:9: ( 'vertex' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:319:11: 'vertex'
             {
             match("vertex"); 
 
@@ -89,8 +90,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = VERTEXSET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:303:12: ( 'vertexset' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:303:14: 'vertexset'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:320:12: ( 'vertexset' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:320:14: 'vertexset'
             {
             match("vertexset"); 
 
@@ -112,8 +113,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = VTEXTURE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:304:11: ( 'vtexture' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:304:13: 'vtexture'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:321:11: ( 'vtexture' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:321:13: 'vtexture'
             {
             match("vtexture"); 
 
@@ -135,8 +136,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = TEXTURESET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:305:13: ( 'textureset' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:305:15: 'textureset'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:322:13: ( 'textureset' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:322:15: 'textureset'
             {
             match("textureset"); 
 
@@ -158,8 +159,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = VNORMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:306:10: ( 'vnormal' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:306:12: 'vnormal'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:323:10: ( 'vnormal' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:323:12: 'vnormal'
             {
             match("vnormal"); 
 
@@ -181,8 +182,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = NORMALSET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:307:12: ( 'normalset' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:307:14: 'normalset'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:324:12: ( 'normalset' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:324:14: 'normalset'
             {
             match("normalset"); 
 
@@ -204,8 +205,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = POINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:308:8: ( 'point' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:308:10: 'point'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:325:8: ( 'point' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:325:10: 'point'
             {
             match("point"); 
 
@@ -227,8 +228,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = LINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:309:6: ( 'line' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:309:8: 'line'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:326:6: ( 'line' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:326:8: 'line'
             {
             match("line"); 
 
@@ -250,8 +251,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = FACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:310:6: ( 'face' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:310:8: 'face'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:327:6: ( 'face' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:327:8: 'face'
             {
             match("face"); 
 
@@ -273,8 +274,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = SMOOTHING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:311:11: ( 'smoothing' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:311:13: 'smoothing'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:328:11: ( 'smoothing' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:328:13: 'smoothing'
             {
             match("smoothing"); 
 
@@ -296,8 +297,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = GROUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:312:7: ( 'group' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:312:9: 'group'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:329:7: ( 'group' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:329:9: 'group'
             {
             match("group"); 
 
@@ -319,8 +320,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = ADD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:313:5: ( 'add' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:313:7: 'add'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:330:5: ( 'add' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:330:7: 'add'
             {
             match("add"); 
 
@@ -342,8 +343,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = DEFTEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:314:8: ( 'deftex' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:314:10: 'deftex'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:331:8: ( 'deftex' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:331:10: 'deftex'
             {
             match("deftex"); 
 
@@ -365,8 +366,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = DEFNORM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:315:9: ( 'defnorm' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:315:11: 'defnorm'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:332:9: ( 'defnorm' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:332:11: 'defnorm'
             {
             match("defnorm"); 
 
@@ -383,13 +384,36 @@ public class grammaticaLexer extends Lexer {
     }
     // $ANTLR end "DEFNORM"
 
+    // $ANTLR start "DEFSMOOTH"
+    public final void mDEFSMOOTH() throws RecognitionException {
+        try {
+            int _type = DEFSMOOTH;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:333:11: ( 'defsmooth' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:333:13: 'defsmooth'
+            {
+            match("defsmooth"); 
+
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "DEFSMOOTH"
+
     // $ANTLR start "BOX"
     public final void mBOX() throws RecognitionException {
         try {
             int _type = BOX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:316:5: ( 'box' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:316:7: 'box'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:334:5: ( 'box' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:334:7: 'box'
             {
             match("box"); 
 
@@ -411,8 +435,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = NEW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:317:5: ( 'new' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:317:7: 'new'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:335:5: ( 'new' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:335:7: 'new'
             {
             match("new"); 
 
@@ -434,8 +458,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = SCALE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:320:7: ( 'scale' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:320:9: 'scale'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:338:7: ( 'scale' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:338:9: 'scale'
             {
             match("scale"); 
 
@@ -457,8 +481,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = ROTATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:321:8: ( 'rotate' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:321:10: 'rotate'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:339:8: ( 'rotate' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:339:10: 'rotate'
             {
             match("rotate"); 
 
@@ -480,8 +504,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = TRASLATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:322:10: ( 'traslate' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:322:12: 'traslate'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:340:10: ( 'traslate' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:340:12: 'traslate'
             {
             match("traslate"); 
 
@@ -503,8 +527,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = LSB;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:323:5: ( '[' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:323:7: '['
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:341:5: ( '[' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:341:7: '['
             {
             match('['); 
 
@@ -524,8 +548,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = RSB;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:324:5: ( ']' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:324:7: ']'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:342:5: ( ']' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:342:7: ']'
             {
             match(']'); 
 
@@ -545,8 +569,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = LTB;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:326:5: ( '(' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:326:7: '('
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:344:5: ( '(' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:344:7: '('
             {
             match('('); 
 
@@ -566,8 +590,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = RTB;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:327:5: ( ')' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:327:7: ')'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:345:5: ( ')' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:345:7: ')'
             {
             match(')'); 
 
@@ -587,8 +611,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:329:7: ( ',' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:329:9: ','
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:347:7: ( ',' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:347:9: ','
             {
             match(','); 
 
@@ -608,8 +632,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = EQ;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:330:4: ( '=' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:330:6: '='
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:348:4: ( '=' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:348:6: '='
             {
             match('='); 
 
@@ -629,8 +653,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = SC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:331:4: ( ';' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:331:6: ';'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:349:4: ( ';' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:349:6: ';'
             {
             match(';'); 
 
@@ -650,14 +674,14 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = SINGLELINECM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:334:14: ( '//' ( . )* ( '\\r' | '\\n' ) )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:334:16: '//' ( . )* ( '\\r' | '\\n' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:352:14: ( '//' ( . )* ( '\\r' | '\\n' ) )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:352:16: '//' ( . )* ( '\\r' | '\\n' )
             {
             match("//"); 
 
 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:334:21: ( . )*
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:352:21: ( . )*
             loop1:
             do {
                 int alt1=2;
@@ -673,7 +697,7 @@ public class grammaticaLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:334:21: .
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:352:21: .
             	    {
             	    matchAny(); 
 
@@ -712,14 +736,14 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = MULTILINETEXTCM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:335:17: ( '/*' ( . )* '*/' )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:335:19: '/*' ( . )* '*/'
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:353:17: ( '/*' ( . )* '*/' )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:353:19: '/*' ( . )* '*/'
             {
             match("/*"); 
 
 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:335:24: ( . )*
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:353:24: ( . )*
             loop2:
             do {
                 int alt2=2;
@@ -744,7 +768,7 @@ public class grammaticaLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:335:24: .
+            	    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:353:24: .
             	    {
             	    matchAny(); 
 
@@ -777,10 +801,10 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:338:7: ( ( '-' )? ( '0' .. '9' )+ )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:338:9: ( '-' )? ( '0' .. '9' )+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:356:7: ( ( '-' )? ( '0' .. '9' )+ )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:356:9: ( '-' )? ( '0' .. '9' )+
             {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:338:9: ( '-' )?
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:356:9: ( '-' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -789,7 +813,7 @@ public class grammaticaLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:338:10: '-'
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:356:10: '-'
                     {
                     match('-'); 
 
@@ -799,7 +823,7 @@ public class grammaticaLexer extends Lexer {
             }
 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:338:16: ( '0' .. '9' )+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:356:16: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -854,10 +878,10 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:339:7: ( ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:339:9: ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:357:7: ( ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:357:9: ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+
             {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:339:9: ( '-' )?
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:357:9: ( '-' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -866,7 +890,7 @@ public class grammaticaLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:339:10: '-'
+                    // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:357:10: '-'
                     {
                     match('-'); 
 
@@ -876,7 +900,7 @@ public class grammaticaLexer extends Lexer {
             }
 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:339:16: ( '0' .. '9' )*
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:357:16: ( '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
@@ -912,7 +936,7 @@ public class grammaticaLexer extends Lexer {
 
             match('.'); 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:339:32: ( '0' .. '9' )+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:357:32: ( '0' .. '9' )+
             int cnt7=0;
             loop7:
             do {
@@ -967,8 +991,8 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:340:7: ( ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) ) ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) | ( '0' .. '9' ) | '_' )* )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:340:9: ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) ) ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) | ( '0' .. '9' ) | '_' )*
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:358:7: ( ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) ) ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) | ( '0' .. '9' ) | '_' )* )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:358:9: ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) ) ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) | ( '0' .. '9' ) | '_' )*
             {
             if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
                 input.consume();
@@ -980,7 +1004,7 @@ public class grammaticaLexer extends Lexer {
             }
 
 
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:341:9: ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) | ( '0' .. '9' ) | '_' )*
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:359:9: ( ( 'a' .. 'z' ) | ( 'A' .. 'Z' ) | ( '0' .. '9' ) | '_' )*
             loop8:
             do {
                 int alt8=2;
@@ -1030,10 +1054,10 @@ public class grammaticaLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:342:5: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:342:7: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:360:5: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:360:7: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:342:7: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:360:7: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt9=0;
             loop9:
             do {
@@ -1086,8 +1110,8 @@ public class grammaticaLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:8: ( VERTEX | VERTEXSET | VTEXTURE | TEXTURESET | VNORMAL | NORMALSET | POINT | LINE | FACE | SMOOTHING | GROUP | ADD | DEFTEX | DEFNORM | BOX | NEW | SCALE | ROTATE | TRASLATE | LSB | RSB | LTB | RTB | COMMA | EQ | SC | SINGLELINECM | MULTILINETEXTCM | INT | FLOAT | ID | WS )
-        int alt10=32;
+        // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:8: ( VERTEX | VERTEXSET | VTEXTURE | TEXTURESET | VNORMAL | NORMALSET | POINT | LINE | FACE | SMOOTHING | GROUP | ADD | DEFTEX | DEFNORM | DEFSMOOTH | BOX | NEW | SCALE | ROTATE | TRASLATE | LSB | RSB | LTB | RTB | COMMA | EQ | SC | SINGLELINECM | MULTILINETEXTCM | INT | FLOAT | ID | WS )
+        int alt10=33;
         alt10 = dfa10.predict(input);
         switch (alt10) {
             case 1 :
@@ -1203,143 +1227,151 @@ public class grammaticaLexer extends Lexer {
                 }
                 break;
             case 15 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:116: BOX
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:116: DEFSMOOTH
+                {
+                mDEFSMOOTH(); 
+
+
+                }
+                break;
+            case 16 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:126: BOX
                 {
                 mBOX(); 
 
 
                 }
                 break;
-            case 16 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:120: NEW
+            case 17 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:130: NEW
                 {
                 mNEW(); 
 
 
                 }
                 break;
-            case 17 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:124: SCALE
+            case 18 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:134: SCALE
                 {
                 mSCALE(); 
 
 
                 }
                 break;
-            case 18 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:130: ROTATE
+            case 19 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:140: ROTATE
                 {
                 mROTATE(); 
 
 
                 }
                 break;
-            case 19 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:137: TRASLATE
+            case 20 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:147: TRASLATE
                 {
                 mTRASLATE(); 
 
 
                 }
                 break;
-            case 20 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:146: LSB
+            case 21 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:156: LSB
                 {
                 mLSB(); 
 
 
                 }
                 break;
-            case 21 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:150: RSB
+            case 22 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:160: RSB
                 {
                 mRSB(); 
 
 
                 }
                 break;
-            case 22 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:154: LTB
+            case 23 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:164: LTB
                 {
                 mLTB(); 
 
 
                 }
                 break;
-            case 23 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:158: RTB
+            case 24 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:168: RTB
                 {
                 mRTB(); 
 
 
                 }
                 break;
-            case 24 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:162: COMMA
+            case 25 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:172: COMMA
                 {
                 mCOMMA(); 
 
 
                 }
                 break;
-            case 25 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:168: EQ
+            case 26 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:178: EQ
                 {
                 mEQ(); 
 
 
                 }
                 break;
-            case 26 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:171: SC
+            case 27 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:181: SC
                 {
                 mSC(); 
 
 
                 }
                 break;
-            case 27 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:174: SINGLELINECM
+            case 28 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:184: SINGLELINECM
                 {
                 mSINGLELINECM(); 
 
 
                 }
                 break;
-            case 28 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:187: MULTILINETEXTCM
+            case 29 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:197: MULTILINETEXTCM
                 {
                 mMULTILINETEXTCM(); 
 
 
                 }
                 break;
-            case 29 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:203: INT
+            case 30 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:213: INT
                 {
                 mINT(); 
 
 
                 }
                 break;
-            case 30 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:207: FLOAT
+            case 31 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:217: FLOAT
                 {
                 mFLOAT(); 
 
 
                 }
                 break;
-            case 31 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:213: ID
+            case 32 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:223: ID
                 {
                 mID(); 
 
 
                 }
                 break;
-            case 32 :
-                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:216: WS
+            case 33 :
+                // /media/Data/Universita/V_anno/1_semestre/Linguaggi e Compilatori/Progetto/Git/LeC/Progetto_LeC/src/grammatica.g:1:226: WS
                 {
                 mWS(); 
 
@@ -1355,27 +1387,27 @@ public class grammaticaLexer extends Lexer {
     protected DFA10 dfa10 = new DFA10(this);
     static final String DFA10_eotS =
         "\1\uffff\14\30\11\uffff\1\55\3\uffff\21\30\3\uffff\6\30\1\105\6"+
-        "\30\1\114\1\30\1\117\7\30\1\uffff\1\30\1\130\1\131\3\30\1\uffff"+
-        "\2\30\1\uffff\7\30\1\146\2\uffff\1\30\1\150\1\151\3\30\1\156\5\30"+
-        "\1\uffff\1\30\2\uffff\1\165\1\30\1\167\1\30\1\uffff\1\30\1\172\4"+
-        "\30\1\uffff\1\177\1\uffff\1\30\1\u0081\1\uffff\1\30\1\u0083\2\30"+
-        "\1\uffff\1\u0086\1\uffff\1\30\1\uffff\1\u0088\1\u0089\1\uffff\1"+
-        "\u008a\3\uffff";
+        "\30\1\114\1\30\1\120\7\30\1\uffff\1\30\1\131\1\132\3\30\1\uffff"+
+        "\3\30\1\uffff\7\30\1\150\2\uffff\1\30\1\152\1\153\4\30\1\161\5\30"+
+        "\1\uffff\1\30\2\uffff\1\170\2\30\1\173\1\30\1\uffff\1\30\1\176\4"+
+        "\30\1\uffff\1\u0083\1\30\1\uffff\1\30\1\u0086\1\uffff\1\30\1\u0088"+
+        "\2\30\1\uffff\1\30\1\u008c\1\uffff\1\30\1\uffff\1\u008e\1\u008f"+
+        "\1\u0090\1\uffff\1\u0091\4\uffff";
     static final String DFA10_eofS =
-        "\u008b\uffff";
+        "\u0092\uffff";
     static final String DFA10_minS =
         "\1\11\3\145\1\157\1\151\1\141\1\143\1\162\1\144\1\145\2\157\7\uffff"+
         "\1\52\2\56\3\uffff\1\162\1\145\1\157\1\170\1\141\1\162\1\167\1\151"+
         "\1\156\1\143\1\157\1\141\1\157\1\144\1\146\1\170\1\164\3\uffff\1"+
         "\164\1\170\1\162\1\164\1\163\1\155\1\60\1\156\2\145\1\157\1\154"+
         "\1\165\1\60\1\156\1\60\1\141\1\145\1\164\1\155\1\165\1\154\1\141"+
-        "\1\uffff\1\164\2\60\1\164\1\145\1\160\1\uffff\1\145\1\157\1\uffff"+
-        "\1\164\1\170\1\165\1\141\1\162\1\141\1\154\1\60\2\uffff\1\150\2"+
-        "\60\1\170\1\162\1\145\1\60\1\162\1\154\1\145\1\164\1\163\1\uffff"+
-        "\1\151\2\uffff\1\60\1\155\1\60\1\145\1\uffff\1\145\1\60\1\163\2"+
-        "\145\1\156\1\uffff\1\60\1\uffff\1\164\1\60\1\uffff\1\145\1\60\1"+
-        "\164\1\147\1\uffff\1\60\1\uffff\1\164\1\uffff\2\60\1\uffff\1\60"+
-        "\3\uffff";
+        "\1\uffff\1\164\2\60\1\164\1\145\1\160\1\uffff\1\145\1\157\1\155"+
+        "\1\uffff\1\164\1\170\1\165\1\141\1\162\1\141\1\154\1\60\2\uffff"+
+        "\1\150\2\60\1\170\1\162\1\157\1\145\1\60\1\162\1\154\1\145\1\164"+
+        "\1\163\1\uffff\1\151\2\uffff\1\60\1\155\1\157\1\60\1\145\1\uffff"+
+        "\1\145\1\60\1\163\2\145\1\156\1\uffff\1\60\1\164\1\uffff\1\164\1"+
+        "\60\1\uffff\1\145\1\60\1\164\1\147\1\uffff\1\150\1\60\1\uffff\1"+
+        "\164\1\uffff\3\60\1\uffff\1\60\4\uffff";
     static final String DFA10_maxS =
         "\1\172\1\164\1\162\2\157\1\151\1\141\1\155\1\162\1\144\1\145\2\157"+
         "\7\uffff\1\57\2\71\3\uffff\1\162\1\145\1\157\1\170\1\141\1\162\1"+
@@ -1383,20 +1415,20 @@ public class grammaticaLexer extends Lexer {
         "\3\uffff\1\164\1\170\1\162\1\164\1\163\1\155\1\172\1\156\2\145\1"+
         "\157\1\154\1\165\1\172\1\164\1\172\1\141\1\145\1\164\1\155\1\165"+
         "\1\154\1\141\1\uffff\1\164\2\172\1\164\1\145\1\160\1\uffff\1\145"+
-        "\1\157\1\uffff\1\164\1\170\1\165\1\141\1\162\1\141\1\154\1\172\2"+
-        "\uffff\1\150\2\172\1\170\1\162\1\145\1\172\1\162\1\154\1\145\1\164"+
-        "\1\163\1\uffff\1\151\2\uffff\1\172\1\155\1\172\1\145\1\uffff\1\145"+
-        "\1\172\1\163\2\145\1\156\1\uffff\1\172\1\uffff\1\164\1\172\1\uffff"+
-        "\1\145\1\172\1\164\1\147\1\uffff\1\172\1\uffff\1\164\1\uffff\2\172"+
-        "\1\uffff\1\172\3\uffff";
+        "\1\157\1\155\1\uffff\1\164\1\170\1\165\1\141\1\162\1\141\1\154\1"+
+        "\172\2\uffff\1\150\2\172\1\170\1\162\1\157\1\145\1\172\1\162\1\154"+
+        "\1\145\1\164\1\163\1\uffff\1\151\2\uffff\1\172\1\155\1\157\1\172"+
+        "\1\145\1\uffff\1\145\1\172\1\163\2\145\1\156\1\uffff\1\172\1\164"+
+        "\1\uffff\1\164\1\172\1\uffff\1\145\1\172\1\164\1\147\1\uffff\1\150"+
+        "\1\172\1\uffff\1\164\1\uffff\3\172\1\uffff\1\172\4\uffff";
     static final String DFA10_acceptS =
-        "\15\uffff\1\24\1\25\1\26\1\27\1\30\1\31\1\32\3\uffff\1\36\1\37\1"+
-        "\40\21\uffff\1\33\1\34\1\35\27\uffff\1\20\6\uffff\1\14\2\uffff\1"+
-        "\17\10\uffff\1\10\1\11\14\uffff\1\7\1\uffff\1\21\1\13\4\uffff\1"+
-        "\1\6\uffff\1\15\1\uffff\1\22\2\uffff\1\5\4\uffff\1\16\1\uffff\1"+
-        "\3\1\uffff\1\23\2\uffff\1\2\1\uffff\1\6\1\12\1\4";
+        "\15\uffff\1\25\1\26\1\27\1\30\1\31\1\32\1\33\3\uffff\1\37\1\40\1"+
+        "\41\21\uffff\1\34\1\35\1\36\27\uffff\1\21\6\uffff\1\14\3\uffff\1"+
+        "\20\10\uffff\1\10\1\11\15\uffff\1\7\1\uffff\1\22\1\13\5\uffff\1"+
+        "\1\6\uffff\1\15\2\uffff\1\23\2\uffff\1\5\4\uffff\1\16\2\uffff\1"+
+        "\3\1\uffff\1\24\3\uffff\1\2\1\uffff\1\6\1\12\1\17\1\4";
     static final String DFA10_specialS =
-        "\u008b\uffff}>";
+        "\u0092\uffff}>";
     static final String[] DFA10_transitionS = {
             "\2\31\2\uffff\1\31\22\uffff\1\31\7\uffff\1\17\1\20\2\uffff\1"+
             "\21\1\25\1\27\1\24\12\26\1\uffff\1\23\1\uffff\1\22\3\uffff\32"+
@@ -1462,82 +1494,89 @@ public class grammaticaLexer extends Lexer {
             "\1\112",
             "\1\113",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\116\5\uffff\1\115",
+            "\1\116\4\uffff\1\117\1\115",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\120",
             "\1\121",
             "\1\122",
             "\1\123",
             "\1\124",
             "\1\125",
             "\1\126",
-            "",
             "\1\127",
+            "",
+            "\1\130",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\132",
             "\1\133",
             "\1\134",
-            "",
             "\1\135",
-            "\1\136",
             "",
+            "\1\136",
             "\1\137",
             "\1\140",
+            "",
             "\1\141",
             "\1\142",
             "\1\143",
             "\1\144",
             "\1\145",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "",
-            "",
+            "\1\146",
             "\1\147",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "",
+            "",
+            "\1\151",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\152",
-            "\1\153",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "\1\154",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\22\30\1\155\7\30",
+            "\1\155",
+            "\1\156",
             "\1\157",
-            "\1\160",
-            "\1\161",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\22\30\1\160\7\30",
             "\1\162",
             "\1\163",
-            "",
             "\1\164",
-            "",
-            "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\165",
             "\1\166",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\170",
             "",
+            "\1\167",
+            "",
+            "",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "\1\171",
+            "\1\172",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\173",
             "\1\174",
+            "",
             "\1\175",
-            "\1\176",
-            "",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "",
+            "\1\177",
             "\1\u0080",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "",
+            "\1\u0081",
             "\1\u0082",
+            "",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "\1\u0084",
-            "\1\u0085",
             "",
+            "\1\u0085",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
             "\1\u0087",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\u0089",
+            "\1\u008a",
+            "",
+            "\1\u008b",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "",
+            "\1\u008d",
             "",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "",
             "",
             "",
             ""
@@ -1573,7 +1612,7 @@ public class grammaticaLexer extends Lexer {
             this.transition = DFA10_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( VERTEX | VERTEXSET | VTEXTURE | TEXTURESET | VNORMAL | NORMALSET | POINT | LINE | FACE | SMOOTHING | GROUP | ADD | DEFTEX | DEFNORM | BOX | NEW | SCALE | ROTATE | TRASLATE | LSB | RSB | LTB | RTB | COMMA | EQ | SC | SINGLELINECM | MULTILINETEXTCM | INT | FLOAT | ID | WS );";
+            return "1:1: Tokens : ( VERTEX | VERTEXSET | VTEXTURE | TEXTURESET | VNORMAL | NORMALSET | POINT | LINE | FACE | SMOOTHING | GROUP | ADD | DEFTEX | DEFNORM | DEFSMOOTH | BOX | NEW | SCALE | ROTATE | TRASLATE | LSB | RSB | LTB | RTB | COMMA | EQ | SC | SINGLELINECM | MULTILINETEXTCM | INT | FLOAT | ID | WS );";
         }
     }
  
