@@ -156,8 +156,11 @@ graphElement : (
 
 // produzioni relative alla definizione di un punto
 pointRule : pointDefinition SC;
-pointInLine : NEW LTB(pointDefinition)RTB;
-
+pointInLine returns [Point p]
+    : POINT tempPoint=singlePointDef
+    {p = tempPoint;}
+    ;
+    
 pointDefinition : POINT (singlePointDef|multiplePointDef);
 singlePointDef returns [Point p]
             : (( tag_point_or_vertex=tagname (equal (
@@ -174,7 +177,7 @@ lineRule : tag_line=lineDefinition SC
          {env.saveLine(tag_line);} 
          ;
 lineInLine returns [Line line]
-                : NEW LTB(tag_line = lineDefinition)RTB
+                : tag_line = lineDefinition
                 {line = env.saveLineInLine(tag_line);}
                 ;
 lineDefinition returns [String tag_line]
@@ -206,23 +209,31 @@ lineDefinition returns [String tag_line]
                                           ;
             
 // produzione relativa alla definizione di una faccia
-faceRule : faceDefinition SC;
-faceInLine : NEW LTB(faceDefinition)RTB;
+faceRule : tag_face=faceDefinition SC
+         {env.saveFace(tag_face);} 
+         ;
+            
+faceInLine returns [Face face]
+                 : tag_face=faceDefinition
+                 {face = env.saveFaceInline(tag_face);}
+                 ;
 faceDefinition returns [String tag_face]
-    :  FACE tag=assignTag? LSB (
+                 :  {env.initializeTempFace();}
+                    FACE tag=assignTag? LSB (
                                        (    tag_vertex=tagname
                                          |  vertex=vertexInline
                                        ) 
                                        (DEFTEX
                                           (   tag_texture1=tagname
-                                            | vTexure1=vTextureInline
+                                            | vTexture1=vTextureInline
                                           )
-                                       )? 
+                                       )?
                                        (DEFNORM
                                           (   tag_normal1=tagname
                                             | vNormal1=vNormalInline
                                           )
                                        )?
+                                       {env.addToTempFace(tag_vertex, vertex, tag_texture1, vTexture1, tag_normal1, vNormal1);}
                                      )
                                      (COMMA
                                         (   tag_vertex=tagname
@@ -238,6 +249,7 @@ faceDefinition returns [String tag_face]
                                               | vNormal2=vNormalInline
                                             )
                                         )?
+                                        {env.addToTempFace(tag_vertex, vertex, tag_texture2, vTexture2, tag_normal2, vNormal2);}
                                      )* 
                                 RSB
                           {tag_face=tag;}      
@@ -259,24 +271,29 @@ grouping : (
 );
 
 //Raggruppamento
-groupRule : GROUP assignTag LSB 
-                  ((tagname|NEW LSB (
-                                faceDefinition
-                              | lineDefinition
-                              | pointDefinition
+groupRule : GROUP groupTag=assignTag 
+            LSB
+              {env.initializeGroup(groupTag);}
+                  ((GraphElementName1=tagname|NEW LSB (
+                                face1=faceInLine
+                              | line1=lineInLine
+                              | point1=pointInLine
                                    )
                                RTB
-                    ) smoothingInLine
-                               
-                  )
-                  ((COMMA tagname|NEW LSB (
-                                faceDefinition
-                              | lineDefinition
-                              | pointDefinition
+                    ) (DEFSMOOTH (smooth_tag1=tagname|smoothingInLine))?          
+                  ) {env.addToTempGroup(GraphElementName1, point1, line1, face1, smooth_tag1);}
+                  ((COMMA GraphElementName2=tagname|NEW LSB (
+                                face2=faceInLine
+                              | line2=lineInLine
+                              | point2=pointInLine
                                    )
                                RTB
-                   ) smoothingInLine
-                  )*;
+                   ) (DEFSMOOTH (smooth_tag2=tagname|smoothingInLine))?
+                     {env.addToTempGroup(GraphElementName2, point2, line2, face2, smooth_tag2);}
+                  )*
+             RSB SC
+             {env.saveGroup();}   
+          ;
 
 //Definizione dello smoothing di un gruppo
 smoothingRule : SMOOTHING assignTag? (singleSmoothDef|multipleSmoothDef)SC;
@@ -313,6 +330,7 @@ GROUP : 'group';
 ADD : 'add';
 DEFTEX : 'deftex';
 DEFNORM : 'defnorm';
+DEFSMOOTH : 'defsmooth';
 BOX : 'box';
 NEW : 'new';
 //PRIMITIVE : 'box'|'plane';

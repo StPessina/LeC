@@ -1,9 +1,9 @@
 package lec.vertexInfo;
 
-public class Vertex3d {
-	private float x;
-	private float y;
-	private float z;
+public class Vertex3d<T extends Vertex3d> implements Comparable<T>{
+	protected float x;
+	protected float y;
+	protected float z;
 	
 	public Vertex3d(Vertex3d v) {
 		this.copy(v);
@@ -39,5 +39,12 @@ public class Vertex3d {
 		this.x = v.x;
 		this.y = v.y;
 		this.z = v.z;
+	}
+
+	@Override
+	public int compareTo(T o) {
+		if(x==o.x && y==o.y && z==o.z)
+			return 0;
+		return -1;
 	}
 }

@@ -8,6 +8,7 @@ import lec.storage.Storage;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
+import test.lec.storage.storagePrinter;
 import JavaPackage.grammaticaLexer;
 import JavaPackage.grammaticaParser;
 
@@ -19,7 +20,7 @@ public class ParserTester  {
 
 	public static void main(String[] args) {
 		CommonTokenStream tokens;
-		String fileIn = "./resources/testParserVertex.txt";
+		String fileIn = "./resources/testFaceSemantic.txt";
 		storage = new Storage();
 		
 		try {
@@ -32,8 +33,9 @@ public class ParserTester  {
 			
 			parser.start();
 			
-			storage.testPrint();
+			storagePrinter sp = new storagePrinter(storage);
 			
+			sp.printAll();
 			
 			System.out.println("---------------------");
 			System.out.println("----- FINE PARSING -------");
