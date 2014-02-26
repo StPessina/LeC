@@ -40,4 +40,12 @@ public class Vertex3d {
 		this.y = v.y;
 		this.z = v.z;
 	}
+	
+	public String getDef(){
+		return null;
+	}
+	
+	public String getKey() {
+		return "ciao";
+	}
 }

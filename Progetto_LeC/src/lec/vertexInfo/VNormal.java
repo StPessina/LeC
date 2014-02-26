@@ -17,6 +17,8 @@ public class VNormal extends Vertex3d {
 				+ getZ() + "]";
 	}
 	
-	
-	
+	@Override
+	public String getDef() {
+		return "vn" + " " + getX() + " " + getY() + " " + getZ();
+	}
 }

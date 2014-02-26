@@ -17,6 +17,8 @@ public class VTexture extends Vertex3d {
 				+ ", getZ()=" + getZ() + "]";
 	}
 	
-	
-
+	@Override
+	public String getDef() {
+		return "vt" + " " + getX() + " " + getY() + " " + getZ();
+	}
 }
