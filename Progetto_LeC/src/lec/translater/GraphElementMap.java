@@ -1,4 +1,4 @@
-package Iec.translater;
+package lec.translater;
 
 import java.util.ArrayList;
 
