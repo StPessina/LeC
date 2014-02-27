@@ -1,0 +1,107 @@
+point p1 = v1; //OK
+
+point p1 ={v1}; //KO line 3:10 no viable alternative at input '{'
+
+point {v1}; //OK
+
+point p1 ={v1,v2}; //KO
+
+point {v1,v2,v3}; //OK
+
+point = {v1,v2,v3}; //KO
+
+point p1 = vertex 0 3 5; //KO
+
+point {v1,v2,v3}; //OK
+
+point p2 = v5 = 5 4 1; //OK
+
+point 0 1 2; //OK?
+
+point v2 = 3 4 5; //OK?
+
+point v1; //OK
+
+point {
+	p1 = v1,
+	p2
+}; // ERRORE! p2?
+
+point p1 = v1;//OK
+
+point {
+	p1 = v1,
+	p2 = v2;
+}; //ERRORE ; dopo v2 non è corretto.
+
+point p1 = v1;//OK
+
+point {
+	p1 = v1,
+	p2 = vertex 0 1 2,
+	p3 = vertex v1 = 0 1 2
+}; //OK
+
+point {
+	p1 = v1,
+	p2 = vertex 0 1 2
+	p3 = vertex v1 = 0 1 2,
+}; //KO manca virgola e quella alla fine non va
+
+point p1 = v1;//OK
+
+point {
+	p1 = v1,
+	p2 = vertex 0 1 2,
+	v1
+} //OK
+
+point {
+	p1 = v1,
+	v2 = 0 1 2
+}; //KO seconda riga non ha senso
+
+point v1; //OK
+
+point {
+	p1 = v1,
+	p2 = 0 2 3
+}; //KO seconda riga non consentita
+
+point p1 = v1; //OK
+
+point {
+	p1 = vertex 0 1 2,
+	p2 = vertex v5 = 0 2 3,
+	v4
+}; //OK
+
+point p1 = v1;//OK
+
+point gp1 = {
+	p1 = vertex 0 1 2,
+	p2 = vertex v5 = 0 2 3,
+	v4
+}; //KO gruppo di punti
+
+point p1 = v1;//OK
+
+point gp1 = {
+	p1 = vertex 0 1 2,
+	p2 = vertex v5 = 0 2 3,
+	v4
+}; //KO gruppo di punti
+
+point p1 = v1;//OK
+
+point {
+	vertex 0 1 2,
+	vertex 2 1,
+	vertex v2 = 1 2 3
+}; //KO manca una coord nel secondo vertice
+
+point {
+	vertex 0 1 2,
+	vertex v2 = 1 2 3,
+	v1
+}; //OK

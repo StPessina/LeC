@@ -17,5 +17,8 @@ public class Vertex extends Vertex3d {
 				+ getZ() + "]";
 	}
 	
-	
+	@Override
+	public String getDef() {
+		return "v" + " " + getX() + " " + getY() + " " + getZ();
+	}
 }

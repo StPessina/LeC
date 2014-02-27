@@ -47,4 +47,12 @@ public class Vertex3d<T extends Vertex3d> implements Comparable<T>{
 			return 0;
 		return -1;
 	}
+	
+	public String getDef(){
+		return null;
+	}
+	
+	public String getKey() {
+		return Integer.toString(hashCode());
+	}
 }
