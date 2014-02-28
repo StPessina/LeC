@@ -1,5 +1,11 @@
 package lec.translater;
 
-public interface ITranslater {
+import java.util.ArrayList;
 
+import lec.storage.IStorage;
+
+public interface ITranslater {
+	
+	public ArrayList<String> getTranslation(IStorage storage);
+	
 }
