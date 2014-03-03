@@ -1,7 +1,6 @@
 package lec.storage;
 
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -176,6 +175,11 @@ public interface IStorage {
 	public Map<String, Point> getPointMap();
 	
 	/**
+	 * @return Lista dei punti con tag inutilizzati
+	 */
+	public List<Point> getUnusedPointList();
+	
+	/**
 	 * @return Lista delle linee senza tag
 	 */
 	public List<Line> getLineList();
@@ -186,6 +190,12 @@ public interface IStorage {
 	public Map<String, Line> getLineMap();
 	
 	/**
+	 * @return Lista delle linee con tag inutilizzati
+	 */
+	public List<Line> getUnusedLineList();
+	
+	
+	/**
 	 * @return Lista delle facce senza tag
 	 */
 	public List<Face> getFaceList();
@@ -194,6 +204,11 @@ public interface IStorage {
 	 * @return Mappa delle facce con tag
 	 */
 	public Map<String, Face> getFaceMap();
+	
+	/**
+	 * @return Lista delle facce con tag inutilizzati
+	 */
+	public List<Face> getUnusedFaceList();
 	
 	/**
 	 * @return Lista dei gruppi

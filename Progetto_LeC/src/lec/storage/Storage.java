@@ -3,7 +3,6 @@
  */
 package lec.storage;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -30,13 +29,9 @@ public class Storage implements IStorage {
 	private HashMap<String, VTexture> vTextureTagMap;
 	private HashMap<String, VNormal> vNormalTagMap;
 	
-	private HashMap<String, Point> pointTagMap;
-	private HashMap<String, Line> lineTagMap;
-	private HashMap<String, Face> faceTagMap;
-	
-	private ArrayList<Point> pointList;
-	private ArrayList<Line> lineList;
-	private ArrayList<Face> faceList;
+	private IGraphElementsMapper<Point> points;
+	private IGraphElementsMapper<Line> lines;
+	private IGraphElementsMapper<Face> faces;
 	
 	private HashMap<String, Group> groupTagMap;
 	
@@ -45,14 +40,9 @@ public class Storage implements IStorage {
 		vTextureTagMap = new HashMap<>();
 		vNormalTagMap = new HashMap<>();
 		
-		pointTagMap = new HashMap<>();
-		pointList = new ArrayList<>();
-		
-		lineTagMap = new HashMap<>();
-		lineList = new ArrayList<>();
-		
-		faceTagMap = new HashMap<>();
-		faceList = new ArrayList<>();
+		points = new GraphElementsMapper<>();
+		lines = new GraphElementsMapper<>();
+		faces = new GraphElementsMapper<>();
 		
 		groupTagMap = new HashMap<>();
 	}
@@ -63,7 +53,7 @@ public class Storage implements IStorage {
 	@Override
 	public void addVertexCopy(String tag, Vertex v) throws DuplicateTagException {
 		if(vertexTagMap.containsKey(tag))
-			throw new DuplicateTagException();
+			throw new DuplicateTagException(tag);
 		vertexTagMap.put(tag, new Vertex(v));
 	}
 	
@@ -72,7 +62,7 @@ public class Storage implements IStorage {
 	 */
 	public Vertex getVertexCopy(String tag) throws TagNotFoundException {
 		if(!vertexTagMap.containsKey(tag))
-			throw new TagNotFoundException();
+			throw new TagNotFoundException(tag);
 		return new Vertex(vertexTagMap.get(tag));
 	}
 
@@ -83,7 +73,7 @@ public class Storage implements IStorage {
 	public void addVTextureCopy(String tag, VTexture vt)
 			throws DuplicateTagException {
 		if(vTextureTagMap.containsKey(tag))
-			throw new DuplicateTagException();
+			throw new DuplicateTagException(tag);
 		vTextureTagMap.put(tag, new VTexture(vt));
 
 	}
@@ -93,7 +83,7 @@ public class Storage implements IStorage {
 	 */
 	public VTexture getVTextureCopy(String tag) throws TagNotFoundException {
 		if(!vTextureTagMap.containsKey(tag))
-			throw new TagNotFoundException();
+			throw new TagNotFoundException(tag);
 		return new VTexture(vTextureTagMap.get(tag));
 	}
 
@@ -103,7 +93,7 @@ public class Storage implements IStorage {
 	@Override
 	public void addVNormalCopy(String tag, VNormal vn) throws DuplicateTagException {
 		if(vNormalTagMap.containsKey(tag))
-			throw new DuplicateTagException();
+			throw new DuplicateTagException(tag);
 		vNormalTagMap.put(tag, new VNormal(vn));
 
 	}
@@ -113,7 +103,7 @@ public class Storage implements IStorage {
 	 */
 	public VNormal getVNormalCopy(String tag) throws TagNotFoundException {
 		if(!vNormalTagMap.containsKey(tag))
-			throw new TagNotFoundException();
+			throw new TagNotFoundException(tag);
 		return new VNormal(vNormalTagMap.get(tag));
 	}
 
@@ -122,7 +112,7 @@ public class Storage implements IStorage {
 	 */
 	@Override
 	public void addPointNoTagCopy(Point point) {
-		pointList.add(new Point(point));
+		points.addNoTag(new Point(point));
 	}
 
 	/* (non-Javadoc)
@@ -130,18 +120,14 @@ public class Storage implements IStorage {
 	 */
 	@Override
 	public void addPointCopy(String tag, Point point) throws DuplicateTagException {
-		if(pointTagMap.containsKey(tag))
-			throw new DuplicateTagException();
-		pointTagMap.put(tag, new Point(point));
+		points.add(tag, point);
 	}
 	
 	/* (non-Javadoc)
 	 * @see lec.storage.IStorage#addFace(java.lang.String, lec.graphelement.Face)
 	 */
 	public Point getPointCopy(String tag) throws TagNotFoundException {
-		if (!pointTagMap.containsKey(tag))
-			throw new TagNotFoundException();
-		return new Point(pointTagMap.get(tag));
+		return new Point(points.getElement(tag));
 	}
 
 	/* (non-Javadoc)
@@ -149,7 +135,7 @@ public class Storage implements IStorage {
 	 */
 	@Override
 	public void addLineNoTagCopy(Line line) {
-		lineList.add(new Line(line));
+		lines.addNoTag(new Line(line));
 	}
 
 	/* (non-Javadoc)
@@ -157,17 +143,14 @@ public class Storage implements IStorage {
 	 */
 	@Override
 	public void addLineCopy(String tag, Line line) throws DuplicateTagException {
-		if(lineTagMap.containsKey(tag))
-			throw new DuplicateTagException();
-		lineTagMap.put(tag, new Line(line));
+		lines.add(tag, new Line(line));
 	}
 	
 	/* (non-Javadoc)
 	 * @see lec.storage.IStorage#addFace(java.lang.String, lec.graphelement.Face)
 	 */
 	public Line getLineCopy(String tag) throws TagNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return new Line(lines.getElement(tag));
 	}
 
 	/* (non-Javadoc)
@@ -175,7 +158,7 @@ public class Storage implements IStorage {
 	 */
 	@Override
 	public void addFaceNoTagCopy(Face face) {
-		faceList.add(new Face(face));
+		faces.addNoTag(new Face(face));
 	}
 
 	/* (non-Javadoc)
@@ -183,76 +166,81 @@ public class Storage implements IStorage {
 	 */
 	@Override
 	public void addFaceCopy(String tag, Face face) throws DuplicateTagException {
-		if(faceTagMap.containsKey(tag))
-			throw new DuplicateTagException();
-		faceTagMap.put(tag, new Face(face));
+		faces.add(tag, new Face(face));
 	}
 	
 	@Override
 	public Face getFaceCopy(String tag) throws TagNotFoundException {
-		// TODO Auto-generated method stub		
-		return null;
+		return new Face(faces.getElement(tag));
 	}
 	
 	@Override
 	public GraphElement getGraphElementCopy(String tag)
 			throws TagNotFoundException {
-		if (pointTagMap.containsKey(tag))
-			return (new Point(pointTagMap.get(tag)));
-		if (lineTagMap.containsKey(tag))
-			return (new Line(lineTagMap.get(tag)));
-		if (faceTagMap.containsKey(tag))
-			return (new Face(faceTagMap.get(tag)));
+		if (points.containsElement(tag))
+			return (new Point(points.getElement(tag)));
+		if (lines.containsElement(tag))
+			return (new Line(lines.getElement(tag)));
+		if (faces.containsElement(tag))
+			return (new Face(faces.getElement(tag)));
 		
-		throw new TagNotFoundException();
+		throw new TagNotFoundException(tag);
 	}
 	
 	@Override
 	public void addGroup(String tag, Group group) throws DuplicateTagException {
 		if (groupTagMap.containsKey(tag))
-			throw new DuplicateTagException();		
+			throw new DuplicateTagException(tag);		
 		groupTagMap.put(tag, group);
 	}
 	
 	@Override
 	public List<Point> getPointList() {
-		// TODO Auto-generated method stub
-		return Collections.unmodifiableList(pointList);
+		return points.getList();
 	}
 
 	@Override
 	public Map<String, Point> getPointMap() {
-		// TODO Auto-generated method stub
-		return Collections.unmodifiableMap(pointTagMap);
+		return points.getTagList();
 	}
 
 	@Override
 	public List<Line> getLineList() {
-		// TODO Auto-generated method stub
-		return Collections.unmodifiableList(lineList);
+		return lines.getList();
 	}
 
 	@Override
 	public Map<String, Line> getLineMap() {
-		// TODO Auto-generated method stub
-		return lineTagMap;
+		return lines.getTagList();
 	}
 
 	@Override
 	public List<Face> getFaceList() {
-		// TODO Auto-generated method stub
-		return Collections.unmodifiableList(faceList);
+		return faces.getList();
 	}
 
 	@Override
 	public Map<String, Face> getFaceMap() {
-		// TODO Auto-generated method stub
-		return Collections.unmodifiableMap(faceTagMap);
+		return faces.getTagList();
+	}
+
+	@Override
+	public List<Point> getUnusedPointList() {
+		return points.getUnusedTagList();
+	}
+
+	@Override
+	public List<Line> getUnusedLineList() {
+		return lines.getUnusedTagList();
+	}
+
+	@Override
+	public List<Face> getUnusedFaceList() {
+		return faces.getUnusedTagList();
 	}
 
 	@Override
 	public Map<String, Group> getGroupMap() {
-		// TODO Auto-generated method stub
 		return Collections.unmodifiableMap(groupTagMap);
 	}
 }
