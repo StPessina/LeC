@@ -1,0 +1,36 @@
+vertex v1 = 0.0 0.0 0.0;
+vertex v2 = 5.0 0.0 0.0;
+vertex v3 = 5.0 5.0 0.0;
+vertex v4 = 0.0 5.0 0.0;
+vertex v5 = 0.0 0.0 5.0;
+vertex v6 = 5.0 0.0 5.0;
+vertex v7 = 5.0 5.0 5.0;
+vertex v8 = 0.0 5.0 5.0;
+
+face bottom = [
+	v1,v2,v3,v4
+];
+
+face top = [
+	v5,v6,v7,v8
+];
+
+face front = [
+	v1,v2,v5,v6
+];
+
+face rear = [
+	v3,v4,v7,v8
+];
+
+face left = [
+	v1,v4,v5,v8
+];
+
+face right = [
+	v2,v3,v6,v7
+];
+
+group cube = [
+	bottom,top,front,rear,left,right
+];

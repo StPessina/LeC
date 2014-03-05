@@ -10,9 +10,9 @@ public class Translator implements ITranslater {
 	
 	private IObjectAnalizer objectAnalizer;
 
-	private int indexVertex = 0;
-	private int indexTexture = 0;
-	private int indexNormal = 0;
+	private int indexVertex = 1;
+	private int indexTexture = 1;
+	private int indexNormal = 1;
 	
 	private static String verticesStartComment = "#Vertices";
 	private static String vTexturesStartComment = "#Textures";
@@ -33,9 +33,9 @@ public class Translator implements ITranslater {
 
 	@Override
 	public ArrayList<String> getTranslation(IStorage storage) {
-		indexVertex = 0;
-		indexTexture = 0;
-		indexNormal = 0;
+		indexVertex = 1;
+		indexTexture = 1;
+		indexNormal = 1;
 		
 		ArrayList<String> translation = new ArrayList<>();
 		

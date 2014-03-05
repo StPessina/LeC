@@ -16,55 +16,14 @@ public class GraphElementMap implements IObjectAnalizer{
 	public GraphElementMap() {
 	}
 	
-	/**
-	 * Popola una lista di stringhe con le istruzioni relative alle informazioni sui vertici
-	 * formattate in accordo con la specifica del formato file .obj.
-	 * La lista viene riempita secondo questo ordine: 
-	 * 	1) istruzioni di scrittura di vertex
-	 * 	2) istruzioni di scrittura di vtexture
-	 * 	3) istruzioni di scrittura di vnormal 
-	 * 
-	 * @return la lista delle istruzioni riguardanti le info sui vertici
-	 */
-	public ArrayList<String> printVertexInfo() {
-		ArrayList<String> vinfos = new ArrayList<String>();
-			vinfos.addAll(vertexMap.getInfoList());
-			vinfos.addAll(vTextureMap.getInfoList());
-			vinfos.addAll(vNormalMap.getInfoList());
-			return vinfos;
-		}
-	/**
-	 * Popola una lista con le istruzioni relative agli elementi grafici gia formattate
-	 * secondo la specifica del formato .obj.
-	 *  
-	 * @param geList - lista di GraphElement
-	 * @return
-	 */
-//	public ArrayList<String> printGraphElement() {
-//		ArrayList<String> graphInfo = new ArrayList<>(geList.size());
-//		for (GraphElement ge : geList) {
-//			String tempInstr = ge.getOBJTag()+ " ";
-//			for (int i = 0; i < vertexMap.getIndices(ge).size(); i++) {
-//				if (vertexMap.getIndices(ge)!=null)
-//					tempInstr.concat(vertexMap.getIndices(ge).get(i).toString());
-//				if (vTextureMap.getIndices(ge)!=null)
-//					tempInstr.concat("/" + vTextureMap.getIndices(ge).get(i).toString());
-//				if (vNormalMap.getIndices(ge)!=null)
-//					tempInstr.concat("/" + vNormalMap.getIndices(ge).get(i).toString());
-//			}
-//			graphInfo.add(tempInstr);
-//		}		
-//		return graphInfo;
-//	}
-
 	@Override
 	public void analizeTranslable(Translatable translableObject,
 			int initialIndexVertices, int initialIndexTextures,
 			int initialIndexNormals) {
 		
-		InfoMap vertexMap = new InfoMap();
-		InfoMap vTextureMap = new InfoMap();
-		InfoMap vNormalMap = new InfoMap();
+		vertexMap = new InfoMap();
+		vTextureMap = new InfoMap();
+		vNormalMap = new InfoMap();
 		
 		vertexMap.addVertex3d(translableObject, translableObject.getOBJVertices(),
 				initialIndexVertices);
@@ -80,9 +39,9 @@ public class GraphElementMap implements IObjectAnalizer{
 			int initialIndexTextures, int initialIndexNormals) {
 		ArrayList<GraphElement> elements = group.getElement();
 		
-		InfoMap vertexMap = new InfoMap();
-		InfoMap vTextureMap = new InfoMap();
-		InfoMap vNormalMap = new InfoMap();
+		vertexMap = new InfoMap();
+		vTextureMap = new InfoMap();
+		vNormalMap = new InfoMap();
 		
 		for (GraphElement gre : elements) {			
 			vertexMap.addVertex3d(gre, gre.getOBJVertices(),
@@ -131,16 +90,27 @@ public class GraphElementMap implements IObjectAnalizer{
 		ArrayList<String> graphInfo = new ArrayList<>();
 		for (Translatable ge : geSet) {
 			String tempInstr = ge.getOBJTag()+ " ";
-			for (int i = 0; i < vertexMap.getIndices(ge).size(); i++) {
-				if (vertexMap.getIndices(ge)!=null)
-					tempInstr.concat(vertexMap.getIndices(ge).get(i).toString());
-				if (vTextureMap.getIndices(ge)!=null)
-					tempInstr.concat("/" + vTextureMap.getIndices(ge).get(i).toString());
-				if (vNormalMap.getIndices(ge)!=null)
-					tempInstr.concat("/" + vNormalMap.getIndices(ge).get(i).toString());
+			ArrayList<Integer> vertexIndex = vertexMap.getIndices(ge);
+			ArrayList<Integer> vTextureIndex = vTextureMap.getIndices(ge);
+			ArrayList<Integer> vNormalIndex = vNormalMap.getIndices(ge);
+			
+			
+			int vertexSize = vertexIndex.size();
+			int vTextureSize = vTextureIndex.size();
+			int vNormalSize = vNormalIndex.size();
+			for (int i = 0; i < vertexSize; i++) {
+				if (vertexSize!=0)
+					tempInstr += vertexIndex.get(i);
+				if (vTextureSize!=0)
+					tempInstr +=  "/" + vTextureIndex.get(i);
+				if (vNormalSize!=0 && vTextureSize!=0)
+					tempInstr += "/" + vNormalIndex.get(i);
+				if (vNormalSize!=0 && !(vTextureSize!=0))
+					tempInstr += "//" + vNormalIndex.get(i);
+				tempInstr += " ";
 			}
-			graphInfo .add(tempInstr);
-		}		
+			graphInfo.add(tempInstr);
+		}
 		return graphInfo;
 	}
 	}

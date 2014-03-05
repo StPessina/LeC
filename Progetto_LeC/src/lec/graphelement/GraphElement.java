@@ -41,18 +41,14 @@ public abstract class GraphElement implements Translatable {
 		this.marker = marker;
 		
 		vertices = new ArrayList<>();
-		
-		if(configuration == vertexConfig.ALL ||
-				configuration == vertexConfig.VERTEX_TEXTURE)
-			vTextures = new ArrayList<>();
-
-		if(configuration == vertexConfig.ALL ||
-				configuration == vertexConfig.VERTEX_NORMAL)
-			vNormals = new ArrayList<>();
+		vTextures = new ArrayList<>();
+		vNormals = new ArrayList<>();
 	}
 
 	public GraphElement(GraphElement ge, String marker) {
 		vertices = new ArrayList<>();
+		vTextures = new ArrayList<>();
+		vNormals = new ArrayList<>();
 		
 		configuration = ge.configuration;
 		this.marker = marker;
@@ -62,14 +58,12 @@ public abstract class GraphElement implements Translatable {
 		
 		if(ge.configuration == vertexConfig.ALL ||
 			ge.configuration == vertexConfig.VERTEX_TEXTURE) {
-			vTextures = new ArrayList<>();
 			for (VTexture vt : ge.vTextures)
 				vTextures.add(new VTexture(vt));
 		}
 		
 		if(ge.configuration == vertexConfig.ALL ||
 			ge.configuration == vertexConfig.VERTEX_NORMAL) {
-			vNormals = new ArrayList<>();
 			for (VNormal vt : ge.vNormals)
 				vNormals.add(new VNormal(vt));
 		}

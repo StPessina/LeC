@@ -53,6 +53,6 @@ public class Vertex3d<T extends Vertex3d> implements Comparable<T>{
 	}
 	
 	public String getKey() {
-		return Integer.toString(hashCode());
+		return Float.toString(x)+Float.toString(y)+Float.toString(z);
 	}
 }

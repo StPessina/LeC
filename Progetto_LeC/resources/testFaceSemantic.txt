@@ -40,34 +40,5 @@ line linea1 = [
 	v1 deftex v5
 ];
 
-line [
-	v4,
-	v3,
-	v11,
-	v4,
-	v3,
-	v1
-];
-
-point [
-	p1 = v4,
-	v3,
-	v11,
-	v4,
-	p10 = v3,
-	v1
-];
-
-point [
-	p14 = v4,
-	p16 = v5,
-	v11,
-	v4,
-	v3,
-	v1
-];
-
-group gruppo1 = [faccia1];
-
-group gruppo2 = [linea1, faccia1, p16, p10];
+group gruppo1 = [faccia1, linea1];
 

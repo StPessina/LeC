@@ -14,6 +14,9 @@ public class InfoMap {
 	private HashMap<Translatable, ArrayList<String>> keyMap;
 		
 	public InfoMap(){
+		cache = new HashMap<>();
+		infoList = new ArrayList<>();
+		keyMap = new HashMap<>();
 	}
 	
 	public HashMap<String, Integer> getCache() {
@@ -39,10 +42,6 @@ public class InfoMap {
 	 * @param vlist
 	 */
 	public void addVertex3d(Translatable translableObject, ArrayList<? extends Vertex3d> vlist, int initialIndex) {
-		
-		HashMap<String, Integer> cache = new HashMap<>();
-		ArrayList<Vertex3d> infoList = new ArrayList<>();
-		HashMap<Translatable, ArrayList<String>> keyMap = new HashMap<>();
 		
 		ArrayList<String> listT = new ArrayList<String>();
 		
