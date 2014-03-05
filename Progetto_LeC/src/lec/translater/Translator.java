@@ -17,13 +17,13 @@ public class Translator implements ITranslater {
 	private static String verticesStartComment = "#Vertices";
 	private static String vTexturesStartComment = "#Textures";
 	private static String vNormalsStartComment = "#Normals";
-	private static String pointStartComment = "#/n#Point/n#";
-	private static String lineStartComment = "#/n#Line/n#";
-	private static String faceStartComment = "#/n#Face/n#";	
-	private static String groupStartComment = "#/n#Group/n#";
+	private static String pointStartComment = "#\n#Point\n#";
+	private static String lineStartComment = "#\n#Line\n#";
+	private static String faceStartComment = "#\n#Face\n#";	
+	private static String groupStartComment = "#\n#Group\n#";
 	private static String groupNameStartComment = "#	Name: ";
-	private static String emptyLine = "/n";
-	private static String doubleEmptyLine = "/n/n";
+	private static String emptyLine = "\n";
+	private static String doubleEmptyLine = "\n\n";
 	
 	
 	public Translator(IObjectAnalizer objectAnalizer) {
@@ -41,19 +41,37 @@ public class Translator implements ITranslater {
 		
 		for (Translatable object : storage.getPointList()) {
 			translation.add(pointStartComment);
-			translation.addAll(translateNoTagObject(object));
+			translation.addAll(translateObject(object));
+			translation.add(doubleEmptyLine);
+		}
+		
+		for (Translatable object : storage.getUnusedPointList()) {
+			translation.add(pointStartComment);
+			translation.addAll(translateObject(object));
 			translation.add(doubleEmptyLine);
 		}
 		
 		for (Translatable object : storage.getLineList()) {
 			translation.add(lineStartComment);
-			translation.addAll(translateNoTagObject(object));
+			translation.addAll(translateObject(object));
+			translation.add(doubleEmptyLine);
+		}
+		
+		for (Translatable object : storage.getUnusedLineList()) {
+			translation.add(lineStartComment);
+			translation.addAll(translateObject(object));
 			translation.add(doubleEmptyLine);
 		}
 		
 		for (Translatable object : storage.getFaceList()) {
 			translation.add(faceStartComment);
-			translation.addAll(translateNoTagObject(object));
+			translation.addAll(translateObject(object));
+			translation.add(doubleEmptyLine);
+		}
+		
+		for (Translatable object : storage.getUnusedFaceList()) {
+			translation.add(faceStartComment);
+			translation.addAll(translateObject(object));
 			translation.add(doubleEmptyLine);
 		}
 		
@@ -63,14 +81,13 @@ public class Translator implements ITranslater {
 			translation.add(doubleEmptyLine);
 		}
 		
-		//Prendere elementi della mappa che non sono stati utilizzati
-		//nei gruppi e aggiungerli alla lista
 		
 		
-		return null;
+		
+		return translation;
 	}
 	
-	private ArrayList<String> translateNoTagObject(Translatable object) {
+	private ArrayList<String> translateObject(Translatable object) {
 		
 		ArrayList<String> translation = new ArrayList<>();
 		
