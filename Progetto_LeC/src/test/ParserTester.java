@@ -2,8 +2,9 @@ package test;
 
 import java.io.FileReader;
 
-import lec.storage.IStorage;
+import lec.printer.IPrinter;
 import lec.storage.Storage;
+import lec.translater.ITranslater;
 
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -17,10 +18,16 @@ public class ParserTester  {
 	static grammaticaParser parser;
 	
 	static Storage storage;
+	
+	static ITranslater translator;
+		
+	static IPrinter printer;
 
 	public static void main(String[] args) {
 		CommonTokenStream tokens;
 		String fileIn = "./resources/testFaceSemantic.txt";
+		String fileOut = "./resources/translation.obj";
+		
 		storage = new Storage();
 		
 		try {

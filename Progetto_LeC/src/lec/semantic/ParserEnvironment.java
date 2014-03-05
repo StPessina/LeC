@@ -1,7 +1,6 @@
 package lec.semantic;
 
 import lec.graphelement.Face;
-import lec.graphelement.GraphElement;
 import lec.graphelement.GraphElement.vertexConfig;
 import lec.graphelement.Line;
 import lec.graphelement.Point;

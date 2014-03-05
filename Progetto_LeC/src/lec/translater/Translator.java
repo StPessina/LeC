@@ -17,13 +17,13 @@ public class Translator implements ITranslater {
 	private static String verticesStartComment = "#Vertices";
 	private static String vTexturesStartComment = "#Textures";
 	private static String vNormalsStartComment = "#Normals";
-	private static String pointStartComment = "#/n#Point/n#";
-	private static String lineStartComment = "#/n#Line/n#";
-	private static String faceStartComment = "#/n#Face/n#";	
-	private static String groupStartComment = "#/n#Group/n#";
+	private static String pointStartComment = "#\n#Point\n#";
+	private static String lineStartComment = "#\n#Line\n#";
+	private static String faceStartComment = "#\n#Face\n#";	
+	private static String groupStartComment = "#\n#Group\n#";
 	private static String groupNameStartComment = "#	Name: ";
-	private static String emptyLine = "/n";
-	private static String doubleEmptyLine = "/n/n";
+	private static String emptyLine = "\n";
+	private static String doubleEmptyLine = "\n\n";
 	
 	
 	public Translator(IObjectAnalizer objectAnalizer) {
