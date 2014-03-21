@@ -88,17 +88,6 @@ pagestyle{empty}
 
 \begin_layout Standard
 \align center
-\begin_inset Graphics
-	filename /media/Data/Universita/IV anno/1 semestre/Informatica 3A/Progettini/Progettini/Cyclone/Sorgenti relazione/Immagini/logo unibg.jpg
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
 
 \series bold
 UNIVERSITÀ DEGLI STUDI DI BERGAMO
@@ -617,6 +606,13 @@ Versione iniziale
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Introduzione
 \end_layout
@@ -630,15 +626,22 @@ Il formato obj
 \end_layout
 
 \begin_layout Standard
-Un file object (obj) rappresenta un formato sviluppato da Wavefront Techonologie
-s usato per definire la geometria e altre proprietà di oggetti grafici.
- Tramite questo formato possono essere elencate tutte le informazioni per
- la definizione di linee, poligoni, curve e superfici freeform.
- Le linee e i poligoni sono descritti in termini dei loro vertici mentre
- curve e superfici sono definite tramite speciali punti di controllo e altri
- parametri che dipendono dal tipo di curva (Bezier, B-Spline, ecc.).
- Spesso un file obj è utilizzato per l'interscambio di oggetti grafici tra
- diverse piattaforme di visualizzazione.
+Un file object (obj) rappresenta un formato di file sviluppato da Wavefront
+ Techonologies utilizzato per la definizione di geometrie 3D.
+ Questo formato contiene un elenco di tutte le informazioni per la definizione
+ di punti, linee, poligoni, curve e superfici freeform.
+ I punti, le linee e i poligoni sono descritti sulla base delle informazioni
+ associate ai vertici di cui sono composti, ovvero, posizione, coordinate
+ di texture e normali per ogni vertice.
+ Le curve e le superfici freeform sono invece definite mediante speciali
+ punti di controllo e parametri dipendenti dal tipo di curva (Bezier, B-Spline,
+ etc.).
+ 
+\end_layout
+
+\begin_layout Standard
+Il formato file obj è spesso utilizzato per l'interscambio di oggetti grafici
+ tra diverse piattaforme di visualizzazione.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -647,19 +650,20 @@ Keywords
 
 \begin_layout Standard
 La struttura di un file obj è molto semplice.
- Non è necessario includere un header all'inizio del file.
- Spesso il file inizia con un breve commento contenente informazioni sull'oggett
-o/i definito/i nel file.
- I commenti (in linea) su un file obj sono individuati dal carattere "#".
- Ogni riga inizia con una keyword seguita dai dati di riferimento per tale
- keyword.
- Ecco a seguire una lista delle più importanti keywords che possono essere
- trovate in un file obj.
+ Non è necessario includere alcun header all'inizio del file.
+ Per la specifica del formato, ogni riga deve iniziare con una keyword seguita
+ dai dati di riferimento per la stessa.
+ Spesso la prima riga è costituita da un breve commento contenente informazioni
+ sull'oggetto/i definito/i nel file.
+ I commenti in linea sono sempre preceduti dal carattere "#".
+ Si riporta in seguito una lista delle più importanti keywords che possono
+ essere individuate in un file obj.
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Float table
+placement h
 wide false
 sideways false
 status open
@@ -1054,6 +1058,83 @@ Keywords file obj.
 
 \end_layout
 
+\begin_layout Standard
+Come si evince dalla tabella riportata, è possibile raggruppare le keywords
+ in quattro macrocategorie:
+\end_layout
+
+\begin_layout Description
+Informazioni
+\begin_inset space ~
+\end_inset
+
+sui
+\begin_inset space ~
+\end_inset
+
+vertici
+\begin_inset space ~
+\end_inset
+
+(Vertex
+\begin_inset space ~
+\end_inset
+
+Data): rappresentati come tre liste, una per ogni keyword (vertici, textures
+ e normali).
+ Ad ogni elemento di queste liste viene assegnato un indice intero crescente
+ partendo dal valore 1.
+ L'assegnazione di un indice ad un elemento in una lista è completamente
+ indipendente dagli indici di ogni altra lista.
+ Ciò significa che, al primo vertice geometrico che compare nel file ,scorrendol
+o dall'alto verso il basso, si assegnerà l'indice 1, al secondo l'indice
+ 2, e così via.
+ Nel caso di vertici che rappresentano coordinate di texture, il procedimento
+ che si segue è lo stesso.
+ Il primo rilevato avrà indice 1, il secondo 2 e così via.
+ La numerazione continua sequenzialmente per tutta la lunghezza del file.
+ Spesso i file hanno dichiarazioni di tipo diverso interfogliate; la numerazione
+ continua sequenzialmente, tipo per tipo, anche in questo caso.
+\end_layout
+
+\begin_layout Description
+Elementi
+\begin_inset space ~
+\end_inset
+
+grafici
+\begin_inset space ~
+\end_inset
+
+(Elements): per ogni elemento grafico, gli indici precedentemente descritti
+ sono utilizzati per identificare vertici geometrici, coordinate di texture
+ o normali al vertice.
+\end_layout
+
+\begin_layout Description
+Raggruppamento
+\begin_inset space ~
+\end_inset
+
+():
+\end_layout
+
+\begin_layout Description
+Attributi
+\begin_inset space ~
+\end_inset
+
+di
+\begin_inset space ~
+\end_inset
+
+display/render:
+\end_layout
+
+\begin_layout Standard
+Qui di seguito si descrivono nel dettaglio.
+\end_layout
+
 \begin_layout Subsubsection*
 Informazioni sui vertici
 \end_layout
@@ -1078,7 +1159,8 @@ v
 \begin_layout Description
 Descrizione: Definisce un vertice geometrico con le rispettive coordinate
  lungo le tre dimensioni (x, y, z).
- I vertici elencati nel file obj sono numerati in ordine di apparizione.
+ I vertici elencati nel file obj, come precedentemente descritto, sono numerati
+ in ordine di apparizione.
  Ciò significa che il primo vertice sarà etichettato "1", il secondo "2"
  e così via.
  Il quarto parametro "w" rappresenta una coordinata omogenea utile nel caso
@@ -1107,14 +1189,47 @@ vt
 \end_layout
 
 \begin_layout Description
-Descrizione: Definisce come avviene la mappatura UV di una texture.
+Descrizione: Specifica un texture vertex e le sue coordinate.
  "u, v, w" sono numeri float compresi tra 0 e 1 che indicano dove mappare
  la texture lungo le tre direzioni.
- Se la texture è controllata lungo una sola direzione orizzontale allora
- deve essere specificato solo "u".
+ Una texture 1D richiede solo la coordinata di texture "u".
  In questo caso gli altri due parametri assumono il valore di default 0.
+ Una 2D richiede la specifica delle coordinate 
+\begin_inset Quotes eld
+\end_inset
+
+u
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+v
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Una 3D richiede tutti e tre i parametri.
 \end_layout
 
+\begin_deeper
+\begin_layout Description
+u: rappresenta il valore per la direzione orizzontale della texture
+\end_layout
+
+\begin_layout Description
+v: (opzionale) rappresenta il valore per la direzione verticale della texture.
+ Assume di default il valore 0.
+\end_layout
+
+\begin_layout Description
+w: (opzionale) rappresenta il valore per la profondità della texture.
+ Assume di default il valore 0.
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Description
 Direzioni
@@ -1469,6 +1584,28 @@ Definizione della sintassi e del lessico
 
 \begin_layout Subsection
 Alfabeto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Sigma=\{vertex,\, vertexset,\, vtexture,\, textureset,\, vnormal,\, normalset,\, point,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+line,\, face,\, smoothing,\, group,\, deftex,\, defnorm,\, defsmooth\}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection

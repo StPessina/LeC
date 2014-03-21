@@ -1,36 +1,74 @@
-vertex v1 = 0.0 0.0 0.0;
-vertex v2 = 5.0 0.0 0.0;
-vertex v3 = 5.0 5.0 0.0;
-vertex v4 = 0.0 5.0 0.0;
-vertex v5 = 0.0 0.0 5.0;
-vertex v6 = 5.0 0.0 5.0;
-vertex v7 = 5.0 5.0 5.0;
-vertex v8 = 0.0 5.0 5.0;
+vertex v11 =  0.000000 0.767982 1.450761;
+vertex v12 =  -1.450761 0.767982 0.000000;
+vertex v13 =  -0.000000 0.767982 -1.450761;
+vertex v14 =  1.450761 0.767982 -0.000000;
+vertex v15 =  0.000000 2.819668 1.450761;
+vertex v16 =  -1.450761 2.819668 0.000000;
+vertex v17 =  -0.000000 2.819668 -1.450761;
+vertex v18 =  1.450761 2.819668 -0.000000;
+
 
 face bottom = [
-	v1,v2,v3,v4
+	v12,v11,v15,v16
 ];
 
 face top = [
-	v5,v6,v7,v8
+	v16,v17,v13,v12
 ];
 
 face front = [
-	v1,v2,v5,v6
+	v17,v18,v14,v13
 ];
 
 face rear = [
-	v3,v4,v7,v8
+	v11,v14,v18,v15
 ];
 
 face left = [
-	v1,v4,v5,v8
+	v11,v12,v13,v14
 ];
 
 face right = [
-	v2,v3,v6,v7
+	v18,v17,v16,v15
 ];
 
 group cube = [
 	bottom,top,front,rear,left,right
+];
+
+vertex v21 = -0.554090 -0.554090 0.554090;
+vertex v22 = -0.554090 -0.554090 -0.554090;
+vertex v23 = 0.554090 -0.554090 -0.554090;
+vertex v24 = 0.554090 -0.554090 0.554090;
+vertex v25 = -0.554090 0.554090 0.554090;
+vertex v26 = -0.554090 0.554090 -0.554090;
+vertex v27 = 0.554090 0.554090 -0.554090;
+vertex v28 = 0.554090 0.554090 0.554090;
+
+face bottom2 = [
+	v22,v21,v25,v26
+];
+
+face top2 = [
+	v26,v27,v23,v22
+];
+
+face front2 = [
+	v27,v28,v24,v23
+];
+
+face rear2 = [
+	v21,v24,v28,v25
+];
+
+face left2 = [
+	v21,v22,v23,v24
+];
+
+face right2 = [
+	v28,v27,v26,v25
+];
+
+group cube2 = [
+	bottom2,top2,front2,rear2,left2,right2
 ];
