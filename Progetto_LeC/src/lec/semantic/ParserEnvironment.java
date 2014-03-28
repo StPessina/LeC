@@ -1,5 +1,8 @@
 package lec.semantic;
 
+import lec.exception.DuplicateTagException;
+import lec.exception.NotHomogeneityException;
+import lec.exception.TagNotFoundException;
 import lec.graphelement.Face;
 import lec.graphelement.GraphElement.vertexConfig;
 import lec.graphelement.Line;
@@ -109,20 +112,20 @@ public class ParserEnvironment {
 	 */
 	public void addNewVertexInfo(String type, String tagname, Vertex3d v) {
 		switch (type) {
-		case "vertex":
-			storage.addVertexCopy(tagname, new Vertex(v.getX(), v.getY(), v.getZ()));
-			break;
-		case "texture":
-			storage.addVTextureCopy(tagname, new VTexture(v.getX(), v.getY(), v.getZ()));
-			break;
+			case "vertex":
+				storage.addVertexCopy(tagname, new Vertex(v.getX(), v.getY(), v.getZ()));
+				break;
+			case "texture":
+				storage.addVTextureCopy(tagname, new VTexture(v.getX(), v.getY(), v.getZ()));
+				break;
 		
-		case "normal":
-			storage.addVNormalCopy(tagname, new VNormal(v.getX(), v.getY(), v.getZ()));
-			break;
+			case "normal":
+				storage.addVNormalCopy(tagname, new VNormal(v.getX(), v.getY(), v.getZ()));
+				break;
 			
-		default:
-			System.out.println("Occhio che non è ne vertex ne texture ne normale!");
-			break;
+			default:
+				System.out.println("Occhio che non è ne vertex ne texture ne normale!");
+				break;
 		}
 	}
 	
@@ -139,8 +142,8 @@ public class ParserEnvironment {
 	public Vertex addNewVertexInLine(String tagname, Vertex3d v) {
         Vertex vertex = new Vertex(v.getX(), v.getY(), v.getZ());
 		if(tagname!=null)
-            storage.addVertexCopy(tagname, vertex);
-        return vertex;
+				storage.addVertexCopy(tagname, vertex);        
+		return vertex;
 	}
 	
 	/**
@@ -156,7 +159,7 @@ public class ParserEnvironment {
 	public VTexture addNewVTextureInLine(String tagname, Vertex3d v){
         VTexture vTexture = new VTexture(v.getX(), v.getY(), v.getZ());
 		if(tagname!=null)
-            storage.addVTextureCopy(tagname, vTexture);
+				storage.addVTextureCopy(tagname, vTexture);
         return vTexture;
 	}
 	
@@ -173,7 +176,7 @@ public class ParserEnvironment {
 	public VNormal addNewVNormalInLine(String tagname, Vertex3d v){
         VNormal vNormal = new VNormal(v.getX(), v.getY(), v.getZ());
 		if(tagname!=null)
-            storage.addVNormalCopy(tagname, vNormal);
+				storage.addVNormalCopy(tagname, vNormal);
         return vNormal;
 	}
 	
@@ -195,7 +198,9 @@ public class ParserEnvironment {
 		 * tagnamePointOrVertex = tagnameVertex (è un vertice)
 		 * */
 		if(tagnamePointOrVertex!=null && tagvertex==null && v==null) {
-			Point newPoint = new Point(storage.getVertexCopy(tagnamePointOrVertex));
+			Point newPoint;
+			
+			newPoint = new Point(storage.getVertexCopy(tagnamePointOrVertex));
 			storage.addPointNoTagCopy(newPoint);
 			return newPoint;
 		}
@@ -229,7 +234,7 @@ public class ParserEnvironment {
 		if(tagnamePointOrVertex!=null && v!=null) {
 			Point newPoint = new Point(v);
 			storage.addPointCopy(tagnamePointOrVertex, newPoint);
-			return newPoint; 
+			return newPoint;
 		}
 		
 		/*
@@ -288,13 +293,13 @@ public class ParserEnvironment {
 		 * quindi lo vado a cercare da componente di storage
 		 */
 		if(tag_vertex!=null)
-			vertex = storage.getVertexCopy(tag_vertex);
-		
+			vertex = storage.getVertexCopy(tag_vertex);		
 		/* E' stato specificato il nome di un vertice texture
 		 * quindi lo vado a cercare da componente di storage
 		 */
 		if(tag_vtexture!=null)
 			vTexture = storage.getVTextureCopy(tag_vtexture);
+			
 		
 		/* Nel caso in cui vTexture sia nullo
 		 * (quindi non è stato definito ne inline ne è stato
@@ -323,7 +328,7 @@ public class ParserEnvironment {
 	 */
 	public Line saveLineInLine(String tag_line){
 		if(tag_line!=null)
-			storage.addLineCopy(tag_line, tempLine);	
+			storage.addLineCopy(tag_line, tempLine);
 		return tempLine;
 	}
 	
@@ -383,21 +388,22 @@ public class ParserEnvironment {
 		VTexture vTextureTemp = vTexture;
 		VNormal vNormalTemp = vNormal;
 		
+		
 		if(vertexName!=null)
 			vertexTemp = storage.getVertexCopy(vertexName);
-		
+
 		if(vTextureName!=null)
 			vTextureTemp = storage.getVTextureCopy(vTextureName);
-		
+
 		if(vNormalName!=null)
 			vNormalTemp = storage.getVNormalCopy(vNormalName);
-		
+
 		if(vTexture == null && vNormal == null)
 			tempFace.add(vertexTemp);
-		
+
 		if(vTexture!= null && vNormal == null)
 			tempFace.add(vertexTemp, vTextureTemp);
-		
+
 		if(vTexture!= null && vNormal != null)
 			tempFace.add(vertexTemp, vTextureTemp, vNormalTemp);
 	}
@@ -427,7 +433,8 @@ public class ParserEnvironment {
 	 */
 	public void saveFace(String tag_face) {
 		if(tag_face!=null)
-			storage.addFaceCopy(tag_face, tempFace);	
+			storage.addFaceCopy(tag_face, tempFace);
+	
 		if(tag_face==null)
 			storage.addFaceNoTagCopy(tempFace);
 	}
@@ -463,6 +470,7 @@ public class ParserEnvironment {
 	 */
 	public void saveGroup() {
 		storage.addGroup(tempGroup.getGroupName(), tempGroup);
+		
 	}
 	
 }

@@ -1,5 +1,6 @@
 package lec.graphelement;
 
+import lec.exception.NotHomogeneityException;
 import lec.vertexInfo.Vertex;
 
 public class Point extends GraphElement {
@@ -10,7 +11,7 @@ public class Point extends GraphElement {
 		super(point, marker);
 	}
 
-	public Point(Vertex vertex) {
+	public Point(Vertex vertex) throws NotHomogeneityException {
 		super(vertexConfig.ONLY_VERTEX, marker);
 		add(vertex);
 	}

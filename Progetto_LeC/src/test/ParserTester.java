@@ -45,9 +45,9 @@ public class ParserTester  {
 			
 			parser.start();
 			
-			storagePrinter sp = new storagePrinter(storage);
-			
-			sp.printAll();
+//			storagePrinter sp = new storagePrinter(storage);
+//			
+//			sp.printAll();
 			
 			System.out.println("---------------------");
 			System.out.println("----- FINE PARSING -------");
@@ -56,20 +56,20 @@ public class ParserTester  {
 			for (int i=0;i<parser.getNumberOfSyntaxErrors();i++) {
 				//	    	System.out.println((i+1) + ".\t" + parser.);
 			}
+		
+			printer = new ConsolePrinter();
+			translator = new Translator(new GraphElementMap());
+			
+			try {
+				printer.print(translator.getTranslation(storage));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		} catch (Exception e) {
 			System.out.println ("Parsing con ANTLR abortito\n\n");
-			e.printStackTrace();
-		}
-		
-		printer = new FilePrinter(fileOut);
-		translator = new Translator(new GraphElementMap());
-		
-		try {
-			printer.print(translator.getTranslation(storage));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+			System.out.println(e.getMessage());
+		}		
 	}
 }

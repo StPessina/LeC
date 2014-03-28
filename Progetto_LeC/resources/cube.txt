@@ -25,7 +25,7 @@ face rear = [
 ];
 
 face left = [
-	v11,v12,v13,v14
+	v11,v12,v13,v14 deftex new (vtexture vt1 = 0.5 0.5 0.5)
 ];
 
 face right = [

@@ -88,6 +88,17 @@ pagestyle{empty}
 
 \begin_layout Standard
 \align center
+\begin_inset Graphics
+	filename images/logo unibg.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
 
 \series bold
 UNIVERSITÀ DEGLI STUDI DI BERGAMO
@@ -1156,6 +1167,27 @@ v
  x y z w
 \end_layout
 
+\begin_deeper
+\begin_layout Description
+x,
+\begin_inset space ~
+\end_inset
+
+y,
+\begin_inset space ~
+\end_inset
+
+z: sono rispettivamente le coordinate x, y e z del vertice nello spazio.
+ Sono definiti come numeri in virgola mobile.
+\end_layout
+
+\begin_layout Description
+w: (opzionale) specifica una coordinata omogenea utile nel caso in cui bisogna
+ rappresentare curve o superfici.
+ Se omesso, il valore di default per w è 1.0.
+\end_layout
+
+\end_deeper
 \begin_layout Description
 Descrizione: Definisce un vertice geometrico con le rispettive coordinate
  lungo le tre dimensioni (x, y, z).
@@ -1163,11 +1195,6 @@ Descrizione: Definisce un vertice geometrico con le rispettive coordinate
  in ordine di apparizione.
  Ciò significa che il primo vertice sarà etichettato "1", il secondo "2"
  e così via.
- Il quarto parametro "w" rappresenta una coordinata omogenea utile nel caso
- in cui bisogna rappresentare curve o superfici.
- Se omesso, il valore di default per "w" è 1.0.
- Tutti i parametri sono rappresentati in formato float.
- 
 \end_layout
 
 \end_deeper
@@ -1188,6 +1215,22 @@ vt
  u v w
 \end_layout
 
+\begin_deeper
+\begin_layout Description
+u: rappresenta il valore per la direzione orizzontale della texture
+\end_layout
+
+\begin_layout Description
+v: (opzionale) rappresenta il valore per la direzione verticale della texture.
+ Assume di default il valore 0.
+\end_layout
+
+\begin_layout Description
+w: (opzionale) rappresenta il valore per la profondità della texture.
+ Assume di default il valore 0.
+\end_layout
+
+\end_deeper
 \begin_layout Description
 Descrizione: Specifica un texture vertex e le sue coordinate.
  "u, v, w" sono numeri float compresi tra 0 e 1 che indicano dove mappare
@@ -1214,22 +1257,6 @@ v
  Una 3D richiede tutti e tre i parametri.
 \end_layout
 
-\begin_deeper
-\begin_layout Description
-u: rappresenta il valore per la direzione orizzontale della texture
-\end_layout
-
-\begin_layout Description
-v: (opzionale) rappresenta il valore per la direzione verticale della texture.
- Assume di default il valore 0.
-\end_layout
-
-\begin_layout Description
-w: (opzionale) rappresenta il valore per la profondità della texture.
- Assume di default il valore 0.
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Description
 Direzioni
@@ -1252,9 +1279,29 @@ vn
  i j k
 \end_layout
 
+\begin_deeper
+\begin_layout Description
+i,
+\begin_inset space ~
+\end_inset
+
+j,
+\begin_inset space ~
+\end_inset
+
+k: rappresentano le coordinate i, j e k della normale al vertice.
+ Sono espressi come valori float.
+ 
+\end_layout
+
+\end_deeper
 \begin_layout Description
 Descrizione: Specifica le componenti i, j e k della normale al vertice di
  riferimento.
+ Le normali ai vertici pregiudicano il corretto shading per il rendering
+ della geometria.
+ Per i poligoni le normali definite ai vertici vengono utilizzate al posto
+ delle reali normali.
 \end_layout
 
 \end_deeper
@@ -1616,12 +1663,83 @@ Produzioni
 Descrizione della semantica
 \end_layout
 
-\begin_layout Subsection
-Errori gestiti dal parser semantico
+\begin_layout Standard
+Il linguaggio prevede che ad ogni informazione sui vertici o oggetto grafico
+ possa essere attribuito un tag, da utilizzare successivamente per richiamare
+ l'entità definita.
+ Per supportare questa funzionalità, sono stati previsti i seguenti controlli
+ semantici:
 \end_layout
 
-\begin_layout Subsection
-Warning gestiti dal parser semantico
+\begin_layout Enumerate
+
+\series bold
+controllo duplicati
+\series default
+: non può essere inserito più di una volta lo stesso tag;
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+controllo in riutilizzo dei
+\series default
+ 
+\series bold
+tag
+\series default
+: per riutilizzare un entità, questa deve essere stata prima definita;
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+controllo di omogeneità
+\series default
+: un oggetto grafico può essere definito con o senza texture e/o normali,
+ a patto che tutti i vertici siano omogenei.
+ Questo significa che tutti i vertici sono definiti con o senza texture
+ e/o normali.
+ Il controllo di omogeneità si occupa di verificare che un oggetto grafico
+ sia appunto omogeneo.
+\end_layout
+
+\begin_layout Standard
+Ad ognuno dei controlli elencati in precedenza è stato attributo un errore
+ semantico del parser.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Errore nel controllo dei duplicati
+\end_layout
+
+\begin_layout Standard
+Nel caso di errore nel controllo dei duplicati viene interrotto il parsing
+ e visualizzato il messaggio di errore contenente il tag duplicato.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Errore nel controllo in riutilizzo dei tag
+\end_layout
+
+\begin_layout Standard
+Nel caso di errore nel controllo in riutilizzo dei tag viene interrotto
+ il parsing e visualizzato il messaggio di errore, contenente il tag non
+ trovato.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Errore nel controllo di omogeneità
+\end_layout
+
+\begin_layout Standard
+Nel caso di errore nel controllo di omogeneità viene interrotto il parsing
+ e visualizzato il messaggio di errore, contenente il tag dell'oggetto che
+ non rispetto il controllo di omogeneità.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1629,7 +1747,7 @@ Grammatica ad attributi
 \end_layout
 
 \begin_layout Section
-Esempio di utilizzo del linguaggio
+Architettura software
 \end_layout
 
 \end_body

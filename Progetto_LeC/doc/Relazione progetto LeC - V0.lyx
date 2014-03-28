@@ -88,6 +88,17 @@ pagestyle{empty}
 
 \begin_layout Standard
 \align center
+\begin_inset Graphics
+	filename images/logo unibg.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
 
 \series bold
 UNIVERSITÀ DEGLI STUDI DI BERGAMO
@@ -1652,12 +1663,88 @@ Produzioni
 Descrizione della semantica
 \end_layout
 
-\begin_layout Subsection
-Errori gestiti dal parser semantico
+\begin_layout Standard
+Il linguaggio prevede che ad ogni informazione sui vertici o oggetto grafico
+ possa essere attribuito un tag, da utilizzare successivamente per richiamare
+ l'entità definita.
+ Per supportare questa funzionalità, sono stati previsti i seguenti controlli
+ semantici:
 \end_layout
 
-\begin_layout Subsection
-Warning gestiti dal parser semantico
+\begin_layout Enumerate
+
+\series bold
+controllo duplicati
+\series default
+: non può essere inserito più di una volta lo stesso tag;
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+controllo in riutilizzo dei
+\series default
+ 
+\series bold
+tag
+\series default
+: per riutilizzare un entità, questa deve essere stata prima definita;
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+controllo di omogeneità
+\series default
+: un oggetto grafico può essere definito con o senza texture e/o normali,
+ a patto che tutti i vertici siano omogenei.
+ Questo significa che tutti i vertici sono definiti con o senza texture
+ e/o normali.
+ Il controllo di omogeneità si occupa di verificare che un oggetto grafico
+ sia appunto omogeneo.
+\end_layout
+
+\begin_layout Standard
+Ad ognuno dei controlli elencati in precedenza è stato attributo un errore
+ semantico del parser.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Errore nel controllo dei duplicati
+\end_layout
+
+\begin_layout Standard
+Nel caso di errore nel controllo dei duplicati viene interrotto il parsing
+ e visualizzato il messaggio di errore contenente il tag duplicato.
+ In seguito è riportato un esempio di codice che genera un errore di duplicazion
+e.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Paragraph
+Errore nel controllo in riutilizzo dei tag
+\end_layout
+
+\begin_layout Standard
+Nel caso di errore nel controllo in riutilizzo dei tag viene interrotto
+ il parsing e visualizzato il messaggio di errore, contenente il tag non
+ trovato.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Errore nel controllo di omogeneità
+\end_layout
+
+\begin_layout Standard
+Nel caso di errore nel controllo di omogeneità viene interrotto il parsing
+ e visualizzato il messaggio di errore, contenente il tag dell'oggetto che
+ non rispetto il controllo di omogeneità.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1665,7 +1752,7 @@ Grammatica ad attributi
 \end_layout
 
 \begin_layout Section
-Esempio di utilizzo del linguaggio
+Architettura software
 \end_layout
 
 \end_body
