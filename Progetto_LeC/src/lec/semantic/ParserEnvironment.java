@@ -1,8 +1,5 @@
 package lec.semantic;
 
-import lec.exception.DuplicateTagException;
-import lec.exception.NotHomogeneityException;
-import lec.exception.TagNotFoundException;
 import lec.graphelement.Face;
 import lec.graphelement.GraphElement.vertexConfig;
 import lec.graphelement.Line;

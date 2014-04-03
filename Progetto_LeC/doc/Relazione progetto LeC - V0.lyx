@@ -59,7 +59,7 @@ figs-within-sections
 \paragraph_indentation default
 \quotes_language english
 \papercolumns 1
-\papersides 2
+\papersides 1
 \paperpagestyle headings
 \tracking_changes false
 \output_changes false
@@ -78,7 +78,7 @@ status open
 
 
 \backslash
-pagestyle{empty}
+thispagestyle{empty}
 \end_layout
 
 \end_inset
@@ -193,6 +193,22 @@ Data:
 \size default
 
 \begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
 \end_inset
 
 
@@ -619,6 +635,29 @@ Versione iniziale
 
 \begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
 \end_inset
 
 
@@ -1659,6 +1698,13 @@ line,\, face,\, smoothing,\, group,\, deftex,\, defnorm,\, defsmooth\}
 Produzioni
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Descrizione della semantica
 \end_layout
@@ -1682,11 +1728,7 @@ controllo duplicati
 \begin_layout Enumerate
 
 \series bold
-controllo in riutilizzo dei
-\series default
- 
-\series bold
-tag
+controllo tag inesistente
 \series default
 : per riutilizzare un entità, questa deve essere stata prima definita;
 \end_layout
@@ -1696,10 +1738,10 @@ tag
 \series bold
 controllo di omogeneità
 \series default
-: un oggetto grafico può essere definito con o senza texture e/o normali,
+: un elemento grafico può essere definito con o senza texture e/o normali,
  a patto che tutti i vertici siano omogenei.
- Questo significa che tutti i vertici sono definiti con o senza texture
- e/o normali.
+ Questo significa che tutti i vertici di un elemento grafico sono definiti
+ con o senza texture e/o normali.
  Il controllo di omogeneità si occupa di verificare che un oggetto grafico
  sia appunto omogeneo.
 \end_layout
@@ -1722,18 +1764,171 @@ e.
 \end_layout
 
 \begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+vertex v1 = 0.1 1.4 1.6;
+\end_layout
+
+\begin_layout Plain Layout
+
+vertex v2 = 100.2 40.3 40.0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+face f1 = [
+\end_layout
+
+\begin_layout Plain Layout
+
+	v1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	v2	
+\end_layout
+
+\begin_layout Plain Layout
+
+];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+face f1 = [
+\end_layout
+
+\begin_layout Plain Layout
+
+	v1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	v2	
+\end_layout
+
+\begin_layout Plain Layout
+
+];
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La faccia con tag f1 viene dichiarata due volte all'interno del codice,
+ questo genera un errore di duplicazione.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ERROR 1: duplicated tag: f1
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
 \begin_layout Paragraph
-Errore nel controllo in riutilizzo dei tag
+Errore utilizzo di un tag inesistente
 \end_layout
 
 \begin_layout Standard
 Nel caso di errore nel controllo in riutilizzo dei tag viene interrotto
  il parsing e visualizzato il messaggio di errore, contenente il tag non
  trovato.
- 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+vertex v1 = 0.1 1.4 1.6;
+\end_layout
+
+\begin_layout Plain Layout
+
+vertex v2 = 100.2 40.3 40.0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+face f1 = [
+\end_layout
+
+\begin_layout Plain Layout
+
+	v1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	v2,
+\end_layout
+
+\begin_layout Plain Layout
+
+	v3	
+\end_layout
+
+\begin_layout Plain Layout
+
+];
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La faccia con tag f1 viene dichiarata utilizzando un vertice con tag v3,
+ che non è stato dichiarato in precedenza.
+ Questo genera un errore di utilizzo di un tag inesistente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ERROR 2: tag not found: v3
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -1742,17 +1937,1686 @@ Errore nel controllo di omogeneità
 
 \begin_layout Standard
 Nel caso di errore nel controllo di omogeneità viene interrotto il parsing
- e visualizzato il messaggio di errore, contenente il tag dell'oggetto che
- non rispetto il controllo di omogeneità.
- 
+ e visualizzato il messaggio di errore.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+vertex v1 = 0.1 1.4 1.6;
+\end_layout
+
+\begin_layout Plain Layout
+
+vertex v2 = 100.2 40.3 40.0;
+\end_layout
+
+\begin_layout Plain Layout
+
+vertex v2 = 345.2 240.3 35.0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+face f1 = [
+\end_layout
+
+\begin_layout Plain Layout
+
+	v1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	v2 deftex new (vtexture 0.5 0.5 0.5),
+\end_layout
+
+\begin_layout Plain Layout
+
+	v3	
+\end_layout
+
+\begin_layout Plain Layout
+
+];
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La faccia f1 è stata definita con due vertici senza texture e uno con texture
+ e quindi non rispetta il controllo di omogeneità.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ERROR 3: Not homogeneity error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Grammatica ad attributi
 \end_layout
 
+\begin_layout Standard
+La grammatica di objet è decorata da una serie di attributi che vengono
+ elaborati dal parser envirorment.
+ In seguito è riportato un esempio di utilizzo della grammatica ad attributi,
+ applicato alla dichiarazione di una nuova informazione sui vertici.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+num
+\series default
+\color inherit
+ returns 
+\series bold
+\color blue
+[float num]
+\series default
+\color inherit
+ : 
+\series bold
+\color blue
+s_num=
+\series default
+\color inherit
+(INT|FLOAT) {
+\series bold
+\color blue
+num
+\series default
+\color inherit
+ = env.parseNumber(
+\series bold
+\color blue
+s_num
+\series default
+\color inherit
+);} ;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+vDef
+\series default
+\color inherit
+ returns 
+\series bold
+\color blue
+[Vertex3d v] 
+\end_layout
+
+\begin_layout Plain Layout
+: 
+\end_layout
+
+\begin_layout Plain Layout
+(
+\series bold
+\color blue
+X=
+\series default
+\color inherit
+num 
+\series bold
+\color blue
+Y=
+\series default
+\color inherit
+num 
+\series bold
+\color blue
+Z=
+\series default
+\color inherit
+num)
+\end_layout
+
+\begin_layout Plain Layout
+{
+\series bold
+\color blue
+v
+\series default
+\color inherit
+=env.translateInVertex3d(
+\series bold
+\color blue
+X
+\series default
+\color inherit
+,
+\series bold
+\color blue
+Y
+\series default
+\color inherit
+,
+\series bold
+\color blue
+Z
+\series default
+\color inherit
+);} 
+\end_layout
+
+\begin_layout Plain Layout
+;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+assignTag
+\series default
+\color inherit
+ returns 
+\series bold
+\color blue
+[String tag]
+\series default
+\color inherit
+ : 
+\series bold
+\color blue
+tag_t=
+\series default
+\color inherit
+tagname equal {
+\series bold
+\color blue
+tag=tag_t;
+\series default
+\color inherit
+} ;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+singleDef
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+[String type]
+\end_layout
+
+\begin_layout Plain Layout
+: 
+\series bold
+\color blue
+tag_t=
+\series default
+\color inherit
+assignTag 
+\series bold
+\color blue
+v_t=
+\series default
+\color inherit
+vDef
+\end_layout
+
+\begin_layout Plain Layout
+{env.addNewVertexInfo(
+\series bold
+\color blue
+type
+\series default
+\color inherit
+, 
+\series bold
+\color blue
+tag_t
+\series default
+\color inherit
+, 
+\series bold
+\color blue
+v_t
+\series default
+\color inherit
+);}
+\end_layout
+
+\begin_layout Plain Layout
+; 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+multipleDef
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+[String type]
+\end_layout
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\begin_layout Plain Layout
+LSB (singleDef
+\series bold
+\color blue
+[type]
+\series default
+\color inherit
+) (COMMA singleDef
+\series bold
+\color blue
+[type]
+\series default
+\color inherit
+)* RSB
+\end_layout
+
+\begin_layout Plain Layout
+;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+vertexRule
+\series default
+\color inherit
+ : VERTEX (multipleDef
+\series bold
+\color blue
+["vertex"]
+\series default
+\color inherit
+|singleDef
+\series bold
+\color blue
+["vertex"]
+\series default
+\color inherit
+)SC;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+vTextureRule
+\series default
+\color inherit
+ : VTEXTURE (multipleDef
+\series bold
+\color blue
+["texture"]
+\series default
+\color inherit
+|singleDef
+\series bold
+\color blue
+["texture"]
+\series default
+\color inherit
+)SC;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+vNormalRule
+\series default
+\color inherit
+ : VNORMAL (multipleDef
+\series bold
+\color blue
+["normal"]
+\series default
+\color inherit
+|singleDef
+\series bold
+\color blue
+["normal"]
+\series default
+\color inherit
+)SC;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In blu sono evidenziati gli attributi della grammatica mentre in rosso sono
+ evidenziate le regole alle quali gli attributi sono applicati.
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+num: La regola num riconosce una stringa formattata come integer o come
+ float e la assegna all'attributo s_num.
+ L'attributo s_num viene passato alla funzione parseNumber(String s_num)
+ del parser envirorment, che lo converte in un numero.
+ L'attributo num contiene a questo punto la conversione della stringa riconusciu
+ta dal parser come un float e viene passato nel returns della regola num.
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+vDef: La regola vDef riconosce la definizione delle coordinate da attribure
+ ad un informazione su un vertice.
+ E' composta da tre call alla regola num, che ritornano tre valori float
+ rispettivamente posti negli attributi X, Y e Z.
+ Questi attributi vengono quindi passati alla funzione translateInVertex3d(float
+ x, float y, float z) per essere convertiti in un oggetto più complesso
+ di tipo Vertex3d.
+ Tale oggetto contiene i valori delle tre coordinate relativi all'informazione
+ sul vertice in corso di creazione e viene passato nel returns della regola
+ vDef.
+ 
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+assignTag: La regola assignTag riconosce in generale l'assegnamento di un
+ tag.
+ E' composta dal token tag e dal token equal.
+ Questa regola ritorna attraverso l'attributo tag appunto il tag riconosciuto
+ dal parser.
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+singleDef: La regola singleDef riconosce in generale un informazione su
+ un vertice.
+ E' composta dalla regola assignTag, attraverso la quale viene riconosciuto
+ il tag assegnato, e dalla regola vDef, attraverso la quale viene riconosciuto
+ l'oggetto Vertex3d che contiene le coordinate del nuovo vertice.
+ Questi attributi vengono quindi passati alla funzione addNewVertexInfo(String
+ type, String tag, Vertex3d v) che esegue l'effettivo salvataggio del nuovo
+ vertice creato.
+ Il parametro type identifica che tipo di informazione sui vertici è in
+ corso di creazione (vertix, vTexture o vNormal) ed è necessario al salvataggio
+ del vertice nella struttura dati corretta.
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+multipleDef: La regola multipleDef riconosce in generale una serie di informazio
+ni sui vertici, definiti per comodità richiamando una sola volta la parola
+ chiave VERTEX.
+ E' composta dal token LSB (
+\begin_inset Quotes eld
+\end_inset
+
+[
+\begin_inset Quotes eld
+\end_inset
+
+), da una almeno una ripetizione della regola singleDef e dal token RSB
+ (
+\begin_inset Quotes eld
+\end_inset
+
+]
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+vertexRule: La regola vertexRule ricosce uno o più vertici.
+ E' composta dal token VERTEX, seguito o dalla regola singleDef o dalle
+ regola multipleDef e conclusa dal token SC.
+ Le regole singleDef e multipleDef sono chiamate con parametro type di valore
+ 
+\begin_inset Quotes eld
+\end_inset
+
+vertex
+\begin_inset Quotes erd
+\end_inset
+
+, per notificare al parser envirorment che le informazioni sui vertici riconosci
+ute dovranno essere salvate come vertici.
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+vTextureRule: La regola vTextureRule ricosce uno o più coordinate di texture.
+ E' composta dal token VTEXTURE, seguito o dalla regola singleDef o dalle
+ regola multipleDef e conclusa dal token SC (
+\begin_inset Quotes eld
+\end_inset
+
+;
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Le regole singleDef e multipleDef sono chiamate con parametro type di valore
+ 
+\begin_inset Quotes eld
+\end_inset
+
+texture
+\begin_inset Quotes erd
+\end_inset
+
+, per notificare al parser envirorment che le informazioni sui vertici riconosci
+ute dovranno essere salvate come coordinate di texture.
+\end_layout
+
+\begin_layout Description
+Regola
+\begin_inset space ~
+\end_inset
+
+vNormalRule: La regola vertexRule ricosce uno o più normali.
+ E' composta dal token VNORMAL, seguito o dalla regola singleDef o dalle
+ regola multipleDef e conclusa dal token SC (
+\begin_inset Quotes eld
+\end_inset
+
+;
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Le regole singleDef e multipleDef sono chiamate con parametro type di valore
+ 
+\begin_inset Quotes eld
+\end_inset
+
+normal
+\begin_inset Quotes erd
+\end_inset
+
+, per notificare al parser envirorment che le informazioni sui vertici riconosci
+ute dovranno essere salvate come normali.
+\end_layout
+
+\begin_layout Standard
+Dall'esempio precedente si evincono le tre principali tendenze nella modalità
+ utilizzata per la grammatica di objet:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Generalizzazione delle parti di regole comuni
+\series default
+: singleDef e multipleDef sono regole scritte una volta sola e riutilizzate
+ per le tre diverse definizioni delle possibili informazioni sui vertici.
+ Questo consente di snellire sia la grammatica, eliminando le parti ripetute,
+ sia il parser envirorment, evitando di scrivere tre metodi differenti.
+ Questa scelta va a discapito della complessità della regola singleDef che
+ necessità di un attributo ulteriore per identificare che tipo di informazione
+ sui vertici è in corso di elaborazione.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Preferenza al trattamento di oggetti complessi
+\series default
+: la regola vDef trasforma direttamente i tre numeri float delle coordinate
+ in oggetto più complesso Vertex3d.
+ La natura dell'oggetto Vertex3d, ossia se si tratta di un vertice, coordinate
+ di texture o di una normale, viene successivamente specificata all'interno
+ del parser envirorment al momento del salvataggio nella struttura dati.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Creazione della struttura dati parallela al parsing
+\series default
+: la regola singleDef salva ogni informazione sui vertici man mano che il
+ parser le riconosce.
+ Ciò significa che la creazione della struttura dati avanza di pari passo
+ con il parsing.
+\end_layout
+
+\begin_layout Standard
+A conferma di quanto detto, in seguito è riportato un ulteriore esempio
+ relativo alla definizione dei gruppi di elementi grafici.
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size footnotesize
+\color red
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
+\series bold
+\size footnotesize
+\color red
+groupRule
+\series default
+\color inherit
+ : GROUP 
+\series bold
+\color blue
+groupTag=
+\series default
+\color inherit
+assignTag
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+             LSB
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+              {env.initializeGroup(
+\series bold
+\color blue
+groupTag
+\series default
+\color inherit
+);}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                  ((GraphElementName1=tagname|NEW LSB (
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                                
+\series bold
+\color blue
+face1=
+\series default
+\color inherit
+faceInLine
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                              | 
+\series bold
+\color blue
+line1=
+\series default
+\color inherit
+lineInLine
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                              | 
+\series bold
+\color blue
+point1=
+\series default
+\color inherit
+pointInLine
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                                   )
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                               RTB
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                    ) (DEFSMOOTH (
+\series bold
+\color blue
+smooth_tag1=
+\series default
+\color inherit
+tagname|smoothingInLine))?
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                            ) {env.addToTempGroup(
+\series bold
+\color blue
+GraphElementName1, point1, line1, 
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size footnotesize
+\color blue
+                                                     face1, smooth_tag1
+\series default
+\color inherit
+);}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                       ((COMMA 
+\series bold
+\color blue
+GraphElementName2=
+\series default
+\color inherit
+tagname|NEW LSB (
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                                
+\series bold
+\color blue
+face2=
+\series default
+\color inherit
+faceInLine
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                              | 
+\series bold
+\color blue
+line2=
+\series default
+\color inherit
+lineInLine
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                              | 
+\series bold
+\color blue
+point2=
+\series default
+\color inherit
+pointInLine
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                                   )
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                               RTB
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                   ) (DEFSMOOTH (
+\series bold
+\color blue
+smooth_tag2=
+\series default
+\color inherit
+tagname|smoothingInLine))?
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                     {env.addToTempGroup(
+\series bold
+\color blue
+GraphElementName2, point2, line2,
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size footnotesize
+\color blue
+                                            face2, smooth_tag2
+\series default
+\color inherit
+);}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                  )*
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+             RSB SC
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+             {env.saveGroup();}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+             ;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A sostegno delle affermazioni esposte precedentemente, è possibile notare
+ che la regola di grouping utilizza oggetti già complessi quali gli elementi
+ grafici face, line e point ottenuti rispettivamente dalle regole faceInLine,
+ lineInLine e pointInLine.
+ Inoltre la costruzione del gruppo avviene in maniera progressiva attraverso
+ quattro metodi del parser envirorment:
+\end_layout
+
+\begin_layout Enumerate
+initializeGroup: viene creato un oggetto gruppo temporaneo nel quale vengono
+ inseriti gli elementi grafici che fanno parte del nuovo gruppo;
+\end_layout
+
+\begin_layout Enumerate
+addToTempGroup: viene aggiunto un elemento grafico nel nuovo gruppo;
+\end_layout
+
+\begin_layout Enumerate
+saveGroup: salvataggio nella struttura dati del nuovo gruppo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Architettura software
+\end_layout
+
+\begin_layout Subsection
+Component diagram
+\end_layout
+
+\begin_layout Standard
+L'architettura software si suddivide in quattro componenti principali:
+\end_layout
+
+\begin_layout Description
+Parser
+\begin_inset space ~
+\end_inset
+
+envirorment: questo componente viene richiamato dal parser generato da Antlr
+ e si occupa di inserire nello storage component le informazioni sui vertici,
+ gli elementi grafici e i gruppi riconosciuti dal parser.
+\end_layout
+
+\begin_layout Description
+Storage
+\begin_inset space ~
+\end_inset
+
+component: questo componente racchiude la struttura dati utilizzata per
+ salvare tutti le informazioni sui vertici, gli elementi grafici e i gruppi
+ riconosciuti dal parser.
+\end_layout
+
+\begin_layout Description
+Translator
+\begin_inset space ~
+\end_inset
+
+component: questo componente traduce la struttura dati contenuta nello storage
+ component nel formato richiesto dallo standard obj.
+\end_layout
+
+\begin_layout Description
+Printer
+\begin_inset space ~
+\end_inset
+
+component: questo componente fornisce in output i dati tradotti dal translator
+ component, in base alla destinazione richiesta (implementato per printing
+ in console e su file obj).
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/00_overview diagram.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Component diagram overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Class diagram e dependency diagram
+\end_layout
+
+\begin_layout Subsubsection
+Storage component
+\end_layout
+
+\begin_layout Standard
+Lo storage component costruisce la struttura dati utilizzando oggetti appartenen
+ti a tre gerarchie differenti:
+\end_layout
+
+\begin_layout Description
+Informazioni
+\begin_inset space ~
+\end_inset
+
+sui
+\begin_inset space ~
+\end_inset
+
+vertici: la gerarchia delle informazioni sui vertici è composta dagli elementi
+ basilari dell'obj quali vertici, coordinate texture e normali.
+\end_layout
+
+\begin_layout Description
+Elementi
+\begin_inset space ~
+\end_inset
+
+grafici: la gerarchia degli elementi grafici descrive gli elementi grafici
+ quali punti, linee e facce.
+ Ognuno di questi componenti viene composto utilizzando oggetti che fanno
+ parte della gerarchia sui vertici.
+\end_layout
+
+\begin_layout Description
+Grouping: la gerarchia di grouping attualmente è composta solamente dal
+ tipo gruppo.
+ Un gruppo è composto da elementi grafici.
+\end_layout
+
+\begin_layout Paragraph
+Gerarchia informazioni sui vertici
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/03_vertexInfo (dependency_autodiagram).png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Dependency diagram informazioni sui vertici
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/04_vertexInfo (structure_autodiagram).png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Class diagram informazioni sui vertici
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Gerarchia elementi grafici e grouping
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/05_graphelement (dependency_autodiagram).png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Dependency diagram elementi grafici
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/06_graphelement (structure_autodiagram).png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Class diagram elementi grafici
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Struttura dati componente di storage
+\end_layout
+
+\begin_layout Standard
+La struttura dati del componente di storage è suddivisa in due macro tipologie
+ di struttura:
+\end_layout
+
+\begin_layout Enumerate
+Struttura di salvataggio di elementi a cui 
+\series bold
+non è
+\series default
+ 
+\series bold
+attribuito un tag
+\series default
+, identificata dalla label 
+\begin_inset Quotes eld
+\end_inset
+
+notag
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Per questa tipologia di struttura viene utilizzata una semplice lista.
+\end_layout
+
+\begin_layout Enumerate
+Struttura di salvataggio di elementi a cui 
+\series bold
+è
+\series default
+ 
+\series bold
+attribuito un tag
+\series default
+, identificata dalla label 
+\begin_inset Quotes eld
+\end_inset
+
+tag
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Per questa tipologia di struttura viene utilizzata una hashmap, per favorire
+ la 
+\series bold
+velocità di ricerca
+\series default
+ di un oggetto per tag durante la fase di costruzione della struttura dati.
+\end_layout
+
+\begin_layout Standard
+Questa scelta deriva dalla possibilità di poter dichiarare un elemento grafico
+ senza tag.
+ Per ogni tipologia di elemento grafico sono istanziate una struttura dati
+ per tipologia, ossia una per memorizzare elementi senza tag e una per memorizza
+re elementi con tag.
+ A tale proposito la hashmap per gli elementi grafici con tag è incapsulata
+ nell'oggetto 
+\shape italic
+GraphElementsMapper
+\shape default
+, per condividere alcune funzionalità di controllo (ad esempio dei duplicati)
+ tra le strutture dati di punti, linee e facce.
+\end_layout
+
+\begin_layout Standard
+Le informazioni sui vertici di cui è stato dichiarato un tag, vengono immagazzin
+ate in una hashmap, sempre per favorire la velocità di ricerca al momento
+ del loro riutilizzo.
+ Le informazioni sui vertici di cui non è stato dichiarato un tag (utilizzando
+ la funzionalità di dichiarazione inline), sono intrinsecamente immagazzinate
+ negli elementi grafici, di conseguenza non esiste una esplicità struttura
+ dati per tali informazioni.
+ Questa scelta deriva dal fatto che lo standard obj prevede di ignorare
+ un informazione sui vertici, se non viene utilizzata almeno in un elemento
+ grafico.
+\end_layout
+
+\begin_layout Standard
+I gruppi devono sempre avere un tag e sono immagazzinati anch'essi in una
+ hashmap.
+ Anche in questo caso gli elementi grafici e le informazioni sui vertici
+ che vengono dichiarate inline, sono intrinsecamente contenuti nell'oggetto
+ gruppo e di conseguenza non hanno una struttura dati esplicita per il loro
+ salvataggio.
+\end_layout
+
+\begin_layout Standard
+Riguardo alla gestione dei tag, è importante sottolineare che ogni qual
+ volta un elemento grafico o un informazione sui vertici viene richiamata
+ tramite tag, viene utilizzato un costrutture per copia per ricreare un
+ istanza dell'oggetto con gli stessi dati ma diversi.
+ Questo garantisce un 
+\series bold
+disaccoppiamento nella creazione di qualsiasi elemento del liguaggio
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/01_storage (dependency_autodiagram).png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Dependency diagram componente di storage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/02_storage (structure_autodiagram).png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Class diagram componente di storage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Parser envirorment component
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/08_semantic (dependency_autodiagram).png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Dependency diagram parser envirorment component
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/09_semantic (structure_autodiagram).png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Class diagram parser envirorment component
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Translator component
+\end_layout
+
+\begin_layout Standard
+Il componente translator si occupa di tradurre la struttura dati contenuta
+ nello storage component nello standard obj.
+ In sostanza fornisce una lista di String.
+\end_layout
+
+\begin_layout Standard
+La caratteristica di maggior rilievo per questo componente è l'
+\series bold
+ottimizzazione dei vertici a livello di elemento grafico o di gruppo
+\series default
+.
+ Dato che il linguaggio favorisce il riutilizzo di informazioni sui vertici
+ e di elementi grafici attraverso la definizione di un tag, è facile incappare
+ in situazioni in cui un vertice è dichiarato una volta sola ma riutilizzato
+ n volte in elementi grafici che possono essere richiamati all'interno dello
+ stesso gruppo.
+ Questa pratica genera una crescita del numero di vertici necessari per
+ descrivere un insieme di elementi grafici che fanno parte di uno stesso
+ gruppo.
+ Per evitare di sovraccaricare il numero di informazioni sui vertici che
+ devono essere esportate, il component translator si fa carico di eliminare
+ i duplicati e di reindicizzare le informazioni grafiche contenute negli
+ elementi grafici del gruppo.
+ Questa funzionalità è carico degli oggetti 
+\shape italic
+GraphElementsMap
+\shape default
+ e 
+\shape italic
+InfoMap
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+A carico del componente translator vi è invece la 
+\series bold
+scomposizione della struttura dati
+\series default
+ contenuta nel componente di storage e l'
+\series bold
+indicizzazione globale dei vertici
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/10_translater (dependency_autodiagram).png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Dependency diagram translator component
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/11_translater (structure_autodiagram).png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Class diagram translator component
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Printer component
+\end_layout
+
+\begin_layout Standard
+Il component di printer contiene l'interfaccia che gli oggetti printers
+ devono implementare, che semplicemente definisce un metodo che prende in
+ ingresso la lista di String generata dal componente translator.
+ Per semplicità sono state implementati due printers differenti, uno per
+ fare output in console (utile in fase di sviluppo) e uno per generare realmente
+ il file obj.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/12_printer (structure_autodiagram).png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Class diagram printer component
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Gerarchia exception
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/14_exception (structure_autodiagram).png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Class diagram informazioni sui vertici
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
